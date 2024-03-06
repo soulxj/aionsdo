@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<events_config>
+	<active>The Fortune Fayre;Doppelgangers;Ascension Energy;Festival Winter;Harvest Revel;Daru Days;Ardent heat;Ascension Energy Inventory;Ardent heat Inventory</active>
+	<events>
+		<event name="Kakuna World" start="2022-12-28T00:00:00+00:00" end="2022-03-31T00:00:00+00:00">
+			<quests>
+				<maintainable>9566;9567</maintainable>
+			</quests>
+			<spawns>
+				<!-- Heiron -->
+				<spawn_map map_id="210040000">
+				    <!-- -->
+					<spawn npc_id="799986">
+						<spot x="2494.56" y="331.53616" z="412.37695" h="22"/>
+					</spawn>
+					<!-- Kakuna -->
+					<spawn npc_id="218855" respawn_time="7200">
+						<spot x="289.59674" y="2771.3396" z="107.22479" h="16" random_walk="5"/>
+					</spawn>
+				</spawn_map>
+				<!-- Beluslan -->
+				<spawn_map map_id="220040000">
+				    <!-- -->
+				    <spawn npc_id="799988">
+						<spot x="340.4465" y="337.91605" z="229.12941" h="21"/>
+					</spawn>
+					<!-- Kakuna -->
+					<spawn npc_id="218858" respawn_time="7200">
+						<spot x="2377.8933" y="2764.553" z="682.78455" h="1" random_walk="5"/>
+					</spawn>
+				</spawn_map>
+			</spawns>
+		</event>
+		<event name="The Black Tiger Event Pass" start="2022-01-09T00:00:00+00:00" end="2022-03-23T00:00:00+00:00">
+			<!-- <inventory_drop startlevel="10" interval="30" endlevel="55" maxCountOfDay="4" cleanTime="6">783300</inventory_drop>-->
+			<spawns>
+				<!-- Sanctum -->
+				<spawn_map map_id="110010000">
+					<!-- Tiger Collector -->
+      				<spawn npc_id="800418" pool="1" respawn_time="295">
+      					<spot x="1530.1826" y="1511.7501" z="566.57526" h="63"/>
+      				</spawn>
+		        </spawn_map>
+				<!-- Pandaemonium -->
+		        <spawn_map map_id="120010000">
+      				<!-- Tiger Collector -->
+      				<spawn npc_id="800418" pool="1" respawn_time="295">
+      					<spot x="1182.7379" y="1351.888" z="209.6744" h="61" />
+      				</spawn>
+		        </spawn_map>
+			</spawns>
+		</event>
+	</events>
+</events_config>

@@ -1,0 +1,1 @@
+ALTER TABLE `players` ADD COLUMN `sp` int(11) NOT NULL default 0 AFTER `guildCoins`

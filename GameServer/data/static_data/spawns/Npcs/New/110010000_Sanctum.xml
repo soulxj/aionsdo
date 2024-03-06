@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<spawns>
+    <spawn_map map_id="110010000">
+        <spawn npc_id="214999" respawn_time="60" difficult_id="0" custom="true">
+            <spot x="1178.2369" y="2226.4539" z="3.0" h="20"/>
+        </spawn>
+        <spawn npc_id="800786" respawn_time="60" difficult_id="0" custom="true">
+            <spot x="1529.3827" y="1511.5973" z="566.5288" h="60"/>
+        </spawn>
+        <spawn npc_id="800790" respawn_time="60" difficult_id="0" custom="true">
+            <spot x="1525.3304" y="1515.4684" z="565.9831" h="58"/>
+        </spawn>
+    </spawn_map>
+</spawns>

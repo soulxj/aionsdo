@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="guide.xsd">
+	<!-- Asmodians -->
+	<guide title="templar_starter_asmo" level="55" race="ASMODIANS" classType="TEMPLAR" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100000797" count="1" /> <!-- Elite Archon Tribunus's Sword     -->
+		<survey itemId="115000889" count="1" /> <!-- Elite Archon Tribunus's Shield    -->
+		<survey itemId="100900610" count="1" /> <!-- Elite Archon Tribunus's Greatsword     -->
+		<survey itemId="100900610" count="1" /> <!-- Elite Archon Tribunus's Greatsword     -->
+		<!-- e50 set		-->
+		<survey itemId="110600886" count="1" /> <!-- Chest 	-->
+		<survey itemId="111600867" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113600851" count="1" /> <!-- Pants 	-->
+		<survey itemId="112600841" count="1" /> <!-- Shoulders -->
+		<survey itemId="114600846" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001717" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+
+		<!-- Scrolls	-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		
+		<!-- Pots	-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  	-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="gladiator_starter_asmo" level="55" race="ASMODIANS" classType="GLADIATOR" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101300582" count="1" /> <!-- Elite Archon Tribunus's Spear -->
+		<survey itemId="101300582" count="1" /> <!-- Elite Archon Tribunus's Spear -->
+		<!-- e50 set		-->
+		<survey itemId="110600886" count="1" /> <!-- Chest 	-->
+		<survey itemId="111600867" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113600851" count="1" /> <!-- Pants 	-->
+		<survey itemId="112600841" count="1" /> <!-- Shoulders -->
+		<survey itemId="114600846" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001717" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+			<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+			<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="assassin_starter_asmo" level="55" race="ASMODIANS" classType="ASSASSIN" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100000797" count="1" /> <!-- Elite Archon Tribunus's Sword   -->
+		<survey itemId="100200726" count="1" /> <!-- Elite Archon Tribunus's Dagger  -->
+
+		<!-- e50 set		-->
+		<survey itemId="110300938" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300889" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300910" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300839" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300944" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001715" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<survey itemId="163000003" count="20000" /> <!-- Arrows  -->
+		<survey itemId="169300010" count="20000" /> <!-- Poison  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="ranger_starter_asmo" level="55" race="ASMODIANS" classType="RANGER" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101700644" count="1" /> <!-- Elite Archon Tribunus's Longbow     -->
+		<survey itemId="101700644" count="1" /> <!-- Elite Archon Tribunus's Longbow        -->
+
+		<!-- e50 set		-->
+		<survey itemId="110300938" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300889" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300910" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300839" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300944" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001715" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<survey itemId="163000003" count="20000" /> <!-- Arrows  -->
+		<survey itemId="169300008" count="20000" /> <!-- Tripeed Seed  -->
+		<survey itemId="169300009" count="20000" /> <!-- Tripeed Fruit  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="sorcerer_starter_asmo" level="55" race="ASMODIANS" classType="SORCERER" rewardCount="24">
+		<message>
+			<![CDATA[<BR><BR>
+	   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100600660" count="1" /> <!-- Elite Archon Tribunus's Tome    -->
+		<survey itemId="100600660" count="1" /> <!-- Elite Archon Tribunus's Tome     -->
+		<survey itemId="100500620" count="1" /> <!-- Elite Archon Tribunus's Jewel    -->
+		<survey itemId="100500620" count="1" /> <!-- Elite Archon Tribunus's Jewel     -->
+		<!-- e50 set 		-->
+		<survey itemId="110100989" count="1" /> <!-- Chest 	-->
+		<survey itemId="111100884" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113100897" count="1" /> <!-- Pants 	-->
+		<survey itemId="112100841" count="1" /> <!-- Shoulders -->
+		<survey itemId="114100923" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001714" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000852" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000732" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000803" count="2" /> <!-- Earring	-->
+		<survey itemId="123000845" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast  -->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="spiritmaster_starter_asmo" level="55" race="ASMODIANS" classType="SPIRIT_MASTER" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100600660" count="1" /> <!-- Elite Archon Tribunus's Tome    -->
+		<survey itemId="100600660" count="1" /> <!-- Elite Archon Tribunus's Tome     -->
+		<survey itemId="100500620" count="1" /> <!-- Elite Archon Tribunus's Jewel    -->
+		<survey itemId="100500620" count="1" /> <!-- Elite Archon Tribunus's Jewel     -->
+		<!-- e50 set 		-->
+		<survey itemId="110100989" count="1" /> <!-- Chest 	-->
+		<survey itemId="111100884" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113100897" count="1" /> <!-- Pants 	-->
+		<survey itemId="112100841" count="1" /> <!-- Shoulders -->
+		<survey itemId="114100923" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001714" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000852" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000732" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000803" count="2" /> <!-- Earring	-->
+		<survey itemId="123000845" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast  -->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169300011" count="1000" /> <!-- Summon    -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="chanter_starter_asmo" level="55" race="ASMODIANS" classType="CHANTER" rewardCount="24">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101500623" count="1" /> <!-- Elite Archon Tribunus's Staff   -->
+		<survey itemId="101500623" count="1" /> <!-- Elite Archon Tribunus's Staff   -->
+		<!-- e50 set 		-->
+		<survey itemId="110500906" count="1" /> <!-- Chest 	-->
+		<survey itemId="111500875" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113500880" count="1" /> <!-- Pants 	-->
+		<survey itemId="112500826" count="1" /> <!-- Shoulders -->
+		<survey itemId="114500887" count="1" /> <!-- Boots 	-->
+		<!--e50 accs 	-->
+		<survey itemId="125001716" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000133" count="100" /> <!-- cast.    -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="cleric_starter_asmo" level="55" race="ASMODIANS" classType="CLERIC" rewardCount="22">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100100599" count="1" /> <!-- Elite Archon Tribunus's Warhammer    -->
+		<survey itemId="115000889" count="1" /> <!-- Elite Archon Tribunus's Shield  -->
+		<!-- e50 set 		-->
+		<survey itemId="110500906" count="1" /> <!-- Chest 	-->
+		<survey itemId="111500875" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113500880" count="1" /> <!-- Pants 	-->
+		<survey itemId="112500826" count="1" /> <!-- Shoulders -->
+		<survey itemId="114500887" count="1" /> <!-- Boots 	-->
+		<!--e50 accs 	-->
+		<survey itemId="125001716" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000852" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000732" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000803" count="2" /> <!-- Earring	-->
+		<survey itemId="123000845" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast  -->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+			<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+
+	<!-- Elyos -->
+	<guide title="templar_starter_ely" level="55" race="ELYOS" classType="TEMPLAR" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100000794" count="1" /> <!-- Elite Guardian Tribunus's Sword     -->
+		<survey itemId="115000886" count="1" /> <!-- Elite Guardian Tribunus's Shield     -->
+		<survey itemId="100900607" count="1" /> <!-- Elite Guardian Tribunus's Greatsword     -->
+		<survey itemId="100900607" count="1" /> <!-- Elite Guardian Tribunus's Greatsword     -->
+		<!-- e50 set 		-->
+		<survey itemId="110600883" count="1" /> <!-- Chest 	-->
+		<survey itemId="111600864" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113600848" count="1" /> <!-- Pants 	-->
+		<survey itemId="112600838" count="1" /> <!-- Shoulders -->
+		<survey itemId="114600843" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs	-->
+		<survey itemId="125001713" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+	<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="gladiator_starter_ely" level="55" race="ELYOS" classType="GLADIATOR" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101300579" count="1" /> <!-- Elite Guardian Tribunus's Spear -->
+		<survey itemId="101300579" count="1" /> <!-- Elite Guardian Tribunus's Spear -->
+		<!-- e50 set 		-->
+		<survey itemId="110600883" count="1" /> <!-- Chest 	-->
+		<survey itemId="111600864" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113600848" count="1" /> <!-- Pants 	-->
+		<survey itemId="112600838" count="1" /> <!-- Shoulders -->
+		<survey itemId="114600843" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs	-->
+		<survey itemId="125001713" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="assassin_starter_ely" level="55" race="ELYOS" classType="ASSASSIN" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100000794" count="1" /> <!-- Elite Guardian Tribunus's Sword   -->
+		<survey itemId="100200723" count="1" /> <!-- Elite Guardian Tribunus's Dagger  -->
+
+		<!-- e50 set 		-->
+		<survey itemId="110300935" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300886" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300907" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300836" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300941" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs	-->
+		<survey itemId="125001711" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<survey itemId="163000003" count="20000" /> <!-- Arrows  -->
+		<survey itemId="169300010" count="20000" /> <!-- Poison  -->
+		
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="ranger_starter_ely" level="55" race="ELYOS" classType="RANGER" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101700641" count="1" /> <!-- Elite Guardian Tribunus's Longbow     -->
+		<survey itemId="101700641" count="1" /> <!-- Elite Guardian Tribunus's Longbow        -->
+
+		<!-- e50 set 		-->
+		<survey itemId="110300935" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300886" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300907" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300836" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300941" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs	-->
+		<survey itemId="125001711" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<survey itemId="163000003" count="20000" /> <!-- Arrows  -->
+		<survey itemId="169300008" count="20000" /> <!-- Tripeed Seed  -->
+		<survey itemId="169300009" count="20000" /> <!-- Tripeed Fruit  -->
+		
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="sorcerer_starter_ely" level="55" race="ELYOS" classType="SORCERER" rewardCount="24">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100600657" count="1" /> <!-- Elite Guardian Tribunus's Tome    -->
+		<survey itemId="100600657" count="1" /> <!-- Elite Guardian Tribunus's Tome     -->
+		<survey itemId="100500617" count="1" /> <!-- Elite Guardian Tribunus's Jewel    -->
+		<survey itemId="100500617" count="1" /> <!-- Elite Guardian Tribunus's Jewel     -->
+		<!-- e50 set 		-->
+		<survey itemId="110100986" count="1" /> <!-- Chest 	-->
+		<survey itemId="111100881" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113100894" count="1" /> <!-- Pants 	-->
+		<survey itemId="112100838" count="1" /> <!-- Shoulders -->
+		<survey itemId="114100920" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001710" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000850" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000730" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000801" count="2" /> <!-- Earring	-->
+		<survey itemId="123000843" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast  -->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="spiritmaster_starter_ely" level="55" race="ELYOS" classType="SPIRIT_MASTER" rewardCount="25">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100600657" count="1" /> <!-- Elite Guardian Tribunus's Tome    -->
+		<survey itemId="100600657" count="1" /> <!-- Elite Guardian Tribunus's Tome     -->
+		<survey itemId="100500617" count="1" /> <!-- Elite Guardian Tribunus's Jewel    -->
+		<survey itemId="100500617" count="1" /> <!-- Elite Guardian Tribunus's Jewel     -->
+		<!-- e50 set 		-->
+		<survey itemId="110100986" count="1" /> <!-- Chest 	-->
+		<survey itemId="111100881" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113100894" count="1" /> <!-- Pants 	-->
+		<survey itemId="112100838" count="1" /> <!-- Shoulders -->
+		<survey itemId="114100920" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001710" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000850" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000730" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000801" count="2" /> <!-- Earring	-->
+		<survey itemId="123000843" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast  -->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169300011" count="1000" /> <!-- Summon    -->
+		
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="chanter_starter_ely" level="55" race="ELYOS" classType="CHANTER" rewardCount="24">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+			
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="101500620" count="1" /> <!-- Elite Guardian Tribunus's Staff   -->
+		<survey itemId="101500620" count="1" /> <!-- Elite Guardian Tribunus's Staff   -->
+		<!-- e50 set 		-->
+		<survey itemId="110500903" count="1" /> <!-- Chest 	-->
+		<survey itemId="111500872" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113500877" count="1" /> <!-- Pants 	-->
+		<survey itemId="112500823" count="1" /> <!-- Shoulders -->
+		<survey itemId="114500884" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001712" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000133" count="100" /> <!-- Cast   -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+        <survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="cleric_starter_ely" level="55" race="ELYOS" classType="CLERIC" rewardCount="22">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="100100596" count="1" /> <!-- Elite Guardian Tribunus's Warhammer    -->
+		<survey itemId="115000886" count="1" /> <!-- Elite Guardian Tribunus's Shield  -->
+		<!-- e50 set		-->
+		<survey itemId="110500903" count="1" /> <!-- Chest 	-->
+		<survey itemId="111500872" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113500877" count="1" /> <!-- Pants 	-->
+		<survey itemId="112500823" count="1" /> <!-- Shoulders -->
+		<survey itemId="114500884" count="1" /> <!-- Boots 	-->
+		<!-- Abyss 40 accessories 	-->
+		<survey itemId="125001712" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000850" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000730" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000801" count="2" /> <!-- Earring	-->
+		<survey itemId="123000843" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000133" count="100" /> <!-- Cast		-->
+		<survey itemId="164000120" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="thunderer_starter_asmo" level="55" race="ASMODIANS" classType="THUNDERER" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="102400112" count="1" /> <!-- Elite Archon Tribunus's Chainsword    -->
+		<survey itemId="102400112" count="1" /> <!-- Elite Archon Tribunus's Chainsword  -->
+		<!-- e50 set		-->
+		<survey itemId="110300938" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300889" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300910" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300839" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300944" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs 	-->
+		<survey itemId="125001715" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000851" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000731" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000802" count="2" /> <!-- Earring	-->
+		<survey itemId="123000844" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000089" count="1000" /> <!-- Pandaemonium Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+	<guide title="thunderer_starter_elyos" level="55" race="ELYOS" classType="THUNDERER" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="102400111" count="1" /> <!-- Elite Guardian Tribunus's Chainsword    -->
+		<survey itemId="102400111" count="1" /> <!-- Elite Guardian Tribunus's Chainsword  -->
+		<!-- e50 set 		-->
+		<survey itemId="110300935" count="1" /> <!-- Chest 	-->
+		<survey itemId="111300886" count="1" /> <!-- Gloves 	-->
+		<survey itemId="113300907" count="1" /> <!-- Pants 	-->
+		<survey itemId="112300836" count="1" /> <!-- Shoulders -->
+		<survey itemId="114300941" count="1" /> <!-- Boots 	-->
+		<!-- e50 accs	-->
+		<survey itemId="125001711" count="1" /> <!-- Hat	 	-->
+		<survey itemId="122000849" count="2" /> <!-- Ring	 	-->
+		<survey itemId="121000729" count="1" /> <!-- Necklace 	-->
+		<survey itemId="120000800" count="2" /> <!-- Earring	-->
+		<survey itemId="123000842" count="1" /> <!-- Belt	 	-->
+		<!-- Manastones				-->
+		<survey itemId="188051839" count="1" /> <!--Starter manastones bundle-->
+		<!-- Scrolls				-->
+		<survey itemId="164000075" count="100" /> <!-- Speed	-->
+		<survey itemId="164000072" count="100" /> <!-- Courage  -->
+		<survey itemId="164000066" count="100" /> <!-- Crit.    -->
+		<survey itemId="164000085" count="1000" /> <!-- Sanctum Scroll    -->
+		<survey itemId="169000009" count="20000" /> <!-- Power Shards  -->
+		<!-- Pots					-->
+		<survey itemId="162000069" count="50" /> <!-- Abyss    -->
+		<survey itemId="162000070" count="50" /> <!-- Abyss    -->
+		<survey itemId="162002002" count="100" /> <!-- Serum    -->
+		<survey itemId="162000022" count="100" /> <!-- L.Heal.	-->
+		<!-- Wings  				-->
+		<survey itemId="187000035" count="1"   />
+	</guide>
+
+	
+	<!-- Stigmas (highest levels) -->
+	<guide title="templar_stigma_asmo" level="55" race="ASMODIANS" classType="TEMPLAR" rewardCount="28">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000192" count="1"/>	<!-- Aether armor -->
+		<survey itemId="140000238" count="1"/>	<!-- Empyrean Fury -->
+		<survey itemId="140000036" count="1"/>	<!-- Bodyguard -->
+		<survey itemId="140000348" count="1"/>	<!-- Prayer of Resilience -->
+		<survey itemId="140000349" count="1"/>	<!-- Prayer of victory -->
+		<survey itemId="140000365" count="1"/>	<!-- Barricade of Steel -->
+		<survey itemId="140000350" count="1"/>	<!-- Divine justice -->
+		<survey itemId="140000351" count="1"/>	<!-- Magic smash -->
+		<survey itemId="140000398" count="1"/>	<!-- siege breaker -->
+		<survey itemId="140000461" count="1"/>	<!-- punishment -->
+		<survey itemId="140000376" count="1"/>	<!-- incite rage -->
+		<survey itemId="140000366" count="1"/>	<!-- break power -->
+		<survey itemId="140000352" count="1"/>	<!-- threatening taunt -->
+		<survey itemId="140000353" count="1"/>	<!-- punishing wave -->
+		<survey itemId="140000501" count="1"/>	<!-- inquisitor's blow -->
+		<survey itemId="140000357" count="1"/>	<!-- shieldburst -->
+		<survey itemId="140000046" count="1"/>	<!-- power of battle morale / power of restoration-->
+		<survey itemId="140000194" count="1"/>	<!-- punishment of darkness -->
+		<survey itemId="140000354" count="1"/>	<!-- empyrean providence -->
+		<survey itemId="140000337" count="1"/>	<!-- provoking roar -->
+		<survey itemId="140000373" count="1"/>	<!-- holy shield -->
+		<survey itemId="140000237" count="1"/>	<!-- shield of faith -->
+		<survey itemId="140000044" count="1"/>	<!-- terrible howl -->
+		<survey itemId="140000016" count="1"/>	<!-- unwavering devotion -->
+		<survey itemId="140000028" count="1"/>	<!-- doom lure -->
+		<survey itemId="140000027" count="1"/>	<!-- divine fury -->
+		<survey itemId="140000554" count="1"/>	<!-- Def Armor NEW STIGMA -->
+	</guide>
+	<guide title="templar_stigma_ely" level="55" race="ELYOS" classType="TEMPLAR" rewardCount="28">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000192" count="1"/>	<!-- Aether armor -->
+		<survey itemId="140000238" count="1"/>	<!-- Empyrean Fury -->
+		<survey itemId="140000036" count="1"/>	<!-- Bodyguard -->
+		<survey itemId="140000348" count="1"/>	<!-- Prayer of Resilience -->
+		<survey itemId="140000349" count="1"/>	<!-- Prayer of victory -->
+		<survey itemId="140000365" count="1"/>	<!-- Barricade of Steel -->
+		<survey itemId="140000350" count="1"/>	<!-- Divine justice -->
+		<survey itemId="140000351" count="1"/>	<!-- Magic smash -->
+		<survey itemId="140000398" count="1"/>	<!-- siege breaker -->
+		<survey itemId="140000461" count="1"/>	<!-- punishment -->
+		<survey itemId="140000376" count="1"/>	<!-- incite rage -->
+		<survey itemId="140000366" count="1"/>	<!-- break power -->
+		<survey itemId="140000352" count="1"/>	<!-- threatening taunt -->
+		<survey itemId="140000353" count="1"/>	<!-- punishing wave -->
+		<survey itemId="140000501" count="1"/>	<!-- inquisitor's blow -->
+		<survey itemId="140000357" count="1"/>	<!-- shieldburst -->
+		<survey itemId="140000046" count="1"/>	<!-- power of battle morale / power of restoration-->
+		<survey itemId="140000193" count="1"/>	<!-- punishment of light -->
+		<survey itemId="140000354" count="1"/>	<!-- empyrean providence -->
+		<survey itemId="140000337" count="1"/>	<!-- provoking roar -->
+		<survey itemId="140000373" count="1"/>	<!-- holy shield -->
+		<survey itemId="140000237" count="1"/>	<!-- shield of faith -->
+		<survey itemId="140000044" count="1"/>	<!-- terrible howl -->
+		<survey itemId="140000016" count="1"/>	<!-- unwavering devotion -->
+		<survey itemId="140000028" count="1"/>	<!-- doom lure -->
+		<survey itemId="140000027" count="1"/>	<!-- divine fury -->
+		<survey itemId="140000554" count="1"/>	<!-- Def Armor NEW STIGMA -->
+	</guide>
+	<guide title="gladiator_stigma_asmo" level="55" race="ASMODIANS" classType="GLADIATOR" rewardCount="30">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000331" count="1"/>	<!-- Draining sword -->
+		<survey itemId="140000375" count="1"/>	<!-- Vengeful strike -->
+		<survey itemId="140000321" count="1"/>	<!-- Dauntless Spirit -->
+		<survey itemId="140000014" count="1"/>	<!-- Howl -->
+		<survey itemId="140000330" count="1"/>	<!-- Crippling Cut -->
+		<survey itemId="140000397" count="1"/>	<!-- Siege Breaker -->
+		<survey itemId="140000499" count="1"/>	<!-- Absorbing Fury -->
+		<survey itemId="140000025" count="1"/>	<!-- Earthquake wave -->
+		<survey itemId="140000191" count="1"/>	<!-- Piercing Rupture -->
+		<survey itemId="140000311" count="1"/>	<!-- Lockdown -->
+		<survey itemId="140000394" count="1"/>	<!-- Second Wind -->
+		<survey itemId="140000023" count="1"/>	<!-- Slaughter -->
+		<survey itemId="140000222" count="1"/>	<!-- Berserking -->
+		<survey itemId="140000007" count="1"/>	<!-- Advanced Dual-Wielding -->
+		<survey itemId="140000408" count="1"/>	<!-- Weakening Blow -->
+		<survey itemId="140000016" count="1"/>	<!-- Unwavering devotion -->
+		<survey itemId="140000008" count="1"/>	<!-- Improved stamina -->
+		<survey itemId="140000011" count="1"/>	<!-- Ankle Snare -->
+		<survey itemId="140000324" count="1"/>	<!-- Precision cut -->
+		<survey itemId="140000322" count="1"/>	<!-- Severe Precision cut -->
+		<survey itemId="140000325" count="1"/>	<!-- Spite strike -->
+		<survey itemId="140000326" count="1"/>	<!-- Sharp Strike -->
+		<survey itemId="140000323" count="1"/>	<!-- Vicious Blow -->
+		<survey itemId="140000327" count="1"/>	<!-- Tendon Slice -->
+		<survey itemId="140000328" count="1"/>	<!-- Whirling strike -->
+		<survey itemId="140000329" count="1"/>	<!-- Sure Strike -->
+		<survey itemId="140000495" count="1"/>	<!-- Draining blow-->
+		<survey itemId="140000553" count="1"/>	<!-- Counteratk Armor NEW STIGMA -->
+
+	</guide>	
+	<guide title="gladiator_stigma_ely" level="55" race="ELYOS" classType="GLADIATOR" rewardCount="29">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000331" count="1"/>	<!-- Draining sword -->
+		<survey itemId="140000375" count="1"/>	<!-- Vengeful strike -->
+		<survey itemId="140000321" count="1"/>	<!-- Dauntless Spirit -->
+		<survey itemId="140000014" count="1"/>	<!-- Howl -->
+		<survey itemId="140000330" count="1"/>	<!-- Crippling Cut -->
+		<survey itemId="140000397" count="1"/>	<!-- Siege Breaker -->
+		<survey itemId="140000499" count="1"/>	<!-- Absorbing Fury -->
+		<survey itemId="140000025" count="1"/>	<!-- Earthquake wave -->
+		<survey itemId="140000190" count="1"/>	<!-- Shattering wave -->
+		<survey itemId="140000311" count="1"/>	<!-- Lockdown -->
+		<survey itemId="140000394" count="1"/>	<!-- Second Wind -->
+		<survey itemId="140000023" count="1"/>	<!-- Slaughter -->
+		<survey itemId="140000222" count="1"/>	<!-- Berserking -->
+		<survey itemId="140000007" count="1"/>	<!-- Advanced Dual-Wielding -->
+		<survey itemId="140000408" count="1"/>	<!-- Weakening Blow -->
+		<survey itemId="140000016" count="1"/>	<!-- Unwavering devotion -->
+		<survey itemId="140000008" count="1"/>	<!-- Improved stamina -->
+		<survey itemId="140000011" count="1"/>	<!-- Ankle Snare -->
+		<survey itemId="140000324" count="1"/>	<!-- Precision cut -->
+		<survey itemId="140000322" count="1"/>	<!-- Severe Precision cut -->
+		<survey itemId="140000325" count="1"/>	<!-- Spite strike -->
+		<survey itemId="140000326" count="1"/>	<!-- Sharp Strike -->
+		<survey itemId="140000323" count="1"/>	<!-- Vicious Blow -->
+		<survey itemId="140000327" count="1"/>	<!-- Tendon Slice -->
+		<survey itemId="140000328" count="1"/>	<!-- Whirling strike -->
+		<survey itemId="140000329" count="1"/>	<!-- Sure Strike -->
+		<survey itemId="140000495" count="1"/>	<!-- Draining blow-->
+		<survey itemId="140000553" count="1"/>	<!-- Counteratk Armor NEW STIGMA -->
+	</guide>
+	<guide title="assassin_stigma_asmo" level="55" race="ASMODIANS" classType="ASSASSIN" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000425" count="1"/>  <!-- sigil strike -->
+		<survey itemId="140000356" count="1"/>	<!-- Venomous Strike -->
+		<survey itemId="140000360" count="1"/>	<!-- Rune Burst -->
+		<survey itemId="140000433" count="1"/>	<!-- Rune knife -->
+		<survey itemId="140000097" count="1"/>	<!-- Throw Shuriken -->
+		<survey itemId="140000419" count="1"/>	<!-- Ambush -->
+		<survey itemId="140000213" count="1"/>	<!-- Deadly abandon -->
+		<survey itemId="140000198" count="1"/>	<!-- Shadow Walk -->
+		<survey itemId="140000503" count="1"/>	<!-- Flash of Speed -->
+		<survey itemId="140000088" count="1"/>	<!-- Blinding Burst -->
+		<survey itemId="140000087" count="1"/>	<!-- Eye of Wrath -->
+		<survey itemId="140000253" count="1"/>	<!-- Oath of Accuracy -->
+		<survey itemId="140000081" count="1"/>	<!-- Apply Deadly Poison -->
+		<survey itemId="140000078" count="1"/>	<!-- Aethertwisting -->
+		<survey itemId="140000077" count="1"/>	<!-- Flurry -->
+		<survey itemId="140000404" count="1"/>	<!-- Agonizing Slash -->
+		<survey itemId="140000405" count="1"/>	<!-- Apply lethal venon -->
+		<survey itemId="140000403" count="1"/>	<!-- Beastly scar -->
+		<survey itemId="140000406" count="1"/>	<!-- Lightning slash -->
+		<survey itemId="140000401" count="1"/>	<!-- Agony rune -->
+		<survey itemId="140000402" count="1"/>	<!-- Dash and Slash -->
+		<survey itemId="140000407" count="1"/>	<!-- Explosive Burst -->
+		<survey itemId="140000411" count="1"/>	<!-- Quickening Doom -->
+		<survey itemId="140000410" count="1"/>	<!-- Signet Silence -->
+		<survey itemId="140000400" count="1"/>	<!-- Sensory boost -->
+		<survey itemId="140000556" count="1"/>	<!-- Slayer Form NEW STIGMA -->
+		
+		
+		
+	</guide>
+	<guide title="assassin_stigma_ely" level="55" race="ELYOS" classType="ASSASSIN" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000425" count="1"/>  <!-- sigil strike -->
+		<survey itemId="140000356" count="1"/>	<!-- Venomous Strike -->
+		<survey itemId="140000360" count="1"/>	<!-- Rune Burst -->
+		<survey itemId="140000433" count="1"/>	<!-- Rune knife -->
+		<survey itemId="140000097" count="1"/>	<!-- Throw Shuriken -->
+		<survey itemId="140000419" count="1"/>	<!-- Ambush -->
+		<survey itemId="140000213" count="1"/>	<!-- Deadly abandon -->
+		<survey itemId="140000198" count="1"/>	<!-- Shadow Walk -->
+		<survey itemId="140000503" count="1"/>	<!-- Flash of Speed -->
+		<survey itemId="140000088" count="1"/>	<!-- Blinding Burst -->
+		<survey itemId="140000087" count="1"/>	<!-- Eye of Wrath -->
+		<survey itemId="140000253" count="1"/>	<!-- Oath of Accuracy -->
+		<survey itemId="140000081" count="1"/>	<!-- Apply Deadly Poison -->
+		<survey itemId="140000078" count="1"/>	<!-- Aethertwisting -->
+		<survey itemId="140000077" count="1"/>	<!-- Flurry -->
+		<survey itemId="140000404" count="1"/>	<!-- Agonizing Slash -->
+		<survey itemId="140000405" count="1"/>	<!-- Apply lethal venon -->
+		<survey itemId="140000403" count="1"/>	<!-- Beastly scar -->
+		<survey itemId="140000406" count="1"/>	<!-- Lightning slash -->
+		<survey itemId="140000401" count="1"/>	<!-- Agony rune -->
+		<survey itemId="140000402" count="1"/>	<!-- Dash and Slash -->
+		<survey itemId="140000407" count="1"/>	<!-- Explosive Burst -->
+		<survey itemId="140000411" count="1"/>	<!-- Quickening Doom -->
+		<survey itemId="140000410" count="1"/>	<!-- Signet Silence -->
+		<survey itemId="140000400" count="1"/>	<!-- Sensory boost -->
+		<survey itemId="140000556" count="1"/>	<!-- Slayer Form NEW STIGMA -->
+	</guide>
+	<guide title="ranger_stigma_asmo" level="55" race="ASMODIANS" classType="RANGER" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000502" count="1"/>	<!-- Keen Cleverness -->
+		<survey itemId="140000466" count="1"/>	<!-- Silence Arrow -->
+		<survey itemId="140000421" count="1"/>	<!-- Call Gryphu -->
+		<survey itemId="140000432" count="1"/>	<!-- Snare Trap -->
+		<survey itemId="140000334" count="1"/>	<!-- Breath of Nature -->
+		<survey itemId="140000247" count="1"/>	<!-- Hunter's might -->
+		<survey itemId="140000195" count="1"/>	<!-- Bestial Fury -->
+		<survey itemId="140000069" count="1"/>	<!-- Focused Shots -->
+		<survey itemId="140000057" count="1"/>	<!-- Trap of Clairvoyance -->
+		<survey itemId="140000239" count="1"/>	<!-- Bow of blessing -->
+		<survey itemId="140000049" count="1"/>	<!-- Retreating Slash -->
+		<survey itemId="140000048" count="1"/>	<!-- Sleep Arrow -->
+		<survey itemId="140000371" count="1"/>	<!-- Gale Arrow -->
+		<survey itemId="140000369" count="1"/>	<!-- Heart Shot -->
+		<survey itemId="140000372" count="1"/>	<!-- Explosive Arrow -->
+		<survey itemId="140000370" count="1"/>	<!-- Lethal Arrow -->
+		<survey itemId="140000379" count="1"/>	<!-- Blazing trap -->
+		<survey itemId="140000381" count="1"/>	<!-- Lightning arrow -->
+		<survey itemId="140000382" count="1"/>	<!-- Agonizing Arrow -->
+		<survey itemId="140000485" count="1"/>	<!-- Arrow deluge -->
+		<survey itemId="140000344" count="1"/>	<!-- Trap of slowing -->
+		<survey itemId="140000368" count="1"/>	<!-- Sharpen Arrows -->
+		<survey itemId="140000074" count="1"/>	<!-- Nature's Resolve -->
+		<survey itemId="140000245" count="1"/>	<!-- Speed of the wind -->
+		<survey itemId="140000197" count="1"/>	<!-- Deadly Arrow -->
+		<survey itemId="140000555" count="1"/>	<!-- Destro Arrow NEW STIGMA -->
+
+		
+	</guide>
+	<guide title="ranger_stigma_ely" level="55" race="ELYOS" classType="RANGER" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		
+		<survey itemId="140000502" count="1"/>	<!-- Keen Cleverness -->
+		<survey itemId="140000466" count="1"/>	<!-- Silence Arrow -->
+		<survey itemId="140000420" count="1"/>	<!-- Call Gryphu -->
+		<survey itemId="140000431" count="1"/>	<!-- Snare Trap -->
+		<survey itemId="140000334" count="1"/>	<!-- Breath of Nature -->
+		<survey itemId="140000247" count="1"/>	<!-- Hunter's might -->
+		<survey itemId="140000195" count="1"/>	<!-- Bestial Fury -->
+		<survey itemId="140000069" count="1"/>	<!-- Focused Shots -->
+		<survey itemId="140000056" count="1"/>	<!-- Trap of Clairvoyance -->
+		<survey itemId="140000239" count="1"/>	<!-- Bow of blessing -->
+		<survey itemId="140000049" count="1"/>	<!-- Retreating Slash -->
+		<survey itemId="140000048" count="1"/>	<!-- Sleep Arrow -->
+		<survey itemId="140000371" count="1"/>	<!-- Gale Arrow -->
+		<survey itemId="140000369" count="1"/>	<!-- Heart Shot -->
+		<survey itemId="140000372" count="1"/>	<!-- Explosive Arrow -->
+		<survey itemId="140000370" count="1"/>	<!-- Lethal Arrow -->
+		<survey itemId="140000379" count="1"/>	<!-- Blazing trap -->
+		<survey itemId="140000381" count="1"/>	<!-- Lightning arrow -->
+		<survey itemId="140000382" count="1"/>	<!-- Agonizing Arrow -->
+		<survey itemId="140000485" count="1"/>	<!-- Arrow deluge -->
+		<survey itemId="140000343" count="1"/>	<!-- Trap of slowing -->
+		<survey itemId="140000368" count="1"/>	<!-- Sharpen Arrows -->
+		<survey itemId="140000074" count="1"/>	<!-- Nature's Resolve -->
+		<survey itemId="140000245" count="1"/>	<!-- Speed of the wind -->
+		<survey itemId="140000196" count="1"/>	<!-- Holy Arrow -->
+		<survey itemId="140000555" count="1"/>	<!-- Destro Arrow NEW STIGMA -->
+	</guide>	
+	<guide title="sorcerer_stigma_asmo" level="55" race="ASMODIANS" classType="SORCERER" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000130" count="1"/>	<!-- curse of roots  -->
+		<survey itemId="140000469" count="1"/>	<!-- illusion storm -->
+		<survey itemId="140000472" count="1"/>	<!-- summon rock -->
+		<survey itemId="140000468" count="1"/>	<!-- flame spray  -->
+		<survey itemId="140000474" count="1"/>	<!-- arcane thunderbolt -->
+		<survey itemId="140000475" count="1"/>	<!-- wintry armor -->
+		<survey itemId="140000476" count="1"/>	<!-- glacial shard -->
+		<survey itemId="140000424" count="1"/>	<!-- ice harpoon -->
+		<survey itemId="140000209" count="1"/>	<!-- lava tempest --> 
+		<survey itemId="140000384" count="1"/>	<!--  ice sheet -->
+		<survey itemId="140000364" count="1"/>	<!--  wind cut down -->
+		<survey itemId="140000512" count="1"/>	<!--  summon whirlwind -->
+		<survey itemId="140000390" count="1"/>	<!-- exchange vitality -->
+		<survey itemId="140000465" count="1"/>	<!-- elemental ward -->
+		<survey itemId="140000409" count="1"/>	<!-- curse of weakness -->
+		<survey itemId="140000295" count="1"/>	<!-- sleeping storm -->
+		<survey itemId="140000144" count="1"/>	<!-- barrier of severance -->
+		<survey itemId="140000291" count="1"/>	<!-- illusion -->
+		<survey itemId="140000293" count="1"/>	<!-- supplication of focus -->
+		<survey itemId="140000185" count="1"/>	<!-- ancestral Lava -->
+		<survey itemId="140000142" count="1"/>	<!-- boon of quickness --> 
+		<survey itemId="140000139" count="1"/>	<!-- vaizel's wisdom -->
+		<survey itemId="140000135" count="1"/>	<!-- zikel's wisdom -->
+		<survey itemId="140000131" count="1"/>	<!-- lumiel's wisdom -->
+		<survey itemId="140000558" count="1"/>	<!-- tornado blast NEW STIGMA  -->
+	</guide>
+	<guide title="sorcerer_stigma_ely" level="55" race="ELYOS" classType="SORCERER" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+	   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000130" count="1"/>	<!-- curse of roots  -->
+		<survey itemId="140000469" count="1"/>	<!-- illusion storm -->
+		<survey itemId="140000472" count="1"/>	<!-- summon rock -->
+		<survey itemId="140000468" count="1"/>	<!-- flame spray  -->
+		<survey itemId="140000474" count="1"/>	<!-- arcane thunderbolt -->
+		<survey itemId="140000475" count="1"/>	<!-- wintry armor -->
+		<survey itemId="140000476" count="1"/>	<!-- glacial shard -->
+		<survey itemId="140000424" count="1"/>	<!-- ice harpoon -->
+		<survey itemId="140000209" count="1"/>	<!-- lava tempest --> 
+		<survey itemId="140000383" count="1"/>	<!--  ice sheet -->
+		<survey itemId="140000364" count="1"/>	<!--  wind cut down -->
+		<survey itemId="140000511" count="1"/>	<!--  summon whirlwind -->
+		<survey itemId="140000390" count="1"/>	<!-- exchange vitality -->
+		<survey itemId="140000465" count="1"/>	<!-- elemental ward -->
+		<survey itemId="140000409" count="1"/>	<!-- curse of weakness -->
+		<survey itemId="140000295" count="1"/>	<!-- sleeping storm -->
+		<survey itemId="140000144" count="1"/>	<!-- barrier of severance -->
+		<survey itemId="140000291" count="1"/>	<!-- illusion -->
+		<survey itemId="140000293" count="1"/>	<!-- supplication of focus -->
+		<survey itemId="140000184" count="1"/>	<!-- ancestral Magma -->
+		<survey itemId="140000142" count="1"/>	<!-- boon of strength --> 
+		<survey itemId="140000139" count="1"/>	<!-- vaizel's wisdom -->
+		<survey itemId="140000135" count="1"/>	<!-- zikel's wisdom -->
+		<survey itemId="140000131" count="1"/>	<!-- lumiel's wisdom -->
+		<survey itemId="140000558" count="1"/>	<!-- tornado blast NEW STIGMA  -->
+	</guide>
+
+	
+	
+	<guide title="spiritmaster_stigma_asmo" level="55" race="ASMODIANS" classType="SPIRIT_MASTER" rewardCount="29">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>	
+		<survey itemId="140000156" count="1"/>  <!-- Spirit Wall of Protection -->
+		<survey itemId="140000355" count="1"/>  <!-- Ignite Aether -->
+		<survey itemId="140000423" count="1"/>  <!-- Withering gloom -->
+		<survey itemId="140000391" count="1"/>  <!-- Absorb Vitality -->
+		<survey itemId="140000510" count="1"/>  <!-- Transference -->
+		<survey itemId="140000377" count="1"/>  <!-- Cyclone of Wrath -->
+		<survey itemId="140000378" count="1"/>  <!-- Blessing of Fire -->
+		<survey itemId="140000212" count="1"/>  <!-- Spirit Explosion -->
+		<survey itemId="140000167" count="1"/>  <!-- Spirit Substitution -->
+		<survey itemId="140000187" count="1"/>  <!-- Ancestral Spirit Self Destruct -->
+		<survey itemId="140000214" count="1"/>  <!-- Cloaking Word -->
+		<survey itemId="140000159" count="1"/>  <!-- Fear Shriek -->
+		<survey itemId="140000148" count="1"/>  <!-- Body Root -->
+		<survey itemId="140000152" count="1"/>  <!-- Sigil of Silence -->
+		<survey itemId="140000163" count="1"/>  <!-- Spirit Recovery -->
+		<survey itemId="140000496" count="1"/>	<!-- Infernal blight -->
+		<survey itemId="140000489" count="1"/>	<!-- Infernal pain -->
+		<survey itemId="140000303" count="1"/>	<!-- Shackle of Vulnerability -->
+		<survey itemId="140000492" count="1"/>	<!-- Magic Implosion -->
+		<survey itemId="140000488" count="1"/>	<!-- Hand of Torpor -->
+		<survey itemId="140000452" count="1"/>	<!-- Weaken Spirit -->
+		<survey itemId="140000149" count="1"/>	<!-- Enmity Swap -->
+		<survey itemId="140000486" count="1"/>	<!-- Healing Spirit -->
+		<survey itemId="140000493" count="1"/>	<!-- Spirit Hypnosis -->
+		<survey itemId="140000306" count="1"/>	<!-- Spirit Ruinous offensive -->
+		<survey itemId="140000481" count="1"/>	<!-- Summon Cyclone servant -->
+		<survey itemId="140000302" count="1"/>	<!-- Armor Spirit -->
+		<survey itemId="140000559" count="1"/>  <!-- Spiritual Harmony NEW STIGMA -->
+	</guide>
+	<guide title="spiritmaster_stigma_ely" level="55" race="ELYOS" classType="SPIRIT_MASTER" rewardCount="29">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000156" count="1"/>  <!-- Spirit Wall of Protection -->
+		<survey itemId="140000355" count="1"/>  <!-- Ignite Aether -->
+		<survey itemId="140000423" count="1"/>  <!-- Withering gloom -->
+		<survey itemId="140000391" count="1"/>  <!-- Absorb Vitality -->
+		<survey itemId="140000510" count="1"/>  <!-- Transference -->
+		<survey itemId="140000377" count="1"/>  <!-- Cyclone of Wrath -->
+		<survey itemId="140000378" count="1"/>  <!-- Blessing of Fire -->
+		<survey itemId="140000211" count="1"/>  <!-- Spirit BurnToAshes -->
+		<survey itemId="140000167" count="1"/>  <!-- Spirit Substitution -->
+		<survey itemId="140000186" count="1"/>  <!-- Ancestral Spirit Self Destruct -->
+		<survey itemId="140000214" count="1"/>  <!-- Cloaking Word -->
+		<survey itemId="140000159" count="1"/>  <!-- Fear Shriek -->
+		<survey itemId="140000148" count="1"/>  <!-- Body Root -->
+		<survey itemId="140000152" count="1"/>  <!-- Sigil of Silence -->
+		<survey itemId="140000163" count="1"/>  <!-- Spirit Recovery -->
+		<survey itemId="140000496" count="1"/>	<!-- Infernal blight -->
+		<survey itemId="140000489" count="1"/>	<!-- Infernal pain -->
+		<survey itemId="140000303" count="1"/>	<!-- Shackle of Vulnerability -->
+		<survey itemId="140000492" count="1"/>	<!-- Magic Implosion -->
+		<survey itemId="140000488" count="1"/>	<!-- Hand of Torpor -->
+		<survey itemId="140000452" count="1"/>	<!-- Weaken Spirit -->
+		<survey itemId="140000149" count="1"/>	<!-- Enmity Swap -->
+		<survey itemId="140000486" count="1"/>	<!-- Healing Spirit -->
+		<survey itemId="140000493" count="1"/>	<!-- Spirit Hypnosis -->
+		<survey itemId="140000306" count="1"/>	<!-- Spirit Ruinous offensive -->
+		<survey itemId="140000480" count="1"/>	<!-- Summon Cyclone servant -->
+		<survey itemId="140000302" count="1"/>	<!-- Armor Spirit -->
+		<survey itemId="140000559" count="1"/>  <!-- Spiritual Harmony NEW STIGMA -->
+	</guide>
+	<guide title="chanter_stigma_asmo" level="55" race="ASMODIANS" classType="CHANTER" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+	
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000497" count="1"/>	<!-- Numbing Blow -->
+		<survey itemId="140000457" count="1"/>	<!-- Disorienting Blow -->
+		<survey itemId="140000453" count="1"/>	<!-- Mountain Crash -->
+		<survey itemId="140000455" count="1"/>	<!-- Blessing of wind -->
+		<survey itemId="140000454" count="1"/>	<!-- Stamina Restoration -->
+		<survey itemId="140000459" count="1"/>	<!-- Elemental screen -->
+		<survey itemId="140000458" count="1"/>	<!-- Healing Burst -->
+		<survey itemId="140000286" count="1"/>	<!-- Invincibility mantra -->
+		<survey itemId="140000456" count="1"/>	<!-- Magic Recovery -->
+		<survey itemId="140000282" count="1"/>	<!-- Blessing of Stone -->
+		<survey itemId="140000116" count="1"/>	<!-- Word of protection -->
+		<survey itemId="140000123" count="1"/>	<!-- Word of inspiration -->
+		<survey itemId="140000117" count="1"/>  <!-- Binding Word -->
+		<survey itemId="140000438" count="1"/>  <!-- Splash Swing -->
+		<survey itemId="140000125" count="1"/>  <!-- Enchantment Mantra -->
+		<survey itemId="140000494" count="1"/>  <!-- Healing Conduit -->
+		<survey itemId="140000484" count="1"/>  <!-- Hit Mantra -->
+		<survey itemId="140000430" count="1"/>  <!-- Promise of Aether -->
+		<survey itemId="140000374" count="1"/>  <!-- Protective Ward -->
+		<survey itemId="140000112" count="1"/>  <!-- Rage Spell -->
+		<survey itemId="140000473" count="1"/>  <!-- Recovery Spell -->
+		<survey itemId="140000483" count="1"/>  <!-- Soul Crush -->
+		<survey itemId="140000506" count="1"/>  <!-- Soul Lock -->
+		<survey itemId="140000206" count="1"/>  <!-- Curtain of Aether -->
+		<survey itemId="140000393" count="1"/>  <!-- Word of Life -->
+		<survey itemId="140000561" count="1"/>  <!-- Reinvigoration NEW STIGMA -->
+		
+	</guide>
+	<guide title="chanter_stigma_ely" level="55" race="ELYOS" classType="CHANTER" rewardCount="27">
+		<message>
+			<![CDATA[<BR><BR>
+	   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+		
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+				<survey itemId="140000497" count="1"/>	<!-- Numbing Blow -->
+		<survey itemId="140000457" count="1"/>	<!-- Disorienting Blow -->
+		<survey itemId="140000453" count="1"/>	<!-- Mountain Crash -->
+		<survey itemId="140000455" count="1"/>	<!-- Blessing of wind -->
+		<survey itemId="140000454" count="1"/>	<!-- Stamina Restoration -->
+		<survey itemId="140000459" count="1"/>	<!-- Elemental screen -->
+		<survey itemId="140000458" count="1"/>	<!-- Healing Burst -->
+		<survey itemId="140000286" count="1"/>	<!-- Invincibility mantra -->
+		<survey itemId="140000456" count="1"/>	<!-- Magic Recovery -->
+		<survey itemId="140000282" count="1"/>	<!-- Blessing of Stone -->
+		<survey itemId="140000116" count="1"/>	<!-- Word of protection -->
+		<survey itemId="140000123" count="1"/>	<!-- Word of inspiration -->
+		<survey itemId="140000117" count="1"/>  <!-- Binding Word -->
+		<survey itemId="140000438" count="1"/>  <!-- Splash Swing -->
+		<survey itemId="140000125" count="1"/>  <!-- Enchantment Mantra -->
+		<survey itemId="140000494" count="1"/>  <!-- Healing Conduit -->
+		<survey itemId="140000484" count="1"/>  <!-- Hit Mantra -->
+		<survey itemId="140000430" count="1"/>  <!-- Promise of Aether -->
+		<survey itemId="140000374" count="1"/>  <!-- Protective Ward -->
+		<survey itemId="140000112" count="1"/>  <!-- Rage Spell -->
+		<survey itemId="140000473" count="1"/>  <!-- Recovery Spell -->
+		<survey itemId="140000483" count="1"/>  <!-- Soul Crush -->
+		<survey itemId="140000506" count="1"/>  <!-- Soul Lock -->
+		<survey itemId="140000205" count="1"/>  <!-- Divine Curtain -->
+		<survey itemId="140000393" count="1"/>  <!-- Word of Life -->
+		<survey itemId="140000561" count="1"/>  <!-- Reinvigoration NEW STIGMA -->
+		
+	</guide>
+	<guide title="cleric_stigma_asmo" level="55" race="ASMODIANS" classType="CLERIC" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000443" count="1"/>	<!-- Call of lightning -->
+		<survey itemId="140000441" count="1"/>	<!-- Enfeebling burst -->
+		<survey itemId="140000434" count="1"/>	<!-- Noble Energy -->
+		<survey itemId="140000437" count="1"/>	<!-- Chain of Suffering -->
+		<survey itemId="140000269" count="1"/>	<!-- Hand of reincarnation -->
+		<survey itemId="140000442" count="1"/>	<!-- Benevolence -->
+		<survey itemId="140000440" count="1"/>	<!-- Summon healing servant -->
+		<survey itemId="140000271" count="1"/>	<!-- Ripple of Purification -->
+		<survey itemId="140000435" count="1"/>	<!-- Splendor of Rebirth -->
+		<survey itemId="140000436" count="1"/>	<!-- Shatter memory -->
+		<survey itemId="140000317" count="1"/>  <!-- Sympathetic heal -->
+		<survey itemId="140000336" count="1"/>  <!-- Punishing Earth -->
+		<survey itemId="140000470" count="1"/>  <!-- Splendor of recovery -->
+		<survey itemId="140000335" count="1"/>  <!-- Earth's wrath -->
+		<survey itemId="140000415" count="1"/>  <!-- Stability -->
+		<survey itemId="140000203" count="1"/>  <!-- Marchutan's splendor -->
+		<survey itemId="140000471" count="1"/>  <!-- Flash of recovery -->
+		<survey itemId="140000108" count="1"/>  <!-- Splendor of purification -->
+		<survey itemId="140000504" count="1"/>  <!-- Noble grace -->
+		<survey itemId="140000102" count="1"/>  <!-- Reverse condition -->
+		<survey itemId="140000104" count="1"/>  <!-- Sage's wisdom --> 
+		<survey itemId="140000098" count="1"/>  <!-- Grace of Empyrean lord -->
+		<survey itemId="140000101" count="1"/>  <!-- Festering wound -->
+		<survey itemId="140000099" count="1"/>  <!-- Blinding light -->
+		<survey itemId="140000560" count="1"/>  <!-- Healing Touch NEW STIGMA-->
+		
+	</guide>
+	<guide title="cleric_stigma_ely" level="55" race="ELYOS" classType="CLERIC" rewardCount="26">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+			
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000443" count="1"/>	<!-- Call of lightning -->
+		<survey itemId="140000441" count="1"/>	<!-- Enfeebling burst -->
+		<survey itemId="140000429" count="1"/>	<!-- Noble Energy -->
+		<survey itemId="140000437" count="1"/>	<!-- Chain of Suffering -->
+		<survey itemId="140000269" count="1"/>	<!-- Hand of reincarnation -->
+		<survey itemId="140000442" count="1"/>	<!-- Benevolence -->
+		<survey itemId="140000439" count="1"/>	<!-- Summon healing servant -->
+		<survey itemId="140000271" count="1"/>	<!-- Ripple of Purification -->
+		<survey itemId="140000435" count="1"/>	<!-- Splendor of Rebirth -->
+		<survey itemId="140000436" count="1"/>	<!-- Shatter memory -->
+		<survey itemId="140000317" count="1"/>  <!-- Sympathetic heal -->
+		<survey itemId="140000336" count="1"/>  <!-- Punishing Earth -->
+		<survey itemId="140000470" count="1"/>  <!-- Splendor of recovery -->
+		<survey itemId="140000335" count="1"/>  <!-- Earth's wrath -->
+		<survey itemId="140000415" count="1"/>  <!-- Stability -->
+		<survey itemId="140000202" count="1"/>  <!-- Yustiel's splendor -->
+		<survey itemId="140000471" count="1"/>  <!-- Flash of recovery -->
+		<survey itemId="140000108" count="1"/>  <!-- Splendor of purification -->
+		<survey itemId="140000504" count="1"/>  <!-- Noble grace -->
+		<survey itemId="140000102" count="1"/>  <!-- Reverse condition -->
+		<survey itemId="140000104" count="1"/>  <!-- Sage's wisdom --> 
+		<survey itemId="140000098" count="1"/>  <!-- Grace of Empyrean lord -->
+		<survey itemId="140000101" count="1"/>  <!-- Festering wound -->
+		<survey itemId="140000099" count="1"/>  <!-- Blinding light -->
+		<survey itemId="140000560" count="1"/>  <!-- Healing Touch NEW STIGMA-->
+		
+	</guide>
+	<guide title="thunderer_stigma_asmo" level="55" race="ASMODIANS" classType="THUNDERER" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+			
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000552" count="1"/>	<!-- Electric Concentration -->
+		<survey itemId="140000551" count="1"/>	<!-- Stormbolt Smash -->
+		<survey itemId="140000546" count="1"/>	<!-- Blinding Light Strike -->
+		<survey itemId="140000550" count="1"/>	<!-- Splitting Lightning -->
+		<survey itemId="140000548" count="1"/>	<!-- Charged Blow -->
+		<survey itemId="140000544" count="1"/>	<!-- Heaven's Judgment -->
+		<survey itemId="140000562" count="1"/>	<!-- Lightning Armor  -->
+		<survey itemId="140000520" count="1"/>	<!-- Current Regression -->
+		<survey itemId="140000542" count="1"/>	<!-- Charged Strike -->
+		<survey itemId="140000531" count="1"/>  <!-- Thunder Strike -->
+		<survey itemId="140000538" count="1"/>  <!-- Charged Slash -->
+		<survey itemId="140000515" count="1"/>  <!-- Lightning Storm -->
+		<survey itemId="140000539" count="1"/>  <!-- Replenishing Lightning -->
+		<survey itemId="140000540" count="1"/>  <!-- Sleep Mode -->
+		<survey itemId="140000518" count="1"/>  <!-- Thunderbolt Wave -->
+		<survey itemId="140000537" count="1"/>  <!-- Wailing Thunder -->
+		<survey itemId="140000527" count="1"/>  <!-- Forceful Impact -->
+		<survey itemId="140000532" count="1"/>  <!-- Current Boost -->
+		<survey itemId="140000521" count="1"/>  <!-- Current Armor -->
+		<survey itemId="140000522" count="1"/>  <!-- Lightning Protective Shield -->
+		<survey itemId="140000528" count="1"/>  <!-- Magnetic Field Discharge -->
+		<survey itemId="140000533" count="1"/>  <!-- Current Charge --> 
+
+		
+	</guide>
+	<guide title="thunderer_stigma_elyos" level="55" race="ELYOS" classType="THUNDERER" rewardCount="23">
+		<message>
+			<![CDATA[<BR><BR>
+   <font color='FFFF00'>Greetings! Welcome to Ethereal Aion!</font></center><br>
+			
+ 		<br> <font color='d6ae0f'>Type .help for more player commands.</font>
+			<br><br>]]>
+		</message>
+		<survey itemId="141000001" count="10000"/>
+		<survey itemId="140000552" count="1"/>	<!-- Electric Concentration -->
+		<survey itemId="140000551" count="1"/>	<!-- Stormbolt Smash -->
+		<survey itemId="140000546" count="1"/>	<!-- Blinding Light Strike -->
+		<survey itemId="140000550" count="1"/>	<!-- Splitting Lightning -->
+		<survey itemId="140000548" count="1"/>	<!-- Charged Blow -->
+		<survey itemId="140000544" count="1"/>	<!-- Heaven's Judgment -->
+		<survey itemId="140000562" count="1"/>	<!-- Lightning Armor  -->
+		<survey itemId="140000520" count="1"/>	<!-- Current Regression -->
+		<survey itemId="140000542" count="1"/>	<!-- Charged Strike -->
+		<survey itemId="140000531" count="1"/>  <!-- Thunder Strike -->
+		<survey itemId="140000538" count="1"/>  <!-- Charged Slash -->
+		<survey itemId="140000515" count="1"/>  <!-- Lightning Storm -->
+		<survey itemId="140000539" count="1"/>  <!-- Replenishing Lightning -->
+		<survey itemId="140000540" count="1"/>  <!-- Sleep Mode -->
+		<survey itemId="140000518" count="1"/>  <!-- Thunderbolt Wave -->
+		<survey itemId="140000537" count="1"/>  <!-- Wailing Thunder -->
+		<survey itemId="140000527" count="1"/>  <!-- Forceful Impact -->
+		<survey itemId="140000532" count="1"/>  <!-- Current Boost -->
+		<survey itemId="140000521" count="1"/>  <!-- Current Armor -->
+		<survey itemId="140000522" count="1"/>  <!-- Lightning Protective Shield -->
+		<survey itemId="140000528" count="1"/>  <!-- Magnetic Field Discharge -->
+		<survey itemId="140000533" count="1"/>  <!-- Current Charge --> 
+		
+	</guide>
+</guides>
