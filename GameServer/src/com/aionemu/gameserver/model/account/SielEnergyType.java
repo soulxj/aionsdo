@@ -1,7 +1,5 @@
 package com.aionemu.gameserver.model.account;
 
-import com.aionemu.gameserver.model.gameobjects.LetterType;
-
 public enum SielEnergyType {
 
     NORMAL(1),

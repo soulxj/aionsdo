@@ -116,7 +116,7 @@ public class PlayerService
 		player.setFriendList(DAOManager.getDAO(FriendListDAO.class).load(player));
 		player.setBlockList(DAOManager.getDAO(BlockListDAO.class).load(player));
 		player.setTitleList(DAOManager.getDAO(PlayerTitleListDAO.class).loadTitleList(playerObjId));
-		DAOManager.getDAO(PlayerSettingsDAO.class).loadSettings(player);
+		player.setPlayerSettings(DAOManager.getDAO(PlayerSettingsDAO.class).loadSettings(playerObjId));
 		DAOManager.getDAO(AbyssRankDAO.class).loadAbyssRank(player);
 		DAOManager.getDAO(PlayerNpcFactionsDAO.class).loadNpcFactions(player);
 		DAOManager.getDAO(MotionDAO.class).loadMotionList(player);

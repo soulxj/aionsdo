@@ -121,6 +121,7 @@ public class PlayerLeaveWorldService
 		//****//
 		PlayerAccountData pad = player.getPlayerAccount().getPlayerAccountData(player.getObjectId());
 		pad.setEquipment(player.getEquipment().getEquippedItems());
+		pad.setPlayerSettings(player.getPlayerSettings());
 		EventWindowService.getInstance().onLogout(player);
 	}
 	

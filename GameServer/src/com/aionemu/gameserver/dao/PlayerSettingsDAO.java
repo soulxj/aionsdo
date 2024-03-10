@@ -18,6 +18,7 @@ package com.aionemu.gameserver.dao;
 
 import com.aionemu.commons.database.dao.DAO;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.model.gameobjects.player.PlayerSettings;
 
 /**
  * @author ATracer
@@ -43,5 +44,5 @@ public abstract class PlayerSettingsDAO implements DAO {
 	/**
 	 * @param playerId
 	 */
-	public abstract void loadSettings(final Player player);
+	public abstract PlayerSettings loadSettings(final int playerOid);
 }

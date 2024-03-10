@@ -189,7 +189,7 @@ public class CM_CREATE_CHARACTER extends AionClientPacket
 			IDFactory.getInstance().releaseId(playerCommonData.getPlayerObjId());
 		} else {
 			List<Item> equipment = DAOManager.getDAO(InventoryDAO.class).loadEquipment(player.getObjectId());
-			PlayerAccountData accPlData = new PlayerAccountData(playerCommonData, null, playerAppearance, equipment, null);
+			PlayerAccountData accPlData = new PlayerAccountData(playerCommonData, null, playerAppearance, equipment, null,null,0);
 			accPlData.setCreationDate(new Timestamp(System.currentTimeMillis()));
 			PlayerService.storeCreationTime(player.getObjectId(), accPlData.getCreationDate());
 			account.addPlayerAccountData(accPlData);

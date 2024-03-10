@@ -19,6 +19,7 @@ package com.aionemu.gameserver.model.account;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerAppearance;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
+import com.aionemu.gameserver.model.gameobjects.player.PlayerSettings;
 import com.aionemu.gameserver.model.team.legion.Legion;
 import com.aionemu.gameserver.model.team.legion.LegionMember;
 
@@ -28,119 +29,135 @@ import java.util.List;
 /**
  * This class is holding information about player, that is displayed on char selection screen, such as: player
  * commondata, player's appearance and creation/deletion time.
- * 
+ *
+ * @author Luno
  * @see PlayerCommonData
  * @see PlayerAppearance
- * @author Luno
  */
 public class PlayerAccountData {
 
-	private CharacterBanInfo cbi;
-	private PlayerCommonData playerCommonData;
-	private PlayerAppearance appereance;
-	private List<Item> equipment;
-	private Timestamp creationDate;
-	private Timestamp deletionDate;
-	private LegionMember legionMember;
+    private CharacterBanInfo cbi;
+    private PlayerCommonData playerCommonData;
+    private PlayerAppearance appereance;
+    private List<Item> equipment;
+    private Timestamp creationDate;
+    private Timestamp deletionDate;
+    private LegionMember legionMember;
 
-	public PlayerAccountData(PlayerCommonData playerCommonData, CharacterBanInfo cbi, PlayerAppearance appereance, List<Item> equipment,
-		LegionMember legionMember) {
-		this.playerCommonData = playerCommonData;
-		this.cbi = cbi;
-		this.appereance = appereance;
-		this.equipment = equipment;
-		this.legionMember = legionMember;
-	}
-	
-	public CharacterBanInfo getCharBanInfo() {
-		return cbi;
-	}
+    private int unreadLetters;
 
-	public Timestamp getCreationDate() {
-		return creationDate;
-	}
+    private PlayerSettings playerSettings;
 
-	/**
-	 * Sets deletion date.
-	 * 
-	 * @param deletionDate
-	 */
-	public void setDeletionDate(Timestamp deletionDate) {
-		this.deletionDate = deletionDate;
-	}
+    public PlayerAccountData(PlayerCommonData playerCommonData, CharacterBanInfo cbi, PlayerAppearance appereance, List<Item> equipment,
+                             LegionMember legionMember, PlayerSettings playerSettings, int unreadLetters) {
+        this.playerCommonData = playerCommonData;
+        this.cbi = cbi;
+        this.appereance = appereance;
+        this.equipment = equipment;
+        this.legionMember = legionMember;
+        this.playerSettings = playerSettings;
+        this.unreadLetters = unreadLetters;
+    }
 
-	/**
-	 * Get deletion date.
-	 * 
-	 * @return Timestamp date when char should be deleted.
-	 */
-	public Timestamp getDeletionDate() {
-		return deletionDate;
-	}
+    public CharacterBanInfo getCharBanInfo() {
+        return cbi;
+    }
 
-	/**
-	 * Get time in seconds when this player will be deleted ( 0 if player was not set to be deleted )
-	 * 
-	 * @return deletion time in seconds
-	 */
-	public int getDeletionTimeInSeconds() {
-		return deletionDate == null ? 0 : (int) (deletionDate.getTime() / 1000);
-	}
+    public Timestamp getCreationDate() {
+        return creationDate;
+    }
 
-	/**
-	 * @return the playerCommonData
-	 */
-	public PlayerCommonData getPlayerCommonData() {
-		return playerCommonData;
-	}
+    /**
+     * Sets deletion date.
+     *
+     * @param deletionDate
+     */
+    public void setDeletionDate(Timestamp deletionDate) {
+        this.deletionDate = deletionDate;
+    }
 
-	/**
-	 * @param playerCommonData
-	 *          the playerCommonData to set
-	 */
-	public void setPlayerCommonData(PlayerCommonData playerCommonData) {
-		this.playerCommonData = playerCommonData;
-	}
+    /**
+     * Get deletion date.
+     *
+     * @return Timestamp date when char should be deleted.
+     */
+    public Timestamp getDeletionDate() {
+        return deletionDate;
+    }
 
-	public PlayerAppearance getAppereance() {
-		return appereance;
-	}
+    /**
+     * Get time in seconds when this player will be deleted ( 0 if player was not set to be deleted )
+     *
+     * @return deletion time in seconds
+     */
+    public int getDeletionTimeInSeconds() {
+        return deletionDate == null ? 0 : (int) (deletionDate.getTime() / 1000);
+    }
 
-	/**
-	 * @param timestamp
-	 */
-	public void setCreationDate(Timestamp creationDate) {
-		this.creationDate = creationDate;
-	}
+    /**
+     * @return the playerCommonData
+     */
+    public PlayerCommonData getPlayerCommonData() {
+        return playerCommonData;
+    }
 
-	/**
-	 * @return the legionMember
-	 */
-	public Legion getLegion() {
-		return legionMember.getLegion();
-	}
+    /**
+     * @param playerCommonData the playerCommonData to set
+     */
+    public void setPlayerCommonData(PlayerCommonData playerCommonData) {
+        this.playerCommonData = playerCommonData;
+    }
 
-	/**
-	 * Returns true if player is a legion member
-	 * 
-	 * @return true or false
-	 */
-	public boolean isLegionMember() {
-		return legionMember != null;
-	}
+    public PlayerAppearance getAppereance() {
+        return appereance;
+    }
 
-	/**
-	 * @return the equipment
-	 */
-	public List<Item> getEquipment() {
-		return equipment;
-	}
+    /**
+     * @param creationDate
+     */
+    public void setCreationDate(Timestamp creationDate) {
+        this.creationDate = creationDate;
+    }
 
-	/**
-	 * @param equipment
-	 *          the equipment to set
-	 */
-	public void setEquipment(List<Item> equipment) {
-		this.equipment = equipment;
-	}
+    /**
+     * @return the legionMember
+     */
+    public Legion getLegion() {
+        return legionMember.getLegion();
+    }
+
+    /**
+     * Returns true if player is a legion member
+     *
+     * @return true or false
+     */
+    public boolean isLegionMember() {
+        return legionMember != null;
+    }
+
+    /**
+     * @return the equipment
+     */
+    public List<Item> getEquipment() {
+        return equipment;
+    }
+
+    /**
+     * @param equipment the equipment to set
+     */
+    public void setEquipment(List<Item> equipment) {
+        this.equipment = equipment;
+    }
+
+    public PlayerSettings getPlayerSettings() {
+        return playerSettings;
+    }
+
+    public void setPlayerSettings(PlayerSettings playerSettings) {
+        this.playerSettings = playerSettings;
+    }
+
+    public int getUnreadLetters() {
+        return unreadLetters;
+    }
 }

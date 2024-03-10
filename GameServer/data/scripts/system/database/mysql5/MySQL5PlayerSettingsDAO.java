@@ -44,8 +44,7 @@ public class MySQL5PlayerSettingsDAO extends PlayerSettingsDAO {
 	 * display 3 - deny
 	 */
 	@Override
-	public void loadSettings(final Player player) {
-		final int playerId = player.getObjectId();
+	public PlayerSettings loadSettings(final int playerId) {
 		final PlayerSettings playerSettings = new PlayerSettings();
 		Connection con = null;
 		try {
@@ -80,7 +79,7 @@ public class MySQL5PlayerSettingsDAO extends PlayerSettingsDAO {
 			DatabaseFactory.close(con);
 		}
 		playerSettings.setPersistentState(PersistentState.UPDATED);
-		player.setPlayerSettings(playerSettings);
+		return playerSettings;
 	}
 
 	@Override

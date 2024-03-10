@@ -1,18 +1,13 @@
 package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.commons.database.dao.DAOManager;
-import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.dao.InventoryDAO;
-import com.aionemu.gameserver.dao.MailDAO;
 import com.aionemu.gameserver.model.Race;
 import com.aionemu.gameserver.model.account.Account;
 import com.aionemu.gameserver.model.account.CharacterBanInfo;
 import com.aionemu.gameserver.model.account.PlayerAccountData;
-import com.aionemu.gameserver.model.gameobjects.player.Player;
-import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.PlayerInfo;
-import com.aionemu.gameserver.services.BrokerService;
 import com.aionemu.gameserver.services.player.PlayerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,17 +37,15 @@ public class S_CHARACTER_LIST extends PlayerInfo {
             writeC(account.size());
 
             for (PlayerAccountData playerData : account.getSortedAccountsList()) {
-                PlayerCommonData pcd = playerData.getPlayerCommonData();
                 CharacterBanInfo cbi = playerData.getCharBanInfo();
-                Player player = PlayerService.getPlayer(pcd.getPlayerObjId(), account);
                 writePlayerInfo(playerData);
-                writeH(player.getPlayerSettings().getDisplay());
-                writeH(player.getPlayerSettings().getDeny());
-                writeD(0); //wtf ?
-                writeD(0); //wtf ?
-                writeD(DAOManager.getDAO(MailDAO.class).unreadedMails(pcd.getPlayerObjId()) != 0 ? 1 : 0); // mail
-                writeB(new byte[108]);
-                writeD(0);   // todo BrokerService.getInstance().getCollectedMoney(pcd)); // collected money from broker
+                writeH(playerData.getPlayerSettings().getDisplay());
+                writeH(playerData.getPlayerSettings().getDeny());
+                writeD(0);
+                writeQ(playerData.getUnreadLetters() != 0 ? 1 : 0);
+                writeQ(0);
+                writeB(new byte[100]);
+                writeD(0); // todo BrokerService.getInstance().getCollectedMoney(pcd)); // collected money from broker
                 writeD(0);
                 //sanction here
                 if (cbi != null && cbi.getEnd() > System.currentTimeMillis() / 1000) {
@@ -66,7 +59,6 @@ public class S_CHARACTER_LIST extends PlayerInfo {
                 }
             }
         }
-
     }
 
     public void removeDeletedCharacters(Account account) {
