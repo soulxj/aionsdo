@@ -84,7 +84,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(S_INVISIBLE_LEVEL.class, 0x43, idSet);
         //S_RECALLED_BY_OTHER 0x44
         addPacketOpcode(S_EFFECT.class, 0x45, idSet);
-        addPacketOpcode(S_LOAD_WORKINGQUEST.class, 0x46, idSet);
+        addPacketOpcode(S_LOAD_WORKINGQUEST.class, 0x46, idSet);                                                //2.8
         addPacketOpcode(S_KEY.class, 0x47, idSet);                                                              //2.8
         addPacketOpcode(S_RESET_SKILL_COOLING_TIME.class, 0x48, idSet);
         addPacketOpcode(S_XCHG_START.class, 0x49, idSet);
@@ -129,7 +129,7 @@ public class ServerPacketsOpcodes {
         //S_WANTED_LOGIN 0x77
         addPacketOpcode(S_INSTANT_DUNGEON_INFO.class, 0x78, idSet);
         addPacketOpcode(S_MATCHMAKER_INFO.class, 0x79, idSet);
-        addPacketOpcode(S_LOAD_FINISHEDQUEST.class, 0x7A, idSet);
+        addPacketOpcode(S_LOAD_FINISHEDQUEST.class, 0x7A, idSet);                                               //2.8
         addPacketOpcode(S_QUEST.class, 0x7B, idSet);
         //S_NCGUARD 0x7C
         addPacketOpcode(S_UPDATE_ZONE_QUEST.class, 0x7E, idSet);

@@ -38,11 +38,7 @@ public class S_LOAD_FINISHEDQUEST extends AionServerPacket
 		writeH(-questState.size() & 0xFFFF);
 		for (QuestState qs: questState) {
 			writeD(qs.getQuestId());
-			if(GSConfig.SERVER_COUNTRY_CODE == 0 ||GSConfig.SERVER_COUNTRY_CODE == 5){
-				writeD(qs.getCompleteCount());
-			} else {
-				writeC(qs.getCompleteCount());
-			}
+			writeD(qs.getCompleteCount());
 		}
 		FastList.recycle(questState);
 		questState = null;

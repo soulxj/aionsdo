@@ -203,7 +203,7 @@ public class DialogService
 				
 				break;
 			}
-			case 26: {
+			case 26: {//add 31?
 				//Quest.
 				if (questId != 0) {
 					final QuestState qs = player.getQuestStateList().getQuestState(questId);
@@ -323,7 +323,8 @@ public class DialogService
 				PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 19));
 				break;
 			}
-			case 39: {
+			case 39:
+			case 44:{
 				//Flight & Teleport.
 				if (CustomConfig.ENABLE_SIMPLE_2NDCLASS) {
 					int level = player.getLevel();

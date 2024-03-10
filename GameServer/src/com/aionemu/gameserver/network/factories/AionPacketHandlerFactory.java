@@ -61,7 +61,7 @@ public class AionPacketHandlerFactory {
         addPacket(new CM_REMOVE_ALTERED_STATE(0xD1, State.IN_GAME)); //3.0 Classic
         addPacket(new CM_FIND_GROUP(0x127, State.IN_GAME));//3.0 Classic
 		addPacket(new CM_SHOW_DIALOG(0xFE, State.IN_GAME)); //3.0 Classic
-		addPacket(new CM_DIALOG_SELECT(0xFC, State.IN_GAME)); //3.0 Classic
+		addPacket(new CM_DIALOG_SELECT(0xFC, State.IN_GAME)); //2.8 Classic
 		addPacket(new CM_CLOSE_DIALOG(0xFF, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_PLAYER_SEARCH(0x115, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_DELETE_QUEST(0x122, State.IN_GAME)); //3.0 Classic

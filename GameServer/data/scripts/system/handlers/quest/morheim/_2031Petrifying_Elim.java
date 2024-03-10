@@ -113,7 +113,7 @@ public class _2031Petrifying_Elim extends QuestHandler
 			if (qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 2) {
 				if (env.getDialog() == QuestDialog.START_DIALOG) {
 					return sendQuestDialog(env, 1693);
-				} else if (env.getDialogId() == QuestDialog.CHECK_USER_HAS_QUEST_ITEM.id()) {
+				} else if (env.getDialogId() == QuestDialog.CHECK_COLLECTED_ITEMS.id()) {
 					if (player.getInventory().getItemCountByItemId(182204001) > 0) {
 						qs.setQuestVar(3);
 						updateQuestStatus(env);

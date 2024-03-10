@@ -173,7 +173,7 @@ public abstract class QuestHandler extends AbstractQuestHandler
 		Player player = env.getPlayer();
 		int dialogId = env.getDialogId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (dialogId >= 7 && dialogId <= 19) {
+		if (dialogId >= 8 && dialogId <= 23) {
 			if (qs == null || qs.getStatus() != QuestStatus.REWARD) {
 				return false;
 			} if (QuestService.finishQuest(env, reward)) {

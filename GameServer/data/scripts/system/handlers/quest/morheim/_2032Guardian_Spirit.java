@@ -110,7 +110,7 @@ public class _2032Guardian_Spirit extends QuestHandler
 						case STEP_TO_2: {
 							return defaultCloseDialog(env, 1, 2); // 2
 						}
-						case CHECK_USER_HAS_QUEST_ITEM: {
+						case CHECK_COLLECTED_ITEMS: {
 							return checkQuestItems(env, 2, 3, false, 10000, 10001); // 3
 						}
 						case STEP_TO_4: {
