@@ -322,7 +322,7 @@ public class ChatChannels {
             addJobChannel(Gender.MALE, PlayerClass.RANGER, "job_弓星");
             addJobChannel(Gender.MALE, PlayerClass.ASSASSIN, "job_杀星");
             addJobChannel(Gender.MALE, PlayerClass.CLERIC, "job_治愈星");
-
+            addJobChannel(Gender.MALE, PlayerClass.THUNDERER, "job_执行者");
 
             // Female
             addJobChannel(Gender.FEMALE, PlayerClass.GLADIATOR, "job_剑星");
@@ -333,6 +333,7 @@ public class ChatChannels {
             addJobChannel(Gender.FEMALE, PlayerClass.RANGER, "job_弓星");
             addJobChannel(Gender.FEMALE, PlayerClass.ASSASSIN, "job_杀星");
             addJobChannel(Gender.FEMALE, PlayerClass.CLERIC, "job_治愈星");
+            addJobChannel(Gender.FEMALE, PlayerClass.THUNDERER, "job_执行者");
         }
     }
 

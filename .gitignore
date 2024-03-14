@@ -8,3 +8,12 @@ GameServer/*.iml
 GameServer/*.log
 GameServer/out
 /GameServer/data/data.iml
+
+ChatServer/target
+ChatServer/build
+ChatServer/.idea
+ChatServer/cache
+ChatServer/log
+ChatServer/*.iml
+ChatServer/*.log
+ChatServer/out
