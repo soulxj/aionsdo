@@ -1,3 +1,10 @@
 !.gitignore
 GameServer/target
 GameServer/build
+GameServer/.idea
+GameServer/cache
+GameServer/log
+GameServer/*.iml
+GameServer/*.log
+GameServer/out
+/GameServer/data/data.iml
