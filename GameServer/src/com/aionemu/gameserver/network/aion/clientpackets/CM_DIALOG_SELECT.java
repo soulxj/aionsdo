@@ -41,6 +41,7 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 		extendedRewardIndex = readH();
 		lastPage = readH();
 		questId = readD();
+		readH();//2.8
 	}
 	
 	@Override
@@ -66,10 +67,10 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 			return;
 		} 
 		
-		if (player.isGM()) {
+		//if (player.isGM()) {
 			PacketSendUtility.sendMessage(player, "<Quest Id>: " + this.questId);
 			PacketSendUtility.sendMessage(player, "<Dialog Id>: " + this.dialogId);
-		} 
+		////}
 		
 		if (targetObjectId == 0 || targetObjectId == player.getObjectId()) {
 			if (questTemplate != null && !questTemplate.isCannotShare() && (dialogId == 1002 || dialogId == 20000)) {
@@ -90,7 +91,6 @@ public class CM_DIALOG_SELECT extends AionClientPacket
 		if (obj != null && obj instanceof Creature) {
 			Creature creature = (Creature) obj;
 			creature.getController().onDialogSelect(dialogId, player, questId, extendedRewardIndex);
-			return;
 		}
 	}
 }

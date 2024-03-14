@@ -1,0 +1,3 @@
+!.gitignore
+GameServer/target
+GameServer/build
