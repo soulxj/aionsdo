@@ -161,7 +161,7 @@ public class _1007A_Ceremony_In_Sanctum extends QuestHandler
 					case 15:
 					case 16:
 					case 18:
-					if (QuestService.finishQuest(env, 1)) {
+					if (QuestService.finishQuest(env, 0)) {
 						player.getCommonData().setLevel(10);
 						return sendQuestSelectionDialog(env);
 					}
@@ -182,7 +182,7 @@ public class _1007A_Ceremony_In_Sanctum extends QuestHandler
 					case 15:
 					case 16:
 					case 18:
-					if (QuestService.finishQuest(env, 2)) {
+					if (QuestService.finishQuest(env, 0)) {
 						player.getCommonData().setLevel(10);
 						return sendQuestSelectionDialog(env);
 					}
@@ -203,7 +203,7 @@ public class _1007A_Ceremony_In_Sanctum extends QuestHandler
 					case 15:
 					case 16:
 					case 18:
-					if (QuestService.finishQuest(env, 3)) {
+					if (QuestService.finishQuest(env, 0)) {
 						player.getCommonData().setLevel(10);
 						return sendQuestSelectionDialog(env);
 					}
