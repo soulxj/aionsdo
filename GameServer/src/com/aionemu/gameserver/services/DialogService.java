@@ -517,12 +517,11 @@ public class DialogService {
 				//Close Legion Warehouse.
 				break;
 			}
-//            todo below 			
-//            case 53: {
-//                //Work Order.
-//                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 28));
-//                break;
-//            }
+            case 58: {
+                //Work Order.
+                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 28));
+                break;
+            }
 //            case 54: {
 //                //Coin's Reward.
 //                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 3));
