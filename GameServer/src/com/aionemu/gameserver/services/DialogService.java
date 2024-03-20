@@ -588,7 +588,7 @@ public class DialogService
 				PacketSendUtility.sendPacket(player, new S_USER_SELL_HISTORY_LIST(player, npc.getObjectId()));
 				break;
 			}
-			case 66: {
+			case 71: {
 				//Adopt Pet.
 				PacketSendUtility.sendPacket(player, new S_FUNCTIONAL_PET(6));
 				break;
@@ -613,11 +613,11 @@ public class DialogService
 				PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 35));
 				break;
 			}
-			case 71: {
-				//Deep Conditioning All Item.
-				ItemChargeService.startChargingEquippedItems(player, targetObjectId, 1);
-				break;
-			}
+//			case 71: {
+//				//Deep Conditioning All Item.
+//				ItemChargeService.startChargingEquippedItems(player, targetObjectId, 1);
+//				break;
+//			}
 			case 73: {
 				//Trade In.
 				TradeListTemplate tradeListTemplate = DataManager.TRADE_LIST_DATA.getTradeInListTemplate(npc.getNpcId());
