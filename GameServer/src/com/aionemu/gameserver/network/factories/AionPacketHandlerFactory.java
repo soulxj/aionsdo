@@ -67,7 +67,7 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_DELETE_QUEST(0x122, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_TITLE_SET(0x169, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_REVIVE(0xEF, State.IN_GAME)); //3.0 Classic
-		addPacket(new CM_MOVE_IN_AIR(0x186, State.IN_GAME)); //3.0 Classic
+		addPacket(new CM_MOVE_IN_AIR(0xC3, State.IN_GAME)); //2.8 Classic
 		addPacket(new CM_TELEPORT_SELECT(0x11E, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_MOTION(0x12D, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_ITEM_REMODEL(0x2D8, State.IN_GAME)); //3.0 Classic
