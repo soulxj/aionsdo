@@ -102,7 +102,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(S_CAPTCHA.class, 0x56, idSet);
         addPacketOpcode(S_ADDED_SERVICE_CHANGE.class, 0x57, idSet);
         addPacketOpcode(S_FIND_NPC_POS_RESULT.class, 0x58, idSet);
-        addPacketOpcode(S_PARTY_INFO.class, 0x59, idSet);
+        addPacketOpcode(S_PARTY_INFO.class, 0x59, idSet); // 2.8 ok
         addPacketOpcode(S_PARTY_MEMBER_INFO.class, 0x5A, idSet);
         //S_GGAUTH_CHECK_QUERY 0x60
         addPacketOpcode(S_BALAUREA_INFO.class, 0x60, idSet);

@@ -97,7 +97,7 @@ public class AionPacketHandlerFactory {
         addPacket(new CM_FRIEND_DEL(0x102, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_CHARACTER_EDIT(0xED, State.AUTHED)); //3.0 Classic
 		addPacket(new CM_APPEARANCE(0x1AC, State.IN_GAME)); //3.0 Classic
-		addPacket(new CM_QUESTION_RESPONSE(0xC0, State.IN_GAME)); //3.0 Classic
+		addPacket(new CM_QUESTION_RESPONSE(0xC0, State.IN_GAME)); //2.8 Classic
 		addPacket(new CM_TOGGLE_SKILL_DEACTIVATE(0xD0, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_PRIVATE_STORE(0x13D, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_PRIVATE_STORE_NAME(0x13A, State.IN_GAME)); //3.0 Classic
@@ -111,7 +111,7 @@ public class AionPacketHandlerFactory {
 		addPacket(new CM_BUY_ITEM(0xC1, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_BUY_TRADE_IN_TRADE(0x2DA, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_VIEW_PLAYER_DETAILS(0x10E, State.IN_GAME)); //3.0 Classic
-        addPacket(new CM_TEAM_INVITE(0x113, State.IN_GAME)); //3.0 Classic
+        addPacket(new CM_TEAM_INVITE(0x113, State.IN_GAME)); //2.8 Classic
 		addPacket(new CM_DUEL_REQUEST(0x100, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_EXCHANGE_REQUEST(0xF5, State.IN_GAME)); //3.0 Classic
         addPacket(new CM_EXCHANGE_ADD_ITEM(0x132, State.IN_GAME)); //3.0 Classic
@@ -119,9 +119,9 @@ public class AionPacketHandlerFactory {
         addPacket(new CM_EXCHANGE_CANCEL(0x12F, State.IN_GAME)); //3.0 Classic
         addPacket(new CM_EXCHANGE_LOCK(0x131, State.IN_GAME)); //3.0 Classic
         addPacket(new CM_EXCHANGE_OK(0x12E, State.IN_GAME)); //3.0 Classic
-        addPacket(new CM_GROUP_LOOT(0x178, State.IN_GAME)); //3.0 Classic
-        addPacket(new CM_GROUP_DISTRIBUTION(0x106, State.IN_GAME)); //3.0 Classic
-        //addPacket(new CM_DISTRIBUTION_SETTINGS(0x178, State.IN_GAME)); //3.0 Classic
+        addPacket(new CM_GROUP_LOOT(0x17B, State.IN_GAME)); //2.8 Classic
+        addPacket(new CM_GROUP_DISTRIBUTION(0x106, State.IN_GAME)); //2.8 Classic
+        addPacket(new CM_DISTRIBUTION_SETTINGS(0x178, State.IN_GAME)); //2.8 Classic
         addPacket(new CM_GROUP_PLAYER_STATUS_INFO(0x112, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_CHAT_MESSAGE_WHISPER(0x96, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_SHOW_BRAND(0x17F, State.IN_GAME)); //3.0 Classic

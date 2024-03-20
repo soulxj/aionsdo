@@ -64,8 +64,7 @@ public class TeamKinahDistributionEvent<T extends TemporaryPlayerTeam<? extends 
                 PacketSendUtility.sendPacket(eventPlayer, new S_MESSAGE_CODE(1390247, amount, teamSize, rewardPerPlayer));
             } else {
                 member.getInventory().increaseKinah(rewardPerPlayer);
-                PacketSendUtility.sendPacket(member, new S_MESSAGE_CODE(1390248, eventPlayer.getName(), amount, teamSize,
-                        rewardPerPlayer));
+                PacketSendUtility.sendPacket(member, new S_MESSAGE_CODE(1390248, eventPlayer.getName(), amount, teamSize, rewardPerPlayer));
             }
         }
         return true;

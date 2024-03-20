@@ -101,6 +101,7 @@ public class S_ALLIANCE_MEMBER_INFO extends AionServerPacket
 				writeS(pcd.getName());
 				writeD(0x00);
                 writeD(0x00);
+				writeC(0x7F);
 				if (player.isOnline()) {
 					List<Effect> abnormalEffects = player.getEffectController().getAbnormalEffects();
 					writeH(abnormalEffects.size());

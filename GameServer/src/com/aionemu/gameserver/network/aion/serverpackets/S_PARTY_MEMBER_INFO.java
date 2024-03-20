@@ -64,9 +64,8 @@ public class S_PARTY_MEMBER_INFO extends AionServerPacket
 		writeC(event.getId());
 		writeH(player.isOnline() ? 1 : 0);
 		writeC(player.isMentor() ? 1 : 0);
-		if(GSConfig.SERVER_COUNTRY_CODE == 0||GSConfig.SERVER_COUNTRY_CODE == 5) {
-			writeC(0); //2.7
-		}
+		writeC(0); //2.7
+
 		switch (event) {
 			case MOVEMENT:
 			case DISCONNECTED:
@@ -83,6 +82,7 @@ public class S_PARTY_MEMBER_INFO extends AionServerPacket
                 writeS(pcd.getName());
 				writeD(0x00);
 				writeD(0x00);
+				writeC(0x7F);//slot
 				List<Effect> abnormalEffects = player.getEffectController().getAbnormalEffects();
 				writeH(abnormalEffects.size());
 				for (Effect effect : abnormalEffects) {
@@ -92,7 +92,7 @@ public class S_PARTY_MEMBER_INFO extends AionServerPacket
 					writeC(effect.getTargetSlot());
 					writeD(effect.getRemainingTime());
 				}
-				writeB(new byte[34]);
+				writeB(new byte[32]);
             break;
 		}
 	}
