@@ -95,22 +95,25 @@ public class ItemService {
         Preconditions.checkNotNull(predicate, "Predicate is not supplied");
         if (LoggingConfig.LOG_ITEM) {
             log.info("[ITEM] ID/Count"
-            + (LoggingConfig.ENABLE_ADVANCED_LOGGING ? "/Item Name - " + itemTemplate.getTemplateId() + "/" + count + "/"
-            + itemTemplate.getName() : " - " + itemTemplate.getTemplateId() + "/" + count) + " to player " + player.getName());
+                    + (LoggingConfig.ENABLE_ADVANCED_LOGGING ? "/Item Name - " + itemTemplate.getTemplateId() + "/" + count + "/"
+                    + itemTemplate.getName() : " - " + itemTemplate.getTemplateId() + "/" + count) + " to player " + player.getName());
         }
-		BattlePassService.getInstance().onUpdateBattlePassMission(player, itemId, (int)count, BattlePassAction.COLLECT_ITEM);
+        BattlePassService.getInstance().onUpdateBattlePassMission(player, itemId, (int) count, BattlePassAction.COLLECT_ITEM);
         Storage inventory = player.getInventory();
         if (itemTemplate.isKinah()) {
             inventory.increaseKinah(count);
             return 0;
-        } if (itemTemplate.isStackable()) {
+        }
+        if (itemTemplate.isStackable()) {
             count = addStackableItem(player, itemTemplate, count, predicate);
         } else {
             count = addNonStackableItem(player, itemTemplate, count, sourceItem, predicate, enchantLevel, augment);
-        } if (inventory.isFull(itemTemplate.getExtraInventoryId()) && count > 0) {
-			///You cannot acquire the item because there is no space in the inventory.
-			PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
-		} if (player.isInInstance()) {
+        }
+        if (inventory.isFull(itemTemplate.getExtraInventoryId()) && count > 0) {
+            ///You cannot acquire the item because there is no space in the inventory.
+            PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
+        }
+        if (player.isInInstance()) {
             player.getPosition().getWorldMapInstance().getInstanceHandler().onInventory(player, itemTemplate);
         } else {
             player.getPosition().getWorld().getWorldMap(player.getWorldId()).getWorldHandler().onInventory(player, itemTemplate);
@@ -127,11 +130,14 @@ public class ItemService {
             Item newItem = ItemFactory.newItem(itemTemplate.getTemplateId());
             if (newItem.getExpireTime() != 0) {
                 ExpireTimerTask.getInstance().addTask(newItem, player);
-            } if (sourceItem != null) {
+            }
+            if (sourceItem != null) {
                 copyItemInfo(sourceItem, newItem);
-            } if (enchantlevel > 0) {
+            }
+            if (enchantlevel > 0) {
                 enchant(player, enchantlevel, newItem);
-            } if (augment) {
+            }
+            if (augment) {
                 chargeItem(player, newItem, 2);
             }
             predicate.changeItem(newItem);
@@ -151,11 +157,12 @@ public class ItemService {
         switch (level) {
             case 1:
                 item.getConditioningInfo().updateChargePoints(ChargeInfo.LEVEL1 - currentCharge);
-            break;
+                break;
             case 2:
                 item.getConditioningInfo().updateChargePoints(ChargeInfo.LEVEL2 - currentCharge);
-            break;
-        } if (item.isEquipped()) {
+                break;
+        }
+        if (item.isEquipped()) {
             player.getGameStats().updateStatsVisually();
         }
         ItemPacketService.updateItemAfterInfoChange(player, item);
@@ -170,11 +177,14 @@ public class ItemService {
             for (ManaStone manaStone : sourceItem.getItemStones()) {
                 ItemSocketService.addManaStone(newItem, manaStone.getItemId());
             }
-        } if (sourceItem.getGodStone() != null) {
+        }
+        if (sourceItem.getGodStone() != null) {
             newItem.addGodStone(sourceItem.getGodStone().getItemId());
-        } if (sourceItem.getEnchantLevel() > 0) {
+        }
+        if (sourceItem.getEnchantLevel() > 0) {
             newItem.setEnchantLevel(sourceItem.getEnchantLevel());
-        } if (sourceItem.isSoulBound()) {
+        }
+        if (sourceItem.isSoulBound()) {
             newItem.setSoulBound(true);
         }
         newItem.setItemColor(sourceItem.getItemColor());
@@ -192,7 +202,8 @@ public class ItemService {
                 break;
             }
             count = inventory.increaseItemCount(item, count, predicate.getUpdateType(item, true));
-        } if (itemTemplate.getArmorType() == ArmorType.SHARD || itemTemplate.getArmorType() == ArmorType.ARROW) {
+        }
+        if (itemTemplate.getArmorType() == ArmorType.SHARD || itemTemplate.getArmorType() == ArmorType.ARROW) {
             Equipment equipement = player.getEquipment();
             items = equipement.getEquippedItemsByItemId(itemTemplate.getTemplateId());
             for (Item item : items) {
@@ -201,7 +212,8 @@ public class ItemService {
                 }
                 count = equipement.increaseEquippedItemCount(item, count);
             }
-        } while (!inventory.isFull(itemTemplate.getExtraInventoryId()) && count > 0) {
+        }
+        while (!inventory.isFull(itemTemplate.getExtraInventoryId()) && count > 0) {
             Item newItem = ItemFactory.newItem(itemTemplate.getTemplateId(), count);
             count -= newItem.getItemCount();
             inventory.add(newItem);
@@ -214,36 +226,37 @@ public class ItemService {
     }
 
     public static boolean addQuestItems(Player player, List<QuestItems> questItems, ItemUpdatePredicate predicate) {
-		int slotReq = 0, specialSlot = 0;
-		for (QuestItems qi : questItems) {
-			if (qi.getItemId() != ItemId.KINAH.value() && qi.getCount() != 0) {
-				ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(qi.getItemId());
-				long stackCount = template.getMaxStackCount();
-				long count = qi.getCount() / stackCount;
-				if (qi.getCount() % stackCount != 0)
-					count++;
-				if (template.getExtraInventoryId() > 0) {
-					specialSlot += count;
-				}
-				else {
-					slotReq += count;
-				}
-			}
-		}
-		Storage inventory = player.getInventory();
-		if (slotReq > 0 && inventory.getFreeSlots() < slotReq) {
-			///You cannot acquire the item because there is no space in the inventory.
-			PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
-			return false;
-		} if (specialSlot > 0 && inventory.getSpecialCubeFreeSlots() < specialSlot) {
-			///You cannot acquire the item because there is no space in the inventory.
-			PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
-			return false;
-		} for (QuestItems qi : questItems) {
-			addItem(player, qi.getItemId(), qi.getCount(), predicate);
-		}
-		return true;
-	}
+        int slotReq = 0, specialSlot = 0;
+        for (QuestItems qi : questItems) {
+            if (qi.getItemId() != ItemId.KINAH.value() && qi.getCount() != 0) {
+                ItemTemplate template = DataManager.ITEM_DATA.getItemTemplate(qi.getItemId());
+                long stackCount = template.getMaxStackCount();
+                long count = qi.getCount() / stackCount;
+                if (qi.getCount() % stackCount != 0)
+                    count++;
+                if (template.getExtraInventoryId() > 0) {
+                    specialSlot += count;
+                } else {
+                    slotReq += count;
+                }
+            }
+        }
+        Storage inventory = player.getInventory();
+        if (slotReq > 0 && inventory.getFreeSlots() < slotReq) {
+            ///You cannot acquire the item because there is no space in the inventory.
+            PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
+            return false;
+        }
+        if (specialSlot > 0 && inventory.getSpecialCubeFreeSlots() < specialSlot) {
+            ///You cannot acquire the item because there is no space in the inventory.
+            PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_MSG_DICE_INVEN_ERROR);
+            return false;
+        }
+        for (QuestItems qi : questItems) {
+            addItem(player, qi.getItemId(), qi.getCount(), predicate);
+        }
+        return true;
+    }
 
     public static void releaseItemId(Item item) {
         IDFactory.getInstance().releaseId(item.getObjectId());
@@ -348,9 +361,11 @@ public class ItemService {
         if (isUpgradable(item)) {
             if (item.getEnchantLevel() == enchant) {
                 return;
-            } if (enchant > 15) {
+            }
+            if (enchant > 15) {
                 enchant = 15;
-            } if (enchant < 0) {
+            }
+            if (enchant < 0) {
                 enchant = 0;
             }
             item.setEnchantLevel(enchant);
@@ -364,19 +379,21 @@ public class ItemService {
     public static boolean isUpgradable(Item item) {
         if (item.getItemTemplate().isNoEnchant()) {
             return false;
-        } if (item.getItemTemplate().isWeapon()) {
+        }
+        if (item.getItemTemplate().isWeapon()) {
             return true;
-        } if (item.getItemTemplate().isArmor()) {
+        }
+        if (item.getItemTemplate().isArmor()) {
             int at = item.getItemTemplate().getItemSlot();
             if (at == 1 || /* Main Hand */
-				at == 2 || /* Sub Hand */
-				at == 8 || /* Jacket */
-				at == 16 || /* Gloves */
-				at == 32 || /* Boots */
-				at == 2048 || /* Shoulder */
-				at == 4096 || /* Pants */
-				at == 131072 || /* Main Off Hand */
-				at == 262144) { /* Sub Off Hand */
+                    at == 2 || /* Sub Hand */
+                    at == 8 || /* Jacket */
+                    at == 16 || /* Gloves */
+                    at == 32 || /* Boots */
+                    at == 2048 || /* Shoulder */
+                    at == 4096 || /* Pants */
+                    at == 131072 || /* Main Off Hand */
+                    at == 262144) { /* Sub Off Hand */
                 return true;
             }
         }
