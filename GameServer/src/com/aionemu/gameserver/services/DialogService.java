@@ -503,30 +503,31 @@ public class DialogService {
 				WarehouseService.expandWarehouse(player, npc);
 				break;
 			}
-            case 49: { //not checked
-                //Legion Warehouse.
-                if (player.getLegion() == null) {
-                    ///You must be a Legion member to use the Legion warehouse.
-                    PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_NO_GUILD_TO_DEPOSIT);
-                    return;
-                }
-                LegionService.getInstance().openLegionWarehouse(player, npc);
-                break;
-            }
-            case 51: {
-                //Close Legion Warehouse.
-                break;
-            }
-            case 53: {
-                //Work Order.
-                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 28));
-                break;
-            }
-            case 54: {
-                //Coin's Reward.
-                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 3));
-                break;
-            }
+			case 53: {
+				//Legion Warehouse.
+				if (player.getLegion() == null) {
+					///You must be a Legion member to use the Legion warehouse.
+					PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_NO_GUILD_TO_DEPOSIT);
+					return;
+				}
+				LegionService.getInstance().openLegionWarehouse(player, npc);
+				break;
+			}
+			case 54: {
+				//Close Legion Warehouse.
+				break;
+			}
+//            todo below 			
+//            case 53: {
+//                //Work Order.
+//                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 28));
+//                break;
+//            }
+//            case 54: {
+//                //Coin's Reward.
+//                PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 3));
+//                break;
+//            }
             case 56:
             case 57: {
                 byte changesex = 0;
