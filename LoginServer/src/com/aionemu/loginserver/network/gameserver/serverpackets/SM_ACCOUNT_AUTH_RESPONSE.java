@@ -11,10 +11,12 @@
 
 package com.aionemu.loginserver.network.gameserver.serverpackets;
 
+import com.aionemu.loginserver.model.AccountSielEnergy;
 import com.aionemu.loginserver.model.AccountTime;
 import com.aionemu.loginserver.network.gameserver.GsConnection;
 import com.aionemu.loginserver.network.gameserver.GsServerPacket;
 
+import java.io.Writer;
 import java.sql.Timestamp;
 
 /**
@@ -49,13 +51,11 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
      * Membership
      */
     private final byte membership;
-    private final Timestamp membershipExpire;
 
     /**
      * TOLL
      */
     private final long toll;
-
 
     /**
      * Constructor.
@@ -67,14 +67,13 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
      * @param membership
      * @param toll
      */
-    public SM_ACCOUNT_AUTH_RESPONSE(int accountId, boolean ok, String accountName, byte accessLevel, byte membership, long toll, Timestamp membershipExpire) {
+    public SM_ACCOUNT_AUTH_RESPONSE(int accountId, boolean ok, String accountName, byte accessLevel, byte membership, long toll) {
         this.accountId = accountId;
         this.ok = ok;
         this.accountName = accountName;
         this.accessLevel = accessLevel;
         this.membership = membership;
         this.toll = toll;
-        this.membershipExpire = membershipExpire;
     }
 
     /**
@@ -93,7 +92,6 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
             writeC(accessLevel);
             writeC(membership);
             writeQ(toll);
-            writeQ(membershipExpire != null ? membershipExpire.getTime() : 0);
         }
     }
 }

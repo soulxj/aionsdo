@@ -22,8 +22,7 @@ import com.aionemu.commons.network.packet.BaseServerPacket;
 public abstract class GsServerPacket extends BaseServerPacket {
 	/**
 	 * Constructs a new server packet with specified id.
-	 * 
-	 * @param opcode
+	 *
 	 *          packet opcode.
 	 */
 	protected GsServerPacket() {

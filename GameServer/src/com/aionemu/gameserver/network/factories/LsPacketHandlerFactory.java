@@ -32,9 +32,6 @@ public class LsPacketHandlerFactory {
 		return SingletonHolder.instance;
 	}
 
-	/**
-	 * @param loginServer
-	 */
 	private LsPacketHandlerFactory() {
 		addPacket(new CM_ACCOUNT_RECONNECT_KEY(0x03), State.AUTHED);
 		addPacket(new CM_ACOUNT_AUTH_RESPONSE(0x01), State.AUTHED);
@@ -47,6 +44,8 @@ public class LsPacketHandlerFactory {
 		addPacket(new CM_MACBAN_LIST(9), State.AUTHED);
 		addPacket(new CM_PREMIUM_RESPONSE(10), State.AUTHED);
 		addPacket(new CM_LS_PING(11), State.AUTHED);
+		addPacket(new CM_ACCOUNT_SIELENERY_RESPONSE(13), State.AUTHED);
+
 	}
 
 	private void addPacket(LsClientPacket prototype, State... states) {

@@ -11,6 +11,8 @@
 
 package com.aionemu.loginserver.model;
 
+import com.aionemu.loginserver.network.gameserver.GsConnection;
+
 import java.sql.Timestamp;
 
 /**
@@ -75,8 +77,9 @@ public class Account {
 	 */
 	private AccountTime accountTime;
 
-	private Timestamp membershipExpire;
+	private AccountSielEnergy accountSielEnergy;
 
+	private GsConnection  gsConnection;
 
 	/**
 	 * Returns account id, null if not stored in DB
@@ -278,6 +281,23 @@ public class Account {
 		this.accountTime = accountTime;
 	}
 
+
+	public AccountSielEnergy getAccountSielEnergy() {
+		return accountSielEnergy;
+	}
+
+	public void setAccountSielEnergy(AccountSielEnergy accountSielEnergy) {
+		this.accountSielEnergy = accountSielEnergy;
+	}
+
+	public GsConnection getGsConnection() {
+		return gsConnection;
+	}
+
+	public void setGsConnection(GsConnection gsConnection) {
+		this.gsConnection = gsConnection;
+	}
+
 	/**
 	 * Retunrns true if players name and password has are equals
 	 * 
@@ -318,13 +338,5 @@ public class Account {
 		result = 31 * result + (passwordHash != null ? passwordHash.hashCode() : 0);
 
 		return result;
-	}
-
-	public Timestamp getMembershipExpire() {
-		return membershipExpire;
-	}
-
-	public void setMembershipExpire(Timestamp membershipExpire) {
-		this.membershipExpire = membershipExpire;
 	}
 }

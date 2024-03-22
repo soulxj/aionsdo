@@ -36,7 +36,7 @@ public class CM_LS_CONTROL extends GsClientPacket
 			break;
 			case 2:
 				account.setMembership((byte) param);
-				account.setMembershipExpire(new Timestamp(expireVip));
+				///account.setMembershipExpire(new Timestamp(expireVip));
 			break;
 		}
 		result = AccountDAO.updateAccount(account);

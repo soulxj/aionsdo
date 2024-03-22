@@ -83,7 +83,7 @@ public class EventWindowService {
 }
 
 class EventWindowsUpdateTask implements Runnable {
-    private static final Logger log = LoggerFactory.getLogger(SielEnergyUpdateTask.class);
+    private static final Logger log = LoggerFactory.getLogger(EventWindowsUpdateTask.class);
     private final int playerId;
 
     EventWindowsUpdateTask(int playerId) {

@@ -68,7 +68,7 @@ public class AccountService {
      * @param membership
      * @return Account
      */
-    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll, Timestamp membershipExpire) {
+    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll) {
         log.debug("[AS] request for account: " + accountId);
 
         Account account = accountsMap.get(accountId);
@@ -82,7 +82,6 @@ public class AccountService {
         account.setAccessLevel(accessLevel);
         account.setMembership(membership);
         account.setToll(toll);
-        account.setMembershipExpire(membershipExpire);
         removeDeletedCharacters(account);
         if (account.isEmpty()) {
             removeAccountWH(accountId);
@@ -124,7 +123,6 @@ public class AccountService {
      * Loads account data and returns.
      *
      * @param accountId
-     * @param accountName
      * @return
      */
     public static Account loadAccount(int accountId) {

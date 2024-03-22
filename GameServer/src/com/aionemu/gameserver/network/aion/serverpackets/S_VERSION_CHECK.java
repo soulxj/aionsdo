@@ -73,7 +73,7 @@ public class S_VERSION_CHECK extends AionServerPacket
 			writeB(IPConfig.getDefaultAddress());
 			writeH(ChatService.getPort());
 		}
-		writeD(0x029b);
+		writeD(00);////0x029b);
 		writeC(0);
 	}
 }

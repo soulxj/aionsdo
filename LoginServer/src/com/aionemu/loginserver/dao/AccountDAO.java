@@ -63,7 +63,6 @@ public class AccountDAO
 				account.setLastIp(rs.getString("last_ip"));
 				account.setLastMac(rs.getString("last_mac"));
 				account.setIpForce(rs.getString("ip_force"));
-				account.setMembershipExpire(rs.getTimestamp("membership_expire"));
 			}
 		} catch (Exception e) {
 			log.error("Can't select account with name: " + name, e);
@@ -103,7 +102,6 @@ public class AccountDAO
 				account.setLastIp(rs.getString("last_ip"));
 				account.setLastMac(rs.getString("last_mac"));
 				account.setIpForce(rs.getString("ip_force"));
-				account.setMembershipExpire(rs.getTimestamp("membership_expire"));
 			}
 		} catch (Exception e) {
 			log.error("Can't select account with token: " + token, e);
@@ -143,7 +141,6 @@ public class AccountDAO
 				account.setLastIp(rs.getString("last_ip"));
 				account.setLastMac(rs.getString("last_mac"));
 				account.setIpForce(rs.getString("ip_force"));
-				account.setMembershipExpire(rs.getTimestamp("membership_expire"));
 			}
 		} catch (Exception e) {
 			log.error("Can't select account with name: " + id, e);
@@ -243,7 +240,7 @@ public class AccountDAO
 	 */
 	public static boolean insertAccount(Account account)
 	{
-		System.out.println("Call insertAccount");
+		///System.out.println("Call insertAccount");
 		int result = 0;
 		PreparedStatement st = DB.prepareStatement("INSERT INTO account_data(`name`, `password`, access_level, membership, activated, last_server, last_ip, last_mac, ip_force, toll) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 

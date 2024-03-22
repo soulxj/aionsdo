@@ -61,7 +61,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
 	 * Membership - regular/premium
 	 */
 	private byte membership;
-	private Timestamp membershipExpire;
 
 	/**
 	 * Toll
@@ -86,7 +85,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
 			accessLevel = (byte) readC();
 			membership = (byte) readC();
 			toll = readQ();
-			membershipExpire = new Timestamp(readQ());
 		}
 	}
 
@@ -95,6 +93,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
 	 */
 	@Override
 	public void runImpl() {
-		LoginServer.getInstance().accountAuthenticationResponse(accountId, accountName, result, accountTime, accessLevel, membership, toll, membershipExpire);
+		LoginServer.getInstance().accountAuthenticationResponse(accountId, accountName, result, accountTime, accessLevel, membership, toll);
 	}
 }

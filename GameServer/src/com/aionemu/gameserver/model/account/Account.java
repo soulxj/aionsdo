@@ -66,7 +66,7 @@ public class Account implements Iterable<PlayerAccountData> {
 	private CharacterPasskey characterPasskey;
 	private long tollCount;
 
-	private Timestamp membershipExpire;
+	private AccountSielEnergy accountSielEnergy;
 
 	public Account(int id) {
 		this.id = id;
@@ -267,16 +267,16 @@ public class Account implements Iterable<PlayerAccountData> {
 		return maxLevel;
 	}
 
+	public AccountSielEnergy getAccountSielEnergy() {
+		return accountSielEnergy;
+	}
+
+	public void setAccountSielEnergy(AccountSielEnergy accountSielEnergy) {
+		this.accountSielEnergy = accountSielEnergy;
+	}
+
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", name=" + name + "]";
-	}
-
-	public Timestamp getMembershipExpire() {
-		return membershipExpire;
-	}
-
-	public void setMembershipExpire(Timestamp membershipExpire) {
-		this.membershipExpire = membershipExpire;
 	}
 }

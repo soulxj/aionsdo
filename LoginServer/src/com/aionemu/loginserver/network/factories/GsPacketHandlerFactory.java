@@ -12,25 +12,13 @@ package com.aionemu.loginserver.network.factories;
 
 import java.nio.ByteBuffer;
 
+import com.aionemu.loginserver.network.gameserver.clientpackets.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aionemu.loginserver.network.gameserver.GsClientPacket;
 import com.aionemu.loginserver.network.gameserver.GsConnection;
 import com.aionemu.loginserver.network.gameserver.GsConnection.State;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_ACCOUNT_AUTH;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_ACCOUNT_DISCONNECTED;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_ACCOUNT_LIST;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_ACCOUNT_RECONNECT_KEY;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_ACCOUNT_TOLL_INFO;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_BAN;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_GS_AUTH;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_GS_CHARACTER;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_GS_PONG;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_LS_CONTROL;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_MAC;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_MACBAN_CONTROL;
-import com.aionemu.loginserver.network.gameserver.clientpackets.CM_PREMIUM_CONTROL;
 
 /**
  * @author -Nemesiss-
@@ -106,6 +94,9 @@ public class GsPacketHandlerFactory {
 					case 13:
 						//TODO find out if sometimes received in AUTHED state
 						msg = new CM_MAC();
+						break;
+					case 0x0f:
+						msg = new CM_ACCOUNT_SIELENERY();
 						break;
 					default:
 						unknownPacket(state, id);

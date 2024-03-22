@@ -44,6 +44,7 @@ public class PlayerLeaveWorldService
 	
 	public static final void startLeaveWorld(Player player) {
 		log.info("Player Logged Out: " + player.getName() + " Account: " + (player.getClientConnection() != null ? player.getClientConnection().getAccount().getName() : "Disconnected"));
+		SielEnergyService.getInstance().onLogout(player);
 		FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x00, player.getObjectId());
 		FindGroupService.getInstance().removeFindGroup(player.getRace(), 0x04, player.getObjectId());
 		player.onLoggedOut();
@@ -123,6 +124,7 @@ public class PlayerLeaveWorldService
 		pad.setEquipment(player.getEquipment().getEquippedItems());
 		pad.setPlayerSettings(player.getPlayerSettings());
 		EventWindowService.getInstance().onLogout(player);
+
 	}
 	
 	public static void tryLeaveWorld(Player player) {

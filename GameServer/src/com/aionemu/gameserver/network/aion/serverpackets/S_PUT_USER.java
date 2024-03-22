@@ -14,215 +14,214 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
 
 import java.util.List;
 
-public class S_PUT_USER extends AionServerPacket
-{
-	private final Player player;
-	private boolean enemy;
-	
-	public S_PUT_USER(Player player, boolean enemy) {
-		this.player = player;
-		this.enemy = enemy;
-	}
-	
-	@Override
-	protected void writeImpl(AionConnection con) {
-		Player activePlayer = con.getActivePlayer();
-		if (activePlayer == null || player == null) {
-			return;
-		}
-		PlayerCommonData pcd = player.getCommonData();
-		final int raceId;
-		if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1) {
-			raceId = activePlayer.getRace().getRaceId();
-		} else if (activePlayer.isEnemy(player)) {
-			raceId = (activePlayer.getRace().getRaceId() == 0 ? 1 : 0);
-		} else {
-			raceId = player.getRace().getRaceId();
-		}
-		final int genderId = pcd.getGender().getGenderId();
-		final PlayerAppearance playerAppearance = player.getPlayerAppearance();
-		writeF(player.getX());// x
-		writeF(player.getY());// y
-		writeF(player.getZ());// z
-		writeD(player.getObjectId());
-		writeD(pcd.getTemplateId());
-		int model = player.getTransformModel().getModelId();
-		writeD(model != 0 ? model : pcd.getTemplateId());
-		writeD(0);
-		writeD(0);
-		writeD(player.getTransformModel().getType().getId());
-		writeC(enemy ? 0x00 : 0x26);
-		writeC(raceId); // race
-		writeC(pcd.getPlayerClass().getClassId());
-		writeC(genderId); // sex
-		writeH(player.getState());
-		writeB(new byte[8]);
-		writeC(player.getHeading());
-		
-		String nameFormat = "%s";
+public class S_PUT_USER extends AionServerPacket {
+    private final Player player;
+    private boolean enemy;
+
+    public S_PUT_USER(Player player, boolean enemy) {
+        this.player = player;
+        this.enemy = enemy;
+    }
+
+    @Override
+    protected void writeImpl(AionConnection con) {
+        Player activePlayer = con.getActivePlayer();
+        if (activePlayer == null || player == null) {
+            return;
+        }
+        PlayerCommonData pcd = player.getCommonData();
+        final int raceId;
+        if (player.getAdminNeutral() > 1 || activePlayer.getAdminNeutral() > 1) {
+            raceId = activePlayer.getRace().getRaceId();
+        } else if (activePlayer.isEnemy(player)) {
+            raceId = (activePlayer.getRace().getRaceId() == 0 ? 1 : 0);
+        } else {
+            raceId = player.getRace().getRaceId();
+        }
+        final int genderId = pcd.getGender().getGenderId();
+        final PlayerAppearance playerAppearance = player.getPlayerAppearance();
+        writeF(player.getX());// x
+        writeF(player.getY());// y
+        writeF(player.getZ());// z
+        writeD(player.getObjectId());
+        writeD(pcd.getTemplateId());
+        int model = player.getTransformModel().getModelId();
+        writeD(model != 0 ? model : pcd.getTemplateId());
+        writeD(0);
+        writeD(0);
+        writeD(player.getTransformModel().getType().getId());
+        writeC(enemy ? 0x00 : 0x26);
+        writeC(raceId); // race
+        writeC(pcd.getPlayerClass().getClassId());
+        writeC(genderId); // sex
+        writeH(player.getState());
+        writeB(new byte[8]);
+        writeC(player.getHeading());
+
+        String nameFormat = "%s";
         //String playerName = player.getName();
         StringBuilder sb = new StringBuilder(nameFormat);
-        
+
         if (player.getClientConnection() != null) {
-        	if (AdminConfig.ADMIN_TAG_ENABLE) {
-        		switch(player.getClientConnection().getAccount().getAccessLevel()) {
-        			case 1:
-        				nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_1.substring(0, AdminConfig.ADMIN_TAG_1.length() - 3)).toString();
-        				break;
-        			case 2:
-        				nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_2.substring(0, AdminConfig.ADMIN_TAG_2.length() - 3)).toString();
-        				break;
-        			case 3:
-        				nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_3.substring(0, AdminConfig.ADMIN_TAG_3.length() - 3)).toString();
-        				break;
-        			case 4:
-        				nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_4.substring(0, AdminConfig.ADMIN_TAG_4.length() - 3)).toString();
-        				break;
-        			case 5:
-        				nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_5.substring(0, AdminConfig.ADMIN_TAG_5.length() - 3)).toString();
-        				break;
-        		}
-        	}
+            if (AdminConfig.ADMIN_TAG_ENABLE) {
+                switch (player.getClientConnection().getAccount().getAccessLevel()) {
+                    case 1:
+                        nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_1.substring(0, AdminConfig.ADMIN_TAG_1.length() - 3)).toString();
+                        break;
+                    case 2:
+                        nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_2.substring(0, AdminConfig.ADMIN_TAG_2.length() - 3)).toString();
+                        break;
+                    case 3:
+                        nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_3.substring(0, AdminConfig.ADMIN_TAG_3.length() - 3)).toString();
+                        break;
+                    case 4:
+                        nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_4.substring(0, AdminConfig.ADMIN_TAG_4.length() - 3)).toString();
+                        break;
+                    case 5:
+                        nameFormat = sb.insert(0, AdminConfig.ADMIN_TAG_5.substring(0, AdminConfig.ADMIN_TAG_5.length() - 3)).toString();
+                        break;
+                }
+            }
         }
-		
-		writeS(String.format(nameFormat, player.getName()));
-		writeH(pcd.getTitleId());
-		writeH(player.getCommonData().isHaveMentorFlag()? 1 : 0);
-		writeH(player.getCastingSkillId());
-		if (player.isLegionMember()) {
-			writeD(player.getLegion().getLegionId());
-			writeC(player.getLegion().getLegionEmblem().getEmblemId());
-			writeC(player.getLegion().getLegionEmblem().getEmblemType().getValue());
-			writeC(player.getLegion().getLegionEmblem().getEmblemType() == LegionEmblemType.DEFAULT ? 0x00 : 0xFF);
-			writeC(player.getLegion().getLegionEmblem().getColor_r());
-			writeC(player.getLegion().getLegionEmblem().getColor_g());
-			writeC(player.getLegion().getLegionEmblem().getColor_b());
-			writeS(player.getLegion().getLegionName());
-		} else {
-			writeB(new byte[12]);
-		}
-		int maxHp = player.getLifeStats().getMaxHp();
-		int currHp = player.getLifeStats().getCurrentHp();
-		writeC(100 * currHp / maxHp);// %hp
-		writeH(pcd.getDp());// current dp
-		writeC(0x00);// unk (0x00)
-		/**
-		 * Start Item Appearance
-		 */
-		List<Item> items = player.getEquipment().getEquippedItemsWithoutStigma();
-		short mask = 0;
-		for (Item item : items) {
-			mask |= item.getEquipmentSlot();
-		}
-		writeH(mask);
-		for (Item item : items) {
-			if (item.getEquipmentSlot() < Short.MAX_VALUE * 2) {
-				writeD(item.getItemSkinTemplate().getTemplateId());
-				GodStone godStone = item.getGodStone();
-				writeD(godStone != null ? godStone.getItemId() : 0);
-				writeD(item.getItemColor());
-				writeD(0x00);// unk (0x00) 2.8 chs display effect ?
-				writeH(0x00);// unk (0x00)
-			}
-		}
-		writeD(playerAppearance.getSkinRGB());
-		writeD(playerAppearance.getHairRGB());
-		writeD(playerAppearance.getEyeRGB());
-		writeD(playerAppearance.getLipRGB());
-		writeC(playerAppearance.getFace());
-		writeC(playerAppearance.getHair());
-		writeC(playerAppearance.getDeco());
-		writeC(playerAppearance.getTattoo());
-		writeC(playerAppearance.getFaceContour());
-		writeC(playerAppearance.getExpression());
-		writeC(player.getGender() == Gender.FEMALE ? 6 : 5);
-		writeC(playerAppearance.getJawLine());
-		writeC(playerAppearance.getForehead());
-		writeC(playerAppearance.getEyeHeight());
-		writeC(playerAppearance.getEyeSpace());
-		writeC(playerAppearance.getEyeWidth());
-		writeC(playerAppearance.getEyeSize());
-		writeC(playerAppearance.getEyeShape());
-		writeC(playerAppearance.getEyeAngle());
-		writeC(playerAppearance.getBrowHeight());
-		writeC(playerAppearance.getBrowAngle());
-		writeC(playerAppearance.getBrowShape());
-		writeC(playerAppearance.getNose());
-		writeC(playerAppearance.getNoseBridge());
-		writeC(playerAppearance.getNoseWidth());
-		writeC(playerAppearance.getNoseTip());
-		writeC(playerAppearance.getCheek());
-		writeC(playerAppearance.getLipHeight());
-		writeC(playerAppearance.getMouthSize());
-		writeC(playerAppearance.getLipSize());
-		writeC(playerAppearance.getSmile());
-		writeC(playerAppearance.getLipShape());
-		writeC(playerAppearance.getJawHeigh());
-		writeC(playerAppearance.getChinJut());
-		writeC(playerAppearance.getEarShape());
-		writeC(playerAppearance.getHeadSize());
-		writeC(playerAppearance.getNeck());
-		writeC(playerAppearance.getNeckLength());
-		writeC(playerAppearance.getShoulderSize());
-		writeC(playerAppearance.getTorso());
-		writeC(playerAppearance.getChest()); // only woman
-		writeC(playerAppearance.getWaist());
-		writeC(playerAppearance.getHips());
-		writeC(playerAppearance.getArmThickness());
-		writeC(playerAppearance.getHandSize());
-		writeC(playerAppearance.getLegThickness());
-		writeC(playerAppearance.getFootSize());
-		writeC(playerAppearance.getFacialRate());
-		writeC(0x00); // always 0
-		writeC(playerAppearance.getArmLength());
-		writeC(playerAppearance.getLegLength());
-		writeC(playerAppearance.getShoulders());
-		writeC(playerAppearance.getFaceShape());
-		writeC(0x00); // always 0
-		writeC(playerAppearance.getVoice());
-		writeF(playerAppearance.getHeight());
-		writeF(0.25f); // scale
-		writeF(2.0f); // gravity or slide surface o_O
-		writeF(player.getGameStats().getMovementSpeedFloat()); // move speed
-		writeH(player.getGameStats().getAttackSpeed().getBase());
-		writeH(player.getGameStats().getAttackSpeed().getCurrent());
-		writeC(player.getPortAnimation());
-		writeS(player.hasStore() ? player.getStore().getStoreMessage() : "");// private store message
-		/**
-		 * Movement
-		 */
-		writeF(0);
-		writeF(0);
-		writeF(0);
-		writeF(player.getX());// x
-		writeF(player.getY());// y
-		writeF(player.getZ());// z
-		writeC(0x00); // move type
-		if (player.isUsingFlyTeleport()) {
-			writeD(player.getFlightTeleportId());
-			writeD(player.getFlightDistance());
-		} else if (player.isInPlayerMode(PlayerMode.WINDSTREAM)) {
+
+        writeS(String.format(nameFormat, player.getName()));
+        writeH(pcd.getTitleId());
+        writeH(player.getCommonData().isHaveMentorFlag() ? 1 : 0);
+        writeH(player.getCastingSkillId());
+        if (player.isLegionMember()) {
+            writeD(player.getLegion().getLegionId());
+            writeC(player.getLegion().getLegionEmblem().getEmblemId());
+            writeC(player.getLegion().getLegionEmblem().getEmblemType().getValue());
+            writeC(player.getLegion().getLegionEmblem().getEmblemType() == LegionEmblemType.DEFAULT ? 0x00 : 0xFF);
+            writeC(player.getLegion().getLegionEmblem().getColor_r());
+            writeC(player.getLegion().getLegionEmblem().getColor_g());
+            writeC(player.getLegion().getLegionEmblem().getColor_b());
+            writeS(player.getLegion().getLegionName());
+        } else {
+            writeB(new byte[12]);
+        }
+        int maxHp = player.getLifeStats().getMaxHp();
+        int currHp = player.getLifeStats().getCurrentHp();
+        writeC(100 * currHp / maxHp);// %hp
+        writeH(pcd.getDp());// current dp
+        writeC(0x00);// unk (0x00)
+        /**
+         * Start Item Appearance
+         */
+        List<Item> items = player.getEquipment().getEquippedItemsWithoutStigma();
+        short mask = 0;
+        for (Item item : items) {
+            mask |= item.getEquipmentSlot();
+        }
+        writeH(mask);
+        for (Item item : items) {
+            if (item.getEquipmentSlot() < Short.MAX_VALUE * 2) {
+                writeD(item.getItemSkinTemplate().getTemplateId());
+                GodStone godStone = item.getGodStone();
+                writeD(godStone != null ? godStone.getItemId() : 0);
+                writeD(item.getItemColor());
+                writeD(0x00);// unk (0x00) 2.8 chs display effect ?
+                writeH(0x00);// unk (0x00)
+            }
+        }
+        writeD(playerAppearance.getSkinRGB());
+        writeD(playerAppearance.getHairRGB());
+        writeD(playerAppearance.getEyeRGB());
+        writeD(playerAppearance.getLipRGB());
+        writeC(playerAppearance.getFace());
+        writeC(playerAppearance.getHair());
+        writeC(playerAppearance.getDeco());
+        writeC(playerAppearance.getTattoo());
+        writeC(playerAppearance.getFaceContour());
+        writeC(playerAppearance.getExpression());
+        writeC(player.getGender() == Gender.FEMALE ? 6 : 5);
+        writeC(playerAppearance.getJawLine());
+        writeC(playerAppearance.getForehead());
+        writeC(playerAppearance.getEyeHeight());
+        writeC(playerAppearance.getEyeSpace());
+        writeC(playerAppearance.getEyeWidth());
+        writeC(playerAppearance.getEyeSize());
+        writeC(playerAppearance.getEyeShape());
+        writeC(playerAppearance.getEyeAngle());
+        writeC(playerAppearance.getBrowHeight());
+        writeC(playerAppearance.getBrowAngle());
+        writeC(playerAppearance.getBrowShape());
+        writeC(playerAppearance.getNose());
+        writeC(playerAppearance.getNoseBridge());
+        writeC(playerAppearance.getNoseWidth());
+        writeC(playerAppearance.getNoseTip());
+        writeC(playerAppearance.getCheek());
+        writeC(playerAppearance.getLipHeight());
+        writeC(playerAppearance.getMouthSize());
+        writeC(playerAppearance.getLipSize());
+        writeC(playerAppearance.getSmile());
+        writeC(playerAppearance.getLipShape());
+        writeC(playerAppearance.getJawHeigh());
+        writeC(playerAppearance.getChinJut());
+        writeC(playerAppearance.getEarShape());
+        writeC(playerAppearance.getHeadSize());
+        writeC(playerAppearance.getNeck());
+        writeC(playerAppearance.getNeckLength());
+        writeC(playerAppearance.getShoulderSize());
+        writeC(playerAppearance.getTorso());
+        writeC(playerAppearance.getChest()); // only woman
+        writeC(playerAppearance.getWaist());
+        writeC(playerAppearance.getHips());
+        writeC(playerAppearance.getArmThickness());
+        writeC(playerAppearance.getHandSize());
+        writeC(playerAppearance.getLegThickness());
+        writeC(playerAppearance.getFootSize());
+        writeC(playerAppearance.getFacialRate());
+        writeC(0x00); // always 0
+        writeC(playerAppearance.getArmLength());
+        writeC(playerAppearance.getLegLength());
+        writeC(playerAppearance.getShoulders());
+        writeC(playerAppearance.getFaceShape());
+        writeC(0x00); // always 0
+        writeC(playerAppearance.getVoice());
+        writeF(playerAppearance.getHeight());
+        writeF(0.25f); // scale
+        writeF(2.0f); // gravity or slide surface o_O
+        writeF(player.getGameStats().getMovementSpeedFloat()); // move speed
+        writeH(player.getGameStats().getAttackSpeed().getBase());
+        writeH(player.getGameStats().getAttackSpeed().getCurrent());
+        writeC(player.getPortAnimation());
+        writeS(player.hasStore() ? player.getStore().getStoreMessage() : "");// private store message
+        /**
+         * Movement
+         */
+        writeF(0);
+        writeF(0);
+        writeF(0);
+        writeF(player.getX());// x
+        writeF(player.getY());// y
+        writeF(player.getZ());// z
+        writeC(0x00); // move type
+        if (player.isUsingFlyTeleport()) {
+            writeD(player.getFlightTeleportId());
+            writeD(player.getFlightDistance());
+        } else if (player.isInPlayerMode(PlayerMode.WINDSTREAM)) {
             writeD(player.windstreamPath.teleportId);
             writeD(player.windstreamPath.distance);
         }
-		writeC(player.getVisualState()); // visualState
-		writeS(player.getCommonData().getNote()); // note show in right down windows if your target on player
-		writeH(player.getLevel()); // [level]
-		writeH(player.getPlayerSettings().getDisplay()); // unk - 0x04
-		writeH(player.getPlayerSettings().getDeny()); // unk - 0x00
-		writeH(player.getAbyssRank().getRank().getId()); // abyss rank
-		writeH(0x00); // unk - 0x01
-		writeD(player.getTarget() == null ? 0 : player.getTarget().getObjectId());
-		writeC(0); // suspect id
-		writeD(player.getCurrentTeamId());
-		writeC(player.isMentor() ? 1 : 0);
+        writeC(player.getVisualState()); // visualState
+        writeS(player.getCommonData().getNote()); // note show in right down windows if your target on player
+        writeH(player.getLevel()); // [level]
+        writeH(player.getPlayerSettings().getDisplay()); // unk - 0x04
+        writeH(player.getPlayerSettings().getDeny()); // unk - 0x00
+        writeH(player.getAbyssRank().getRank().getId()); // abyss rank
+        writeH(0x00); // unk - 0x01
+        writeD(player.getTarget() == null ? 0 : player.getTarget().getObjectId());
+        writeC(0); // suspect id
+        writeD(player.getCurrentTeamId());
+        writeC(player.isMentor() ? 1 : 0);
 
-		writeD(player.getPlayerAccount().getMembership() == 2 ? 3 : 1);
-		writeC(0); //test
-		writeD(0x01000000);//unckeck
-		//todo
-		writeD(0);//unckeck
-		writeD(0);//unckeck
-		writeD(0);//unckeck
-	}
+        writeD(player.getPlayerAccount().getAccountSielEnergy().getType().getId());// == 2 ? 3 : 1); //this is account type 1/2/3
+        writeC(0); //test
+        writeD(0x01000000);//unckeck
+        //todo
+        writeD(0);//unckeck
+        writeD(0);//unckeck
+        writeD(0);//unckeck
+    }
 }

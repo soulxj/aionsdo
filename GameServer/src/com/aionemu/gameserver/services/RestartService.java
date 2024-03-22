@@ -39,7 +39,6 @@ public class RestartService
         CronService.getInstance().schedule(new Runnable() {
             public void run() {
                 BattlePassService.getInstance().onRestart();
-                SielEnergyService.getInstance().onRestart();
                 EventWindowService.getInstance().onRestart();
             }
         }, daily1);

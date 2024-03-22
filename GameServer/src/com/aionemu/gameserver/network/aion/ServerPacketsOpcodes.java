@@ -267,7 +267,7 @@ public class ServerPacketsOpcodes {
         addPacketOpcode(S_RESPONSE_NPSHOP_GOODS_LIST.class, 0x10B, idSet); //need to add
         addPacketOpcode(S_RESPONSE_NPSHOP_GOODS_RECV.class, 0x10C, idSet); //need to add
         addPacketOpcode(S_GAMEPASS_INFO.class, 0x118, idSet);
-        addPacketOpcode(S_GAMEPASS_OTHER_UPDATED.class, 0x119, idSet); //need to add
+        addPacketOpcode(S_GAMEPASS_OTHER_UPDATED.class, 0x119, idSet);
         addPacketOpcode(S_RANK_LIST.class, 0x12F, idSet); //need to add
         addPacketOpcode(S_RANK_INFO.class, 0x130, idSet); //need to add
         addPacketOpcode(S_RANKING_BADGE.class, 0x137, idSet); //need to add

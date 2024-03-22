@@ -1,4 +1,4 @@
-package com.aionemu.gameserver.model.account;
+package com.aionemu.loginserver.model;
 
 public enum SielEnergyType {
 

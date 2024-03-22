@@ -21,6 +21,7 @@ import java.util.zip.Deflater;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import com.aionemu.loginserver.taskmanager.ExpireTimerTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -107,7 +108,7 @@ public class LoginServer {
 
 		initalizeLoggger();
 		CronService.initSingleton(ThreadPoolManagerRunnableRunner.class);
-
+		ExpireTimerTask.getInstance();
 		// write a timestamp that can be used by TruncateToZipFileAppender
 		log.info("\f" + new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date(System.currentTimeMillis())) + "\f");
 		Config.load();

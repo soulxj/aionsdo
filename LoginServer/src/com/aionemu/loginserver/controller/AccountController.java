@@ -10,15 +10,12 @@
  */
 package com.aionemu.loginserver.controller;
 
-import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.aionemu.commons.utils.NetworkUtils;
 import com.aionemu.loginserver.GameServerInfo;
 import com.aionemu.loginserver.GameServerTable;
 import com.aionemu.loginserver.configs.Config;
 import com.aionemu.loginserver.dao.AccountDAO;
+import com.aionemu.loginserver.dao.AccountSielEnergyDAO;
 import com.aionemu.loginserver.dao.AccountTimeDAO;
 import com.aionemu.loginserver.dao.PremiumDAO;
 import com.aionemu.loginserver.model.Account;
@@ -30,12 +27,16 @@ import com.aionemu.loginserver.network.aion.SessionKey;
 import com.aionemu.loginserver.network.aion.serverpackets.SM_SERVER_LIST;
 import com.aionemu.loginserver.network.aion.serverpackets.SM_UPDATE_SESSION;
 import com.aionemu.loginserver.network.gameserver.GsConnection;
+import com.aionemu.loginserver.network.gameserver.GsServerPacket;
 import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_AUTH_RESPONSE;
 import com.aionemu.loginserver.network.gameserver.serverpackets.SM_GS_CHARACTER_RESPONSE;
 import com.aionemu.loginserver.network.gameserver.serverpackets.SM_REQUEST_KICK_ACCOUNT;
 import com.aionemu.loginserver.utils.AccountUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class is resposible for controlling all account actions
@@ -77,7 +78,7 @@ public class AccountController {
      * @param key
      * @param gsConnection
      */
-    public static synchronized void checkAuth(SessionKey key, GsConnection gsConnection) {
+    public static synchronized Account checkAuth(SessionKey key, GsConnection gsConnection) {
         LoginConnection con = accountsOnLS.get(key.accountId);
 
         if (con != null && con.getSessionKey().checkSessionKey(key)) {
@@ -101,10 +102,13 @@ public class AccountController {
             /**
              * Send response to GameServer
              */
-            gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, true, acc.getName(), acc.getAccessLevel(), acc.getMembership(), toll, acc.getMembershipExpire()));
-        } else {
-            gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, false, null, (byte) 0, (byte) 0, 0, null));
+            gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, true, acc.getName(), acc.getAccessLevel(), acc.getMembership(), toll));
+            return acc;
         }
+
+        gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, false, null, (byte) 0, (byte) 0, 0));
+        return null;
+
     }
 
     /**
@@ -349,6 +353,7 @@ public class AccountController {
         Account account = AccountDAO.getAccount(name);
         if (account != null) {
             account.setAccountTime(AccountTimeDAO.getAccountTime(account.getId()));
+            AccountSielEnergyDAO.load(account);
         }
         return account;
     }
@@ -357,6 +362,7 @@ public class AccountController {
         Account account = AccountDAO.getAccountByToken(token);
         if (account != null) {
             account.setAccountTime(AccountTimeDAO.getAccountTime(account.getId()));
+            AccountSielEnergyDAO.load(account);
         }
         return account;
     }
@@ -386,7 +392,7 @@ public class AccountController {
         account.setMembership((byte) 0);
         account.setActivated((byte) 1);
 
-        if (AccountDAO.insertAccount(account)) {
+        if (AccountDAO.insertAccount(account) && SielEnergyController.onCreateAccount(account)) {
             return account;
         }
         return null;

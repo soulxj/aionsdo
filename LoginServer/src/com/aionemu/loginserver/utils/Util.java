@@ -17,6 +17,8 @@
 package com.aionemu.loginserver.utils;
 
 import java.nio.ByteBuffer;
+import java.sql.Timestamp;
+import java.util.Calendar;
 
 /**
  * @author lord_rex
@@ -72,5 +74,15 @@ public class Util {
 			else
 				result.append('.');
 		}
+	}
+
+	public static Timestamp getCurrentDay() {
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(System.currentTimeMillis());
+		c.set(Calendar.HOUR_OF_DAY, 8);
+		c.set(Calendar.MINUTE, 30);
+		c.set(Calendar.SECOND, 0);
+		c.set(Calendar.MILLISECOND, 0);
+		return new Timestamp(c.getTime().getTime());
 	}
 }

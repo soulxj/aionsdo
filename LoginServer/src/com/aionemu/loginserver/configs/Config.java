@@ -54,10 +54,10 @@ public class Config
 	public static int PINGPONG_DELAY;
 	@Property(key="loginserver.excluded.ips", defaultValue="")
     public static String EXCLUDED_IP;
-
 	@Property(key = "loginserver.use.np", defaultValue = "true")
 	public static boolean USE_NP_LOGIN;
-	
+	@Property(key = "loginserver.trial.seconds", defaultValue = "300")
+	public static long TRIAL_SECONDS;
 	public static void load() {
 		try {
 			Properties myProps = null;
