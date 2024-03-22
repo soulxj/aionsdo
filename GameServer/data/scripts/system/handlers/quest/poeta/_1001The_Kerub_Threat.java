@@ -64,8 +64,9 @@ public class _1001The_Kerub_Threat extends QuestHandler
         final Player player = env.getPlayer();
 		final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
+
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
             if (targetId == 203071) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
