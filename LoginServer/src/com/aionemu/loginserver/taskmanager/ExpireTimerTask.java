@@ -34,7 +34,7 @@ public class ExpireTimerTask extends AbstractPeriodicTaskManager {
     private FastMap<AccountSielEnergy, Account> expirables = new FastMap<>(2000);
 
     public ExpireTimerTask() {
-        super(100);
+        super(200);
     }
 
     public static ExpireTimerTask getInstance() {

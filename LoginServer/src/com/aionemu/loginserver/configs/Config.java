@@ -56,7 +56,7 @@ public class Config
     public static String EXCLUDED_IP;
 	@Property(key = "loginserver.use.np", defaultValue = "true")
 	public static boolean USE_NP_LOGIN;
-	@Property(key = "loginserver.trial.seconds", defaultValue = "300")
+	@Property(key = "loginserver.trial.seconds", defaultValue = "3600")
 	public static long TRIAL_SECONDS;
 	public static void load() {
 		try {
