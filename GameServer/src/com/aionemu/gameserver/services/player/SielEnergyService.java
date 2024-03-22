@@ -5,13 +5,10 @@ import com.aionemu.gameserver.model.account.AccountSielEnergy;
 import com.aionemu.gameserver.model.account.SielEnergyType;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.network.aion.serverpackets.S_GAMEPASS_INFO;
-import com.aionemu.gameserver.network.aion.serverpackets.need.S_GAMEPASS_OTHER_UPDATED;
+import com.aionemu.gameserver.network.aion.serverpackets.S_GAMEPASS_OTHER_UPDATED;
 import com.aionemu.gameserver.network.loginserver.LoginServer;
 import com.aionemu.gameserver.network.loginserver.serverpackets.SM_ACCOUNT_SIELENERY;
 import com.aionemu.gameserver.utils.PacketSendUtility;
-import com.aionemu.gameserver.world.World;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author soulxj

@@ -1,4 +1,4 @@
-package com.aionemu.gameserver.network.aion.serverpackets.need;
+package com.aionemu.gameserver.network.aion.serverpackets;
 
 import com.aionemu.gameserver.model.account.SielEnergyType;
 import com.aionemu.gameserver.network.aion.AionConnection;
