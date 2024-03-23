@@ -11,20 +11,15 @@
 package com.aionemu.loginserver.network.gameserver.clientpackets;
 
 
-import com.aionemu.loginserver.dao.AccountSielEnergyDAO;
 import com.aionemu.loginserver.model.Account;
 import com.aionemu.loginserver.model.AccountSielEnergy;
-import com.aionemu.loginserver.model.SielEnergyType;
 import com.aionemu.loginserver.network.gameserver.GsClientPacket;
 import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_SIELENERY_NOTITY;
 import com.aionemu.loginserver.taskmanager.ExpireTimerTask;
-import com.aionemu.loginserver.utils.ThreadPoolManager;
 
 /**
- * In this packet Gameserver is asking if given account sessionKey is valid at Loginserver side. [if user that is
- * authenticating on Gameserver is already authenticated on Loginserver]
  *
- * @author -Nemesiss-
+ * @author -soulxj-
  */
 public class CM_ACCOUNT_SIELENERY extends GsClientPacket {
 
@@ -57,15 +52,7 @@ public class CM_ACCOUNT_SIELENERY extends GsClientPacket {
                 ExpireTimerTask.getInstance().addTask(account.getAccountSielEnergy(), account);
             } else {
                 ExpireTimerTask.getInstance().removeAccount(account);
-                long now = System.currentTimeMillis();
-                long use = now - accountSielEnergy.getChargeTime();
-                long remain = accountSielEnergy.getRemainSecond() * 1000 - use;
-                if (remain < 0) {
-                    remain = 0;
-                }
-                accountSielEnergy.setRemainSecond(remain / 1000);
-                ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(accountSielEnergy));
-
+                accountSielEnergy.onSave();
             }
         }
     }

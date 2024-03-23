@@ -70,18 +70,7 @@ public class ExpireTimerTask extends AbstractPeriodicTaskManager {
             for (Iterator<Map.Entry<AccountSielEnergy, Account>> i = expirables.entrySet().iterator(); i.hasNext(); ) {
                 Map.Entry<AccountSielEnergy, Account> entry = i.next();
                 AccountSielEnergy expirable = entry.getKey();
-                ////Account account = entry.getValue();
-
-                ///if (expirable.getType() == SielEnergyType.TRIAL) {
-                    expirable.onBeat(timeNow);
-//                } else if (expirable.getType() == SielEnergyType.MEMBERSHIP) {
-//                    long min = (expirable.getExpireTime() - timeNow);
-//                    if (min < 0 && expirable.canExpireNow()) {
-//                        expirable.expireEnd(account);
-//                        i.remove();
-//                    }
-//                }
-
+                expirable.onBeat(timeNow);
             }
         } finally {
             writeUnlock();
