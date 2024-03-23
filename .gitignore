@@ -17,3 +17,12 @@ ChatServer/log
 ChatServer/*.iml
 ChatServer/*.log
 ChatServer/out
+
+LoginServer/target
+LoginServer/build
+LoginServer/.idea
+LoginServer/cache
+LoginServer/log
+LoginServer/*.iml
+LoginServer/*.log
+LoginServer/out
