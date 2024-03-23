@@ -9,7 +9,6 @@ import com.aionemu.gameserver.network.aion.AionServerPacket;
  */
 public class S_GAMEPASS_INFO extends AionServerPacket {
 
-
     private AccountSielEnergy accountSielEnergy;
 
     public S_GAMEPASS_INFO(AccountSielEnergy accountSielEnergy) {
@@ -22,6 +21,10 @@ public class S_GAMEPASS_INFO extends AionServerPacket {
         writeD(accountSielEnergy.getType().getId());
         switch (accountSielEnergy.getType().getId()) {
             case 1:
+                writeQ(-accountSielEnergy.getChargeTime().getTime() / 1000);
+                writeQ(0);
+                writeQ(0);
+                break;
             case 2:
                 writeQ(-accountSielEnergy.getChargeTime().getTime() / 1000);
                 writeQ(accountSielEnergy.getRemain());
