@@ -22,10 +22,7 @@ import com.aionemu.gameserver.configs.main.CacheConfig;
 import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.dao.*;
 import com.aionemu.gameserver.model.Race;
-import com.aionemu.gameserver.model.account.Account;
-import com.aionemu.gameserver.model.account.AccountTime;
-import com.aionemu.gameserver.model.account.CharacterBanInfo;
-import com.aionemu.gameserver.model.account.PlayerAccountData;
+import com.aionemu.gameserver.model.account.*;
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerAppearance;
 import com.aionemu.gameserver.model.gameobjects.player.PlayerCommonData;
@@ -68,7 +65,7 @@ public class AccountService {
      * @param membership
      * @return Account
      */
-    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll) {
+    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll, int sielenergy_type, long sielenergy_chargeTime, long sielenergy_end, long sielenergy_remain) {
         log.debug("[AS] request for account: " + accountId);
 
         Account account = accountsMap.get(accountId);
@@ -82,6 +79,7 @@ public class AccountService {
         account.setAccessLevel(accessLevel);
         account.setMembership(membership);
         account.setToll(toll);
+        account.setAccountSielEnergy(new AccountSielEnergy(SielEnergyType.getSielTypeById(sielenergy_type), new Timestamp(sielenergy_chargeTime), sielenergy_end == 0 ? null : new Timestamp(sielenergy_end), sielenergy_remain));
         removeDeletedCharacters(account);
         if (account.isEmpty()) {
             removeAccountWH(accountId);
@@ -153,7 +151,7 @@ public class AccountService {
              */
             List<Item> equipment = DAOManager.getDAO(InventoryDAO.class).loadEquipment(playerId);
 
-            PlayerAccountData acData = new PlayerAccountData(playerCommonData, cbi, appereance, equipment, legionMember, playerSettings,unreadLetters);
+            PlayerAccountData acData = new PlayerAccountData(playerCommonData, cbi, appereance, equipment, legionMember, playerSettings, unreadLetters);
             playerDAO.setCreationDeletionTime(acData);
 
             account.addPlayerAccountData(acData);

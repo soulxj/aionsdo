@@ -220,13 +220,13 @@ public class LoginServer {
      * @param result
      * @param accountTime
      */
-    public void accountAuthenticationResponse(int accountId, String accountName, boolean result, AccountTime accountTime,
-                                              byte accessLevel, byte membership, long toll) {
+    public void accountAuthenticationResponse(int accountId, String accountName, boolean result, AccountTime accountTime, byte accessLevel, byte membership, long toll,
+                                              int sielenergy_type, long sielenergy_chargeTime, long sielenergy_end, long sielenergy_remain) {
         AionConnection client = loginRequests.remove(accountId);
         log.info("accountAuthenticationResponse : accountId: " + accountId + " accountname: " + accountName + " result : " + result);
         if (client == null)
             return;
-        Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll);
+        Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll, sielenergy_type, sielenergy_chargeTime, sielenergy_end, sielenergy_remain);
         if (!validateAccount(account)) {
             log.info("Illegal account auth detected: " + accountId);
             client.close(new S_L2AUTH_LOGIN_CHECK(false, accountName), true);
@@ -242,7 +242,7 @@ public class LoginServer {
             client.sendPacket(new S_REPLY_NP_LOGIN_GAMESVR());
             //client.sendPacket(new S_REPLY_NP_LOGIN_GAMESVR());
             Map<Integer, BlackcloudLetter> letters = DAOManager.getDAO(AccountBlackCloudDAO.class).loadAccountBlackcloud(account);
-            //client.sendPacket(new S_NPSHOP_GOODS_COUNT(letters.size()));
+            client.sendPacket(new S_NPSHOP_GOODS_COUNT(letters.size()));
             client.sendPacket(new S_REPLY_NP_AUTH_TOKEN("014D5546474D6A6378526A51744E7A5644515330304D3059304C554A4551554D744F4446464E6A67794D455A45526B597A4F6A45354E454D33516B4D774C5551344E7A59744E44644451533142515455324C546C474D4441794E7A59304E5468474F41413D0036374443393030452D333544422D423942302D423133442D4333344641343846394538340061696F6E6E637700FA0102"));
             client.sendPacket(new S_REPLY_NP_AUTH_TOKEN("014D5546474D6A6378526A51744E7A5644515330304D3059304C554A4551554D744F4446464E6A67794D455A45526B597A4F6A63304D4555324D454D334C544132526A41744E4459304E5330354D6A4D344C5545354F544930524549334E6A51315241413D0032423842384643462D464438322D464444432D303039342D3339464236353030393046300061696F6E6E637700FA0103"));
             int code = Rnd.get(300000000, 400000000);
@@ -381,7 +381,7 @@ public class LoginServer {
             loginServer.sendPacket(new SM_LS_CONTROL(accountName, playerName, adminName, param, type, vipexpire));
     }
 
-    public void accountUpdate(int accountId, byte param, int type, long membershipexpire) {
+    public void accountUpdate(int accountId, byte param, int type) {
         synchronized (this) {
             AionConnection client = loggedInAccounts.get(accountId);
             boolean freeJumping = false;
@@ -410,12 +410,12 @@ public class LoginServer {
             return false;
     }
 
-    public void updateAccountSielEnergy(int accId, boolean isPush, final AccountSielEnergy accountSielEnergy) {
+    public void updateAccountSielEnergy(int accId, final AccountSielEnergy accountSielEnergy) {
         AionConnection client = loggedInAccounts.get(accId);
-        if (client != null && client.getAccount() != null && client.getActivePlayer() != null) {
+        if (client != null && client.getAccount() != null) {
             AccountSielEnergy old = client.getAccount().getAccountSielEnergy();
             client.getAccount().setAccountSielEnergy(accountSielEnergy);
-            SielEnergyService.getInstance().onUpdate(isPush, client.getActivePlayer(), old,accountSielEnergy);
+            SielEnergyService.getInstance().onUpdate(client.getActivePlayer(), old, accountSielEnergy);
         }
     }
 

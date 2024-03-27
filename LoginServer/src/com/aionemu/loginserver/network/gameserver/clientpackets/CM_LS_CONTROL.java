@@ -15,7 +15,6 @@ public class CM_LS_CONTROL extends GsClientPacket
 	private String playerName;
 	private String adminName;
 	private boolean result;
-	private long expireVip;
 
 	@Override
 	protected void readImpl() {
@@ -24,7 +23,6 @@ public class CM_LS_CONTROL extends GsClientPacket
 		accountName = readS();
 		playerName = readS();
 		param = readC();
-		expireVip = readQ();
 	}
 
 	@Override
@@ -36,10 +34,9 @@ public class CM_LS_CONTROL extends GsClientPacket
 			break;
 			case 2:
 				account.setMembership((byte) param);
-				///account.setMembershipExpire(new Timestamp(expireVip));
 			break;
 		}
 		result = AccountDAO.updateAccount(account);
-		sendPacket(new SM_LS_CONTROL_RESPONSE(type, result, playerName, account.getId(), param, adminName, expireVip));
+		sendPacket(new SM_LS_CONTROL_RESPONSE(type, result, playerName, account.getId(), param, adminName));
 	}
 }

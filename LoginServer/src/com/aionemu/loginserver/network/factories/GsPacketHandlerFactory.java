@@ -96,7 +96,7 @@ public class GsPacketHandlerFactory {
 						msg = new CM_MAC();
 						break;
 					case 0x0f:
-						msg = new CM_ACCOUNT_SIELENERY();
+						msg = new CM_ACCOUNT_CHARGE();
 						break;
 					default:
 						unknownPacket(state, id);

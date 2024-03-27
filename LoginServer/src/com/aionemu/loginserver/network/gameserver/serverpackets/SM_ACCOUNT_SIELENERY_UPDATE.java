@@ -19,19 +19,15 @@ import com.aionemu.loginserver.network.gameserver.GsServerPacket;
  * In this packet LoginServer is answering on GameServer request about valid authentication data and also sends account
  * name of user that is authenticating on GameServer.
  *
- * @author -Nemesiss-
+ * @author -SOULXJ-
  */
-public class SM_ACCOUNT_SIELENERY_NOTITY extends GsServerPacket {
-
+public class SM_ACCOUNT_SIELENERY_UPDATE extends GsServerPacket {
 
     private final AccountSielEnergy accountSielEnergy;
-    private boolean isPush;
 
 
-    public SM_ACCOUNT_SIELENERY_NOTITY(boolean isPush, AccountSielEnergy accountSielEnergy) {
-
+    public SM_ACCOUNT_SIELENERY_UPDATE(AccountSielEnergy accountSielEnergy) {
         this.accountSielEnergy = accountSielEnergy;
-        this.isPush = isPush;
     }
 
     /**
@@ -40,7 +36,6 @@ public class SM_ACCOUNT_SIELENERY_NOTITY extends GsServerPacket {
     @Override
     protected void writeImpl(GsConnection con) {
         writeC(13);
-        writeD(isPush ? 1 : 0);
         writeD(accountSielEnergy.getAccount().getId());
         writeD(accountSielEnergy.getType().getId());
         writeQ(accountSielEnergy.getChargeTime());

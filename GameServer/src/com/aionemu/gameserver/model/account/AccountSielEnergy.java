@@ -45,13 +45,27 @@ public final class AccountSielEnergy implements StatOwner {
         return remain;
     }
 
+    private boolean canApply() {
+        long now = System.currentTimeMillis();
+        switch (type) {
+            case TRIAL:
+                return now - chargeTime.getTime() < remain * 1000;
+            case MEMBERSHIP:
+                return now < end.getTime();
+            default:
+                return false;
+        }
+    }
+
     public void apply(Player player) {
-        functions.add(new StatAddFunction(StatEnum.BOOST_HUNTING_XP_RATE, 100, true));
-        functions.add(new StatAddFunction(StatEnum.BOOST_GROUP_HUNTING_XP_RATE, 100, true));
-        functions.add(new StatAddFunction(StatEnum.BOOST_CRAFTING_XP_RATE, 100, true));
-        functions.add(new StatAddFunction(StatEnum.BOOST_GATHERING_XP_RATE, 100, true));
-        player.setBonus(true);
-        player.getGameStats().addEffect(this, functions);
+        if (canApply()) {
+            functions.add(new StatAddFunction(StatEnum.BOOST_HUNTING_XP_RATE, 100, true));
+            functions.add(new StatAddFunction(StatEnum.BOOST_GROUP_HUNTING_XP_RATE, 100, true));
+            functions.add(new StatAddFunction(StatEnum.BOOST_CRAFTING_XP_RATE, 100, true));
+            functions.add(new StatAddFunction(StatEnum.BOOST_GATHERING_XP_RATE, 100, true));
+            player.setBonus(true);
+            player.getGameStats().addEffect(this, functions);
+        }
     }
 
     public void end(Player player) {

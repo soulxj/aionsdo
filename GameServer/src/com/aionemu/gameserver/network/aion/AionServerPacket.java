@@ -95,7 +95,6 @@ public abstract class AionServerPacket extends BaseServerPacket {
 	 * Write data that this packet represents to given byte buffer.
 	 * 
 	 * @param con
-	 * @param buf
 	 */
 	protected void writeImpl(AionConnection con) {
 

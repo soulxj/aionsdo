@@ -2,7 +2,7 @@ package com.aionemu.loginserver.model;
 
 import com.aionemu.loginserver.configs.Config;
 import com.aionemu.loginserver.dao.AccountSielEnergyDAO;
-import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_SIELENERY_NOTITY;
+import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_SIELENERY_UPDATE;
 import com.aionemu.loginserver.taskmanager.IExpirable;
 import com.aionemu.loginserver.utils.ThreadPoolManager;
 import com.aionemu.loginserver.utils.Util;
@@ -131,7 +131,7 @@ public class AccountSielEnergy implements IExpirable {
                     remainSecond = Config.TRIAL_SECONDS;
                     type = SielEnergyType.TRIAL;
                     ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_NOTITY(true, this));
+                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
                 }
                 break;
             case TRIAL:
@@ -142,7 +142,7 @@ public class AccountSielEnergy implements IExpirable {
                         remainSecond = 0;
                         type = SielEnergyType.NONE;
                         ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                        account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_NOTITY(true, this));
+                        account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
                     }
                 }
                 break;
@@ -152,7 +152,7 @@ public class AccountSielEnergy implements IExpirable {
                     type = SielEnergyType.NONE;
                     endTime = null;
                     ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_NOTITY(true, this));
+                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
                 }
                 break;
         }

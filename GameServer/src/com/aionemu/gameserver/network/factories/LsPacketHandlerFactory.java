@@ -44,7 +44,7 @@ public class LsPacketHandlerFactory {
 		addPacket(new CM_MACBAN_LIST(9), State.AUTHED);
 		addPacket(new CM_PREMIUM_RESPONSE(10), State.AUTHED);
 		addPacket(new CM_LS_PING(11), State.AUTHED);
-		addPacket(new CM_ACCOUNT_SIELENERY_RESPONSE(13), State.AUTHED);
+		addPacket(new CM_ACCOUNT_SIELENERY_UPDATE(13), State.AUTHED);
 
 	}
 

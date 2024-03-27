@@ -27,19 +27,16 @@ import java.sql.Timestamp;
 /**
  * @author -soulxj-
  */
-public class CM_ACCOUNT_SIELENERY_RESPONSE extends LsClientPacket {
+public class CM_ACCOUNT_SIELENERY_UPDATE extends LsClientPacket {
 
 
     private int accountId;
     private int type;
     private long chargeTime;
     private long end;
-
     private long remain;
 
-    private boolean isPush;
-
-    public CM_ACCOUNT_SIELENERY_RESPONSE(int opCode) {
+    public CM_ACCOUNT_SIELENERY_UPDATE(int opCode) {
         super(opCode);
     }
 
@@ -49,33 +46,20 @@ public class CM_ACCOUNT_SIELENERY_RESPONSE extends LsClientPacket {
      */
     @Override
     public void readImpl() {
-        isPush = readD() == 1;
         accountId = readD();
         type = readD();
         chargeTime = readQ();
         end = readQ();
         remain = readQ();
-
     }
 
-    @Override
-    public String toString() {
-        return "CM_ACCOUNT_SIELENERY_NOTITY{" +
-                "accountId=" + accountId +
-                ", type=" + type +
-                ", chargeTime=" + chargeTime +
-                ", end=" + end +
-                ", remain=" + remain +
-                '}';
-    }
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void runImpl() {
-        //System.out.println(this.toString());
-        AccountSielEnergy accountSielEnergy = new AccountSielEnergy(SielEnergyType.getSielTypeById(type), new Timestamp(chargeTime), end == 0 ? null : new Timestamp(end), remain);
-        LoginServer.getInstance().updateAccountSielEnergy(accountId, isPush,accountSielEnergy);
+        final AccountSielEnergy accountSielEnergy = new AccountSielEnergy(SielEnergyType.getSielTypeById(type), new Timestamp(chargeTime), end == 0 ? null : new Timestamp(end), remain);
+        LoginServer.getInstance().updateAccountSielEnergy(accountId, accountSielEnergy);
     }
 }

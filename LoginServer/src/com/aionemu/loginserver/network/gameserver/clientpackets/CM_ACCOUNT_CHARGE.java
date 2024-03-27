@@ -14,18 +14,14 @@ package com.aionemu.loginserver.network.gameserver.clientpackets;
 import com.aionemu.loginserver.model.Account;
 import com.aionemu.loginserver.model.AccountSielEnergy;
 import com.aionemu.loginserver.network.gameserver.GsClientPacket;
-import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_SIELENERY_NOTITY;
 import com.aionemu.loginserver.taskmanager.ExpireTimerTask;
 
 /**
  *
  * @author -soulxj-
  */
-public class CM_ACCOUNT_SIELENERY extends GsClientPacket {
+public class CM_ACCOUNT_CHARGE extends GsClientPacket {
 
-    /**
-     * SessionKey that GameServer needs to check if is valid at Loginserver side.
-     */
     private int accId;
     private int type;
 
@@ -48,7 +44,6 @@ public class CM_ACCOUNT_SIELENERY extends GsClientPacket {
             AccountSielEnergy accountSielEnergy = account.getAccountSielEnergy();
             if (type == 1) {
                 accountSielEnergy.setChargeTime(System.currentTimeMillis());
-                getConnection().sendPacket(new SM_ACCOUNT_SIELENERY_NOTITY(false, account.getAccountSielEnergy()));
                 ExpireTimerTask.getInstance().addTask(account.getAccountSielEnergy(), account);
             } else {
                 ExpireTimerTask.getInstance().removeAccount(account);

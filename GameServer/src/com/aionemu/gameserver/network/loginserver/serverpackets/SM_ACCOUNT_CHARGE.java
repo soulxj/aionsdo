@@ -23,9 +23,9 @@ import com.aionemu.gameserver.network.loginserver.LsServerPacket;
  * In this packet Gameserver is asking if given account sessionKey is valid at Loginserver side. [if user that is
  * authenticating on Gameserver is already authenticated on Loginserver]
  * 
- * @author -Nemesiss-
+ * @author -SOULXJ-
  */
-public class SM_ACCOUNT_SIELENERY extends LsServerPacket {
+public class SM_ACCOUNT_CHARGE extends LsServerPacket {
 
 	/**
 	 * accountId [part of session key]
@@ -41,7 +41,7 @@ public class SM_ACCOUNT_SIELENERY extends LsServerPacket {
 	 * @param accountId
 	 *          account identifier.
 	 */
-	public SM_ACCOUNT_SIELENERY(int accountId,int type) {
+	public SM_ACCOUNT_CHARGE(int accountId, int type) {
 		super(0x0F);
 		this.accountId = accountId;
 		this.type = type;
