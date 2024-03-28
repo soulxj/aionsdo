@@ -172,6 +172,7 @@ public class PlayerService
 		WorldPosition position = World.getInstance().createPosition(ld.getMapId(), ld.getX(), ld.getY(), ld.getZ(), ld.getHeading(), 0);
 		playerCommonData.setPosition(position);
 		Player newPlayer = new Player(new PlayerController(), playerCommonData, playerAppearance, account);
+		newPlayer.setPlayerSettings(new PlayerSettings());
 		newPlayer.setSkillList(new PlayerSkillList());
 		SkillLearnService.addNewSkills(newPlayer);
 		PlayerCreationData playerCreationData = playerInitialData.getPlayerCreationData(playerCommonData.getPlayerClass());
