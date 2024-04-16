@@ -45,6 +45,6 @@ public class CM_ACCOUNT_AUTH extends GsClientPacket {
      */
     @Override
     protected void runImpl() {
-        AccountController.checkAuth(sessionKey, this.getConnection());
+        AccountController.checkAuth(sessionKey, getConnection());
     }
 }

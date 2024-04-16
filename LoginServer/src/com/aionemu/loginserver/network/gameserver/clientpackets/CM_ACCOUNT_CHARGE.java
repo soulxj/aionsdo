@@ -14,10 +14,10 @@ package com.aionemu.loginserver.network.gameserver.clientpackets;
 import com.aionemu.loginserver.model.Account;
 import com.aionemu.loginserver.model.AccountSielEnergy;
 import com.aionemu.loginserver.network.gameserver.GsClientPacket;
+import com.aionemu.loginserver.network.gameserver.serverpackets.SM_ACCOUNT_SIELENERY_UPDATE;
 import com.aionemu.loginserver.taskmanager.ExpireTimerTask;
 
 /**
- *
  * @author -soulxj-
  */
 public class CM_ACCOUNT_CHARGE extends GsClientPacket {
@@ -38,16 +38,15 @@ public class CM_ACCOUNT_CHARGE extends GsClientPacket {
     protected void runImpl() {
         Account account = getConnection().getGameServerInfo().getAccountFromGameServer(accId);
         if (account != null) {
-            if (account.getGsConnection() == null)
-                account.setGsConnection(getConnection());
-
             AccountSielEnergy accountSielEnergy = account.getAccountSielEnergy();
             if (type == 1) {
                 accountSielEnergy.setChargeTime(System.currentTimeMillis());
-                ExpireTimerTask.getInstance().addTask(account.getAccountSielEnergy(), account);
+                accountSielEnergy.onUpdate(account);
+                ExpireTimerTask.getInstance().addTask(accountSielEnergy, account);
+                getConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(accId,accountSielEnergy));
             } else {
                 ExpireTimerTask.getInstance().removeAccount(account);
-                accountSielEnergy.onSave();
+                accountSielEnergy.onUpdate(account);
             }
         }
     }

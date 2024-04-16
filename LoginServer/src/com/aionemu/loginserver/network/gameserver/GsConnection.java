@@ -78,7 +78,7 @@ public class GsConnection extends AConnection {
 	 * @throws IOException
 	 */
 	public GsConnection(SocketChannel sc, Dispatcher d) throws IOException {
-		super(sc, d, 8192*8, 8192*8);
+		super(sc, d, 8192*2, 8192*2);
 
 	}
 
@@ -112,6 +112,7 @@ public class GsConnection extends AConnection {
 				return false;
 
 			packet.write(this, data);
+			log.info("send " + packet.getPacketName());
 			return true;
 		}
 	}

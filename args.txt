@@ -1,0 +1,1 @@
+bin64\aion.bin -ip:106.54.175.178 -port:2106 -dist:19 -PATCH 1 -gg -VERERR 3 -multithread -noweb -cc:5 -megaphone -np:150.158.219.159 -loginex -pwd16 npsa -dnpshop -dss -dpetition -dce -ingamewebshop -nospamcheck -64 -titleinfo32:永恒之塔 -titleinfo64:永恒之塔(64位) -sugogachakina -old_charInstance -64 /ticket:ULS21-12f6f96f5a324279a097b950d2c3908d /AuthProviderCode:shanda 

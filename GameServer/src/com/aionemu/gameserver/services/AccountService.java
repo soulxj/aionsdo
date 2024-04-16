@@ -65,7 +65,7 @@ public class AccountService {
      * @param membership
      * @return Account
      */
-    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll, int sielenergy_type, long sielenergy_chargeTime, long sielenergy_end, long sielenergy_remain) {
+    public static Account getAccount(int accountId, String accountName, AccountTime accountTime, byte accessLevel, byte membership, long toll, int sielenergy_type) {
         log.debug("[AS] request for account: " + accountId);
 
         Account account = accountsMap.get(accountId);
@@ -79,7 +79,7 @@ public class AccountService {
         account.setAccessLevel(accessLevel);
         account.setMembership(membership);
         account.setToll(toll);
-        account.setAccountSielEnergy(new AccountSielEnergy(SielEnergyType.getSielTypeById(sielenergy_type), new Timestamp(sielenergy_chargeTime), sielenergy_end == 0 ? null : new Timestamp(sielenergy_end), sielenergy_remain));
+        account.setAccountSielEnergy(new AccountSielEnergy(SielEnergyType.getSielTypeById(sielenergy_type), null, null, 0));
         removeDeletedCharacters(account);
         if (account.isEmpty()) {
             removeAccountWH(accountId);

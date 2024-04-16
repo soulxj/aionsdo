@@ -34,17 +34,15 @@ public class SM_LS_CONTROL extends LsServerPacket {
 	private final int param;
 
 	private final int type;
-	private final long vipexpire;
 
-	public SM_LS_CONTROL(String accountName, String playerName, String adminName, int param, int type, long vipexpire) {
+
+	public SM_LS_CONTROL(String accountName, String playerName, String adminName, int param, int type) {
 		super(0x05);
 		this.accountName = accountName;
 		this.param = param;
 		this.playerName = playerName;
 		this.adminName = adminName;
 		this.type = type;
-		this.vipexpire = vipexpire;
-
 	}
 
 	/**
@@ -57,6 +55,5 @@ public class SM_LS_CONTROL extends LsServerPacket {
 		writeS(accountName);
 		writeS(playerName);
 		writeC(param);
-		writeQ(vipexpire);
 	}
 }

@@ -221,12 +221,12 @@ public class LoginServer {
      * @param accountTime
      */
     public void accountAuthenticationResponse(int accountId, String accountName, boolean result, AccountTime accountTime, byte accessLevel, byte membership, long toll,
-                                              int sielenergy_type, long sielenergy_chargeTime, long sielenergy_end, long sielenergy_remain) {
+                                              int sielenergy_type) {
         AionConnection client = loginRequests.remove(accountId);
         log.info("accountAuthenticationResponse : accountId: " + accountId + " accountname: " + accountName + " result : " + result);
         if (client == null)
             return;
-        Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll, sielenergy_type, sielenergy_chargeTime, sielenergy_end, sielenergy_remain);
+        Account account = AccountService.getAccount(accountId, accountName, accountTime, accessLevel, membership, toll, sielenergy_type);
         if (!validateAccount(account)) {
             log.info("Illegal account auth detected: " + accountId);
             client.close(new S_L2AUTH_LOGIN_CHECK(false, accountName), true);
@@ -376,10 +376,11 @@ public class LoginServer {
         log.info("GameServer disconnected from the Login Server...");
     }
 
-    public void sendLsControlPacket(String accountName, String playerName, String adminName, int param, int type, long vipexpire) {
-        if (loginServer != null && loginServer.getState() == State.AUTHED)
-            loginServer.sendPacket(new SM_LS_CONTROL(accountName, playerName, adminName, param, type, vipexpire));
-    }
+
+//    public void sendLsControlPacket(String accountName, String playerName, String adminName, int param, int type) {
+//        if (loginServer != null && loginServer.getState() == State.AUTHED)
+//            loginServer.sendPacket(new SM_LS_CONTROL(accountName, playerName, adminName, param, type));
+//    }
 
     public void accountUpdate(int accountId, byte param, int type) {
         synchronized (this) {

@@ -34,19 +34,19 @@ public class AccountSielEnergyDAO {
             @Override
             public void handleRead(ResultSet rset) throws SQLException {
                 while (rset.next()) {
-                    AccountSielEnergy accountSielEnergy = new AccountSielEnergy(account, SielEnergyType.getSielTypeById(rset.getInt("id")), rset.getTimestamp("init"), rset.getTimestamp("end"), rset.getLong("remain"));
+                    AccountSielEnergy accountSielEnergy = new AccountSielEnergy(SielEnergyType.getSielTypeById(rset.getInt("id")), rset.getTimestamp("init"), rset.getTimestamp("end"), rset.getLong("remain"));
                     account.setAccountSielEnergy(accountSielEnergy);
                 }
             }
         });
     }
 
-    public static boolean replaceInsert(final AccountSielEnergy accountSielEnergy) {
+    public static boolean replaceInsert(final int accId,final AccountSielEnergy accountSielEnergy) {
         Connection con = null;
         try {
             con = DatabaseFactory.getConnection();
             PreparedStatement stmt = con.prepareStatement(INSERT_SIEL);
-            stmt.setInt(1, accountSielEnergy.getAccount().getId());
+            stmt.setInt(1, accId);
             stmt.setInt(2, accountSielEnergy.getType().getId());
             stmt.setTimestamp(3, accountSielEnergy.getInitTime());
             stmt.setTimestamp(4, accountSielEnergy.getEndTime());

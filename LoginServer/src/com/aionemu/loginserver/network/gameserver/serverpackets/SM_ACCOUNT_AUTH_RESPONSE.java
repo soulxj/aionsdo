@@ -40,22 +40,22 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
     /**
      * account name
      */
-    private final String accountName;
+    private String accountName;
 
     /**
      * Access level
      */
-    private final byte accessLevel;
+    private byte accessLevel;
 
     /**
      * Membership
      */
-    private final byte membership;
+    private byte membership;
 
     /**
      * TOLL
      */
-    private final long toll;
+    private long toll;
 
     private AccountSielEnergy accountSielEnergy;
 
@@ -79,6 +79,11 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
         this.accountSielEnergy = accountSielEnergy;
     }
 
+    public SM_ACCOUNT_AUTH_RESPONSE(int accountId, boolean ok) {
+        this.accountId = accountId;
+        this.ok = ok;
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -96,9 +101,6 @@ public class SM_ACCOUNT_AUTH_RESPONSE extends GsServerPacket {
             writeC(membership);
             writeQ(toll);
             writeD(accountSielEnergy.getType().getId());
-            writeQ(accountSielEnergy.getChargeTime());
-            writeQ(accountSielEnergy.getEndTime().getTime());
-            writeQ(accountSielEnergy.getRemainSecond());
         }
     }
 }

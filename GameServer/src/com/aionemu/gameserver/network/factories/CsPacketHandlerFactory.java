@@ -29,9 +29,6 @@ public class CsPacketHandlerFactory {
 
 	private CsPacketHandler handler = new CsPacketHandler();
 
-	/**
-	 * @param injector
-	 */
 	public CsPacketHandlerFactory() {
 		addPacket(new CM_CS_AUTH_RESPONSE(0x00), State.CONNECTED);
 		addPacket(new CM_CS_PLAYER_AUTH_RESPONSE(0x01), State.AUTHED);

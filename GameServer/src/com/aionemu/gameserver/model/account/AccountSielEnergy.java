@@ -49,7 +49,7 @@ public final class AccountSielEnergy implements StatOwner {
         long now = System.currentTimeMillis();
         switch (type) {
             case TRIAL:
-                return now - chargeTime.getTime() < remain * 1000;
+                return remain > 0;
             case MEMBERSHIP:
                 return now < end.getTime();
             default:

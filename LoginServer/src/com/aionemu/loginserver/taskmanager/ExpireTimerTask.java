@@ -21,7 +21,6 @@ package com.aionemu.loginserver.taskmanager;
 
 import com.aionemu.loginserver.model.Account;
 import com.aionemu.loginserver.model.AccountSielEnergy;
-import com.aionemu.loginserver.model.SielEnergyType;
 import javolution.util.FastMap;
 
 import java.util.Iterator;
@@ -70,7 +69,7 @@ public class ExpireTimerTask extends AbstractPeriodicTaskManager {
             for (Iterator<Map.Entry<AccountSielEnergy, Account>> i = expirables.entrySet().iterator(); i.hasNext(); ) {
                 Map.Entry<AccountSielEnergy, Account> entry = i.next();
                 AccountSielEnergy expirable = entry.getKey();
-                expirable.onBeat(timeNow);
+                expirable.onBeat(timeNow,entry.getValue());
             }
         } finally {
             writeUnlock();

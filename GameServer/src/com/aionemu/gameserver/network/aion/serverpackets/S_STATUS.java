@@ -70,8 +70,8 @@ public class S_STATUS extends AionServerPacket
 		writeQ(pcd.getExpNeed());// [xp till next lv]
 		writeQ(pcd.getExpRecoverable()); // [recoverable exp]
 		writeQ(pcd.getExpShown()); // [current xp]
-
 		writeD(0); // [unk]
+
 		Stat2 maxHp = pgs.getMaxHp();
 		writeD(maxHp.getCurrent()); // [max hp]
 		writeD(pls.getCurrentHp());// [current hp]
@@ -91,11 +91,6 @@ public class S_STATUS extends AionServerPacket
 		Stat2 flyTime = pgs.getFlyTime();
 		writeD(flyTime.getCurrent());// [max fly time]
 		writeD(pls.getCurrentFp());// [current fly time]
-
-		if(GSConfig.SERVER_COUNTRY_CODE == 0||GSConfig.SERVER_COUNTRY_CODE == 5) {
-			//writeB(new byte[8]); //2.7
-		}
-
 
 		writeC(player.getFlyState());// [fly state]
 		writeC(0);// [unk]
@@ -134,7 +129,7 @@ public class S_STATUS extends AionServerPacket
 		writeH(mainHandPAcc.getCurrent());// [current main_hand_accuracy]
 		writeH(offHandPAcc.getCurrent());// [current off_hand_accuracy]
 
-		writeH(0);// [unk]
+		writeH(1);// [unk]
 
 		Stat2 mAcc = pgs.getMAccuracy();
 		Stat2 mCrit = pgs.getMCritical();
@@ -164,7 +159,7 @@ public class S_STATUS extends AionServerPacket
 		writeH(mCritResist.getCurrent());// [current spell resist]
 		writeH(pCritDamReduce.getCurrent());// [current strike fortitude]
 		writeH(mCritDamReduce.getCurrent());// [current spell fortitude]
-		writeH(0);// [unk] 1.9 version
+		writeH(16472);// [unk] 1.9 version
 
 		writeD(player.getInventory().getLimit());// [unk]
 
@@ -179,14 +174,7 @@ public class S_STATUS extends AionServerPacket
 		writeQ(pcd.getCurrentReposteEnergy());
 		writeQ(pcd.getMaxReposteEnergy());
 		writeC(pcd.getCurrentSalvationPercent());
-
-		//unk
-		if(GSConfig.SERVER_COUNTRY_CODE == 0||GSConfig.SERVER_COUNTRY_CODE == 5) {
-			writeB(new byte[3]);
-			writeD(666); //daeva poten
-		} else {
-			writeB(new byte[7]);
-		}
+		writeB(new byte[7]);//unk
 
 		writeH(power.getBase());// [base power]
 		writeH(health.getBase());// [base health]
@@ -206,15 +194,12 @@ public class S_STATUS extends AionServerPacket
 		writeD(maxDp.getBase());// [base dp]
 		writeD(maxSp.getBase());
 		writeD(flyTime.getBase());// [fly time]
-		if(GSConfig.SERVER_COUNTRY_CODE == 0||GSConfig.SERVER_COUNTRY_CODE == 5) {
-			//writeB(new byte[4]); //unk
-		}
+
 		writeH(mainHandPAtk.getBase());// [base main hand attack]
 		writeH(offHandPAtk.getBase());// [base off hand attack]
 		writeH(mAtk.getBase()); // [base magic attack ?]
 		writeH(pdef.getBase()); // [base pdef]
 		writeH(mresist.getBase()); // [base magic res]
-
 		writeH(0); // [unk]
 
 		writeF(arange.getBase() / 1000f);// [base attack range]
@@ -222,6 +207,7 @@ public class S_STATUS extends AionServerPacket
 		writeH(evasion.getBase()); // [base evasion]
 		writeH(parry.getBase()); // [base parry]
 		writeH(block.getBase()); // [base block]
+
 
 		writeH(mainHandPCrit.getBase()); // [base main hand crit rate]
 		writeH(offHandPCrit.getBase()); // [base off hand crit rate]
@@ -232,14 +218,15 @@ public class S_STATUS extends AionServerPacket
 		writeH(mainHandPAcc.getBase()); // [base main hand accuracy]
 		writeH(offHandPAcc.getBase()); // [base off hand accuracy]
 
-		writeH(0); // [base Casting speed] VERSION 1.9
+
+		writeH(1); // [base Casting speed] VERSION 1.9
 
 		writeH(mAcc.getBase());// [base magic accuracy]
-
 		writeH(concentration.getBase()); // [base concentration]
-		writeH(mBoost.getBase());// [base magic boost]
 
+		writeH(mBoost.getBase());// [base magic boost]
 		writeH(healBoost.getBase()); // [base healboost]
+
 		writeH(pCritResist.getBase()); // [base strike resist]
 		writeH(mCritResist.getBase()); // [base spell resist]
 		writeH(pCritDamReduce.getBase()); // [base strike fortitude]

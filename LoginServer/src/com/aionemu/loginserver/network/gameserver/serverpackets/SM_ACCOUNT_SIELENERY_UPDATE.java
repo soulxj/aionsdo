@@ -23,10 +23,13 @@ import com.aionemu.loginserver.network.gameserver.GsServerPacket;
  */
 public class SM_ACCOUNT_SIELENERY_UPDATE extends GsServerPacket {
 
+    private final int accId;
+
     private final AccountSielEnergy accountSielEnergy;
 
 
-    public SM_ACCOUNT_SIELENERY_UPDATE(AccountSielEnergy accountSielEnergy) {
+    public SM_ACCOUNT_SIELENERY_UPDATE(int accId,AccountSielEnergy accountSielEnergy) {
+        this.accId = accId;
         this.accountSielEnergy = accountSielEnergy;
     }
 
@@ -36,7 +39,7 @@ public class SM_ACCOUNT_SIELENERY_UPDATE extends GsServerPacket {
     @Override
     protected void writeImpl(GsConnection con) {
         writeC(13);
-        writeD(accountSielEnergy.getAccount().getId());
+        writeD(accId);
         writeD(accountSielEnergy.getType().getId());
         writeQ(accountSielEnergy.getChargeTime());
         writeQ(accountSielEnergy.getEndTime() != null ? accountSielEnergy.getEndTime().getTime() : 0);

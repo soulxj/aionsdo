@@ -76,7 +76,7 @@ public class LoginServerConnection extends AConnection {
 	 */
 
 	public LoginServerConnection(SocketChannel sc, Dispatcher d) throws IOException {
-		super(sc, d, 8192*8, 8192*8);
+		super(sc, d, 8192*2, 8192*2);
 		LsPacketHandlerFactory lsPacketHandlerFactory = LsPacketHandlerFactory.getInstance();
 		this.lsPacketHandler = lsPacketHandlerFactory.getPacketHandler();
 		state = State.CONNECTED;
@@ -101,7 +101,7 @@ public class LoginServerConnection extends AConnection {
 	@Override
 	public boolean processData(ByteBuffer data) {
 		LsClientPacket pck = lsPacketHandler.handle(data, this);
-		log.debug("received packet: " + pck);
+		log.info("received packet: " + pck);
 
 		/**
 		 * Execute packet only if packet exist (!= null) and read was ok.

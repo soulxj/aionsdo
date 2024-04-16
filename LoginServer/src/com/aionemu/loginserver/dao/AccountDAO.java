@@ -377,19 +377,4 @@ public class AccountDAO
 		});
 	}
 
-	/**
-	 * Updates account membership
-	 *
-	 * @param accountId account id
-	 * @return was update successful or not
-	 */
-	public static boolean updateMembership(final int accountId)
-	{
-		return DB.insertUpdate(
-				"UPDATE account_data SET membership = old_membership, membership_expire = NULL WHERE id = ? and membership_expire < CURRENT_TIMESTAMP",
-				preparedStatement -> {
-					preparedStatement.setInt(1, accountId);
-					preparedStatement.execute();
-				});
-	}
 }

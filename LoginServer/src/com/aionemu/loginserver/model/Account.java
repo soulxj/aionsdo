@@ -79,7 +79,15 @@ public class Account {
 
 	private AccountSielEnergy accountSielEnergy;
 
-	private GsConnection  gsConnection;
+	private GsConnection gsConnection;
+
+	public GsConnection getGsConnection() {
+		return gsConnection;
+	}
+
+	public void setGsConnection(GsConnection gsConnection) {
+		this.gsConnection = gsConnection;
+	}
 
 	/**
 	 * Returns account id, null if not stored in DB
@@ -288,14 +296,6 @@ public class Account {
 
 	public void setAccountSielEnergy(AccountSielEnergy accountSielEnergy) {
 		this.accountSielEnergy = accountSielEnergy;
-	}
-
-	public GsConnection getGsConnection() {
-		return gsConnection;
-	}
-
-	public void setGsConnection(GsConnection gsConnection) {
-		this.gsConnection = gsConnection;
 	}
 
 	/**

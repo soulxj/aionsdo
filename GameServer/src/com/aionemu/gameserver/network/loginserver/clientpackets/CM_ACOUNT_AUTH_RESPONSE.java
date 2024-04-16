@@ -66,9 +66,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
     private long toll;
 
     private int sielenergy_type;
-    private long sielenergy_chargeTime;
-    private long sielenergy_end;
-    private long sielenergy_remain;
 
     /**
      * {@inheritDoc}
@@ -89,10 +86,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
             membership = (byte) readC();
             toll = readQ();
             sielenergy_type = readD();
-            sielenergy_chargeTime = readQ();
-            sielenergy_end = readQ();
-            sielenergy_remain = readQ();
-
         }
     }
 
@@ -101,6 +94,6 @@ public class CM_ACOUNT_AUTH_RESPONSE extends LsClientPacket {
      */
     @Override
     public void runImpl() {
-        LoginServer.getInstance().accountAuthenticationResponse(accountId, accountName, result, accountTime, accessLevel, membership, toll, sielenergy_type, sielenergy_chargeTime, sielenergy_end, sielenergy_remain);
+        LoginServer.getInstance().accountAuthenticationResponse(accountId, accountName, result, accountTime, accessLevel, membership, toll, sielenergy_type);
     }
 }

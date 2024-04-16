@@ -14,23 +14,18 @@ import java.sql.Timestamp;
  */
 public class AccountSielEnergy implements IExpirable {
 
-    private final Account account;
+
     private SielEnergyType type;
     private Timestamp initTime;
     private Timestamp endTime;
     private long remainSecond;
     private long chargeTime;
 
-    public AccountSielEnergy(Account account, SielEnergyType type, Timestamp initTime, Timestamp endTime, long remainSecond) {
-        this.account = account;
+    public AccountSielEnergy(SielEnergyType type, Timestamp initTime, Timestamp endTime, long remainSecond) {
         this.type = type;
         this.initTime = initTime;
         this.endTime = endTime;
         this.remainSecond = remainSecond;
-    }
-
-    public Account getAccount() {
-        return account;
     }
 
     public SielEnergyType getType() {
@@ -80,7 +75,7 @@ public class AccountSielEnergy implements IExpirable {
     /**
      * 如乱如何都保存数据
      */
-    public void onSave() {
+    public void onUpdate(final Account account) {
         final long hour9 = Util.getCurrentDay().getTime();
         final long now = System.currentTimeMillis();
 
@@ -97,7 +92,8 @@ public class AccountSielEnergy implements IExpirable {
                 if (remainSecond > 0) {
                     long use = now - chargeTime;
                     long remain = remainSecond * 1000 - use;
-                    if (remain < 0) {
+                    remainSecond = remain/1000;
+                    if (remainSecond < 0) {
                         remainSecond = 0;
                         type = SielEnergyType.NONE;
                     }
@@ -112,7 +108,7 @@ public class AccountSielEnergy implements IExpirable {
                 break;
         }
 
-        ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
+        ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(account.getId(), this));
     }
 
     /**
@@ -120,7 +116,7 @@ public class AccountSielEnergy implements IExpirable {
      *
      * @param now
      */
-    public void onBeat(long now) {
+    public void onBeat(long now, final Account account) {
         final long hour9 = Util.getCurrentDay().getTime();
 
         switch (type) {
@@ -130,8 +126,8 @@ public class AccountSielEnergy implements IExpirable {
                     initTime = new Timestamp(now);
                     remainSecond = Config.TRIAL_SECONDS;
                     type = SielEnergyType.TRIAL;
-                    ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
+                    ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(account.getId(), this));
+                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(account.getId(), this));
                 }
                 break;
             case TRIAL:
@@ -141,8 +137,8 @@ public class AccountSielEnergy implements IExpirable {
                     if (remain < 0) {
                         remainSecond = 0;
                         type = SielEnergyType.NONE;
-                        ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                        account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
+                        ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(account.getId(), this));
+                        account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(account.getId(), this));
                     }
                 }
                 break;
@@ -151,8 +147,8 @@ public class AccountSielEnergy implements IExpirable {
                     remainSecond = 0;
                     type = SielEnergyType.NONE;
                     endTime = null;
-                    ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(this));
-                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(this));
+                    ThreadPoolManager.getInstance().executeLongRunning(() -> AccountSielEnergyDAO.replaceInsert(account.getId(), this));
+                    account.getGsConnection().sendPacket(new SM_ACCOUNT_SIELENERY_UPDATE(account.getId(), this));
                 }
                 break;
         }

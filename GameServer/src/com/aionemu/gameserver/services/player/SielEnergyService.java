@@ -27,10 +27,8 @@ public class SielEnergyService {
     public void onLogin(Player player) {
         Account account = player.getPlayerAccount();
         if (account != null && account.getAccountSielEnergy() != null) {
-            account.getAccountSielEnergy().apply(player);
             SM_ACCOUNT_CHARGE req = new SM_ACCOUNT_CHARGE(account.getId(), 1);
             LoginServer.getInstance().sendPacket(req);
-            PacketSendUtility.sendPacket(player, new S_GAMEPASS_INFO(account.getAccountSielEnergy()));
         }
     }
 

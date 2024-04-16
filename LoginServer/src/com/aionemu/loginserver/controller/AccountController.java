@@ -78,7 +78,7 @@ public class AccountController {
      * @param key
      * @param gsConnection
      */
-    public static synchronized Account checkAuth(SessionKey key, GsConnection gsConnection) {
+    public static synchronized void checkAuth(SessionKey key, GsConnection gsConnection) {
         LoginConnection con = accountsOnLS.get(key.accountId);
 
         if (con != null && con.getSessionKey().checkSessionKey(key)) {
@@ -96,18 +96,18 @@ public class AccountController {
             gsi.addAccountToGameServer(acc);
 
             acc.setLastServer(gsi.getId());
+            acc.setGsConnection(gsConnection);
             AccountDAO.updateLastServer(acc.getId(), acc.getLastServer());
 
             long toll = PremiumDAO.getToll(acc.getId());
             /**
              * Send response to GameServer
              */
-            gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, true, acc.getName(), acc.getAccessLevel(), acc.getMembership(), toll,acc.getAccountSielEnergy()));
-            return acc;
+            gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, true, acc.getName(), acc.getAccessLevel(), acc.getMembership(), toll, acc.getAccountSielEnergy()));
+            return;
         }
 
-        gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, false, null, (byte) 0, (byte) 0, 0,null));
-        return null;
+        gsConnection.sendPacket(new SM_ACCOUNT_AUTH_RESPONSE(key.accountId, false));
 
     }
 
@@ -232,7 +232,6 @@ public class AccountController {
         // if everything was OK
         AccountDAO.updateLastIp(account.getId(), connection.getIP());
         // last mac is updated after receiving packet from gameserver
-        AccountDAO.updateMembership(account.getId());
 
         return AionAuthResponse.AUTHED;
     }
@@ -307,7 +306,6 @@ public class AccountController {
         // if everything was OK
         AccountDAO.updateLastIp(account.getId(), connection.getIP());
         // last mac is updated after receiving packet from gameserver
-        AccountDAO.updateMembership(account.getId());
 
         return AionAuthResponse.AUTHED;
     }

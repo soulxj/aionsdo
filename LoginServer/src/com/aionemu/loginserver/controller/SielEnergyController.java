@@ -21,10 +21,9 @@ public class SielEnergyController {
      */
     public static boolean onCreateAccount(Account account) {
         long initTime = System.currentTimeMillis();
-        long remainTimeInSeconds = Config.TRIAL_SECONDS;
-        AccountSielEnergy sielEnergy = new AccountSielEnergy(account, SielEnergyType.TRIAL, new Timestamp(initTime), null, remainTimeInSeconds);
+        AccountSielEnergy sielEnergy = new AccountSielEnergy(SielEnergyType.TRIAL, new Timestamp(initTime), null, Config.TRIAL_SECONDS);
         account.setAccountSielEnergy(sielEnergy);
-        return AccountSielEnergyDAO.replaceInsert(sielEnergy);
+        return AccountSielEnergyDAO.replaceInsert(account.getId(), sielEnergy);
     }
 
 }
