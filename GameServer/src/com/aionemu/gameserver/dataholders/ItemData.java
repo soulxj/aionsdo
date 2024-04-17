@@ -53,13 +53,17 @@ public class ItemData extends ReloadableData {
     
     @XmlTransient
     Map<Integer, ItemTemplate> allItems;
+    @XmlTransient
+    Map<String, ItemTemplate> nameIndex;
 
     void afterUnmarshal(Unmarshaller u, Object parent) {
         items = new TIntObjectHashMap<ItemTemplate>();
         allItems = new HashMap<Integer, ItemTemplate>();
+        nameIndex = new HashMap<>();
         for (ItemTemplate it : its) {
             items.put(it.getTemplateId(), it);
             allItems.put(it.getTemplateId(), it);
+            nameIndex.put(it.getName(),it);
             //if (it.getCategory().equals(ItemCategory.MANASTONE)) {
 			//	int level = it.getLevel();
 			//	if (!manastones.containsKey(level)) {
@@ -101,11 +105,9 @@ public class ItemData extends ReloadableData {
     public ItemTemplate getItemTemplate(int itemId) {
         return items.get(itemId);
     }
-    
-    public Map<Integer, ItemTemplate> getAllItems() {
-    	return allItems;
+    public ItemTemplate getItemTemplate(String name) {
+        return nameIndex.get(name);
     }
-
     /**
      * @return items.size()
      */

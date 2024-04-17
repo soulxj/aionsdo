@@ -17,33 +17,66 @@
 package com.aionemu.gameserver.model.gm;
 
 /**
- * @author xTz
+ * @author Ever' - Magenik
  */
-public enum GmCommands {
+public enum GmPanelCommands {
 
-	GM_MAIL_LIST,
-	INVENTORY,
-	SKILL,
+	/**
+	 * @STANDARD FUNCTION TAB
+	 */
+	REMOVE_SKILL_DELAY_ALL,
+	ITEMCOOLTIME,
+	CLEARUSERCOOLT,
+	SET_MAKEUP_BONUS,
+	SET_VITALPOINT,
+	SET_DISABLE_ITEMUSE_GAUGE,
+	PARTYRECALL,
+	ATTRBONUS,
 	TELEPORTTO,
-	STATUS,
-	SEARCH,
-	QUEST,
-	GM_GUILDHISTORY,
-	GM_BUDDY_LIST,
-	RECALL,
-	GM_COMMENT_LSIT,
-	GM_COMMENT_ADD,
-	CHECK_BOT1,
-	CHECK_BOT99,
+	RESURRECT,
+	INVISIBLE,
+	VISIBLE,
+	/**
+	 * @CHARACTER SETTING TAB
+	 */
+	LEVELDOWN,
+	LEVELUP,
+	CHANGECLASS,
+	CLASSUP,
+	DELETECQUEST,
+	ADDQUEST,
+	ENDQUEST,
+	SETINVENTORYGROWTH,
+	SKILLPOINT,
+	COMBINESKILL,
+	ADDSKILL,
+	DELETESKILL,
+	GIVETITLE,
+	/**
+	 * @OVERALL FUNCTION TAB
+	 */
+	ENCHANT100,
+	FREEFLY,
+	/**
+	 * @NPC QUEST ITEM TAB
+	 */
+	TELEPORT_TO_NAMED,
+	WISH,
+	WISHID,
+	DELETE_ITEMS,
+	/**
+	 * @PLAYER INFO
+	 */
 	BOOKMARK_ADD,
-	GUILD;
+	SET_ENCHANTCOUNT,
+	SEARCH;
 
-	public static GmCommands getValue(String command) {
-		for (GmCommands value : values()) {
+	public static GmPanelCommands getValue(String command) {
+		for (GmPanelCommands value : values()) {
 			if (value.name().equals(command.toUpperCase())) {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Invalid GmCommands id: " + command);
+		throw new IllegalArgumentException("Invalid GmPanelCommands id: " + command);
 	}
 }

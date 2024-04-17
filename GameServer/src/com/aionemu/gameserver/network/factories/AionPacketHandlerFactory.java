@@ -168,7 +168,7 @@ public class AionPacketHandlerFactory {
         addPacket(new CM_BOARD_BUSINESS(0x1BE, State.IN_GAME)); //3.0 Classic
         addPacket(new CM_QUEST_TELEPORT(0x1BF, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_BATTLE_PASS_REWARD(0x156, State.IN_GAME)); //3.0 Classic
-		
+        addPacket(new CM_GM_COMMAND_SEND(0xC8, State.IN_GAME)); //3.0 Classic
 		/*
         addPacket(new CM_LEGION_MODIFY_EMBLEM(0xAE, State.IN_GAME)); //3.0 Classic
 		addPacket(new CM_LEGION_UPLOAD_INFO(0x113, State.IN_GAME)); //3.0 Classic

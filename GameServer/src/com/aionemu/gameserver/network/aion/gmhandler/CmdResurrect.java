@@ -14,36 +14,29 @@
  *  along with Aion-Lightning.
  *  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aionemu.gameserver.model.gm;
+package com.aionemu.gameserver.network.aion.gmhandler;
+
+import com.aionemu.gameserver.model.gameobjects.player.Player;
+import com.aionemu.gameserver.network.aion.serverpackets.S_RESURRECT_BY_OTHER;
+import com.aionemu.gameserver.utils.PacketSendUtility;
 
 /**
- * @author xTz
+ * @author Alcapwnd
  */
-public enum GmCommands {
+public class CmdResurrect extends AbstractGMHandler {
 
-	GM_MAIL_LIST,
-	INVENTORY,
-	SKILL,
-	TELEPORTTO,
-	STATUS,
-	SEARCH,
-	QUEST,
-	GM_GUILDHISTORY,
-	GM_BUDDY_LIST,
-	RECALL,
-	GM_COMMENT_LSIT,
-	GM_COMMENT_ADD,
-	CHECK_BOT1,
-	CHECK_BOT99,
-	BOOKMARK_ADD,
-	GUILD;
-
-	public static GmCommands getValue(String command) {
-		for (GmCommands value : values()) {
-			if (value.name().equals(command.toUpperCase())) {
-				return value;
-			}
-		}
-		throw new IllegalArgumentException("Invalid GmCommands id: " + command);
+	public CmdResurrect(Player admin, String params) {
+		super(admin, params);
+		run();
 	}
+
+	public void run() {
+		Player t = target != null ? target : admin;
+		if (!t.getLifeStats().isAlreadyDead()) {
+			return;
+		}
+		t.setPlayerResActivate(true);
+		PacketSendUtility.sendPacket(t, new S_RESURRECT_BY_OTHER(admin));
+	}
+
 }
