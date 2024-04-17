@@ -5,6 +5,7 @@ import com.aionemu.gameserver.geoEngine.collision.CollisionResults;
 import com.aionemu.gameserver.geoEngine.math.Vector3f;
 import com.aionemu.gameserver.model.gameobjects.Creature;
 import com.aionemu.gameserver.model.gameobjects.VisibleObject;
+import com.aionemu.gameserver.model.gameobjects.player.Player;
 import com.aionemu.gameserver.utils.MathUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -114,6 +115,30 @@ public class GeoService {
         return geoData.getMap(worldId).canSee(x, y, z, x1, y1, z1, limit, instanceId);
     }
 
+    public boolean canPass(VisibleObject object, VisibleObject target) {
+        float limit = (float) (MathUtil.getDistance(object, target) - target.getObjectTemplate().getBoundRadius().getCollision());
+        if (limit <= 0)
+            return true;
+
+        float upperTarget = target.getObjectTemplate().getBoundRadius().getUpper() / 2;
+        if (upperTarget > 2.2)
+            upperTarget = 2.2f;
+
+        float objectUp = object.getObjectTemplate().getBoundRadius().getUpper() / 2;
+        if(object instanceof Player)
+            objectUp = 1.5f;
+        else if (target instanceof Player)
+            upperTarget = 1.5f;
+
+
+        return geoData.getMap(object.getWorldId()).canPass(object.getX(), object.getY(),
+                object.getZ() + objectUp, target.getX(), target.getY(),
+                target.getZ() + upperTarget, limit, object.getInstanceId());
+    }
+
+    public boolean canPass(int worldId, float x, float y, float z, float x1, float y1, float z1, float limit, int instanceId) {
+        return geoData.getMap(worldId).canPass(x, y, z, x1, y1, z1, limit, instanceId);
+    }
     public boolean isGeoOn() {
         return GeoDataConfig.GEO_ENABLE;
     }

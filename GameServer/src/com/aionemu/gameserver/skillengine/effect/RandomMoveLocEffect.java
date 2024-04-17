@@ -32,6 +32,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.World;
 import com.aionemu.gameserver.world.geo.GeoService;
+import com.eleanor.utils.GeomUtil;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -65,6 +66,11 @@ public class RandomMoveLocEffect extends EffectTemplate
                 @Override
                 public void run() {
                     PacketSendUtility.sendPacket(effector, new S_TARGET_INFO(effector));
+					float dis = GeomUtil.getDistance3D(effector.getX(), effector.getY(), effector.getZ(), effect.getX(), effect.getY(), effect.getZ());
+					if (dis > 20) {
+						World.getInstance().updatePosition(effector, skill.getX(), skill.getY(), skill.getZ(), skill.getH());
+						PacketSendUtility.broadcastPacketAndReceive(effector, new S_MOVEBACK(effect.getEffector(), effect.getEffector().getObjectId(), effect.getTargetX(), effect.getTargetY(), effect.getTargetZ()));
+					}
                 }
             }, 200);
         }
