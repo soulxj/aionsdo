@@ -205,6 +205,8 @@ public class _2009A_Ceremony_In_Pandaemonium extends QuestHandler
 					}
 				}
 			}
+
+			return true;
 		}
 		return false;
 	}

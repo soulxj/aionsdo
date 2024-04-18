@@ -67,9 +67,10 @@ public class _2076The_Shadow_Summons extends QuestHandler
     public boolean onDialogEvent(final QuestEnv env) {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
-        int var = qs.getQuestVarById(0);
+
         int targetId = env.getTargetId();
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
             if (targetId == 798300) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {

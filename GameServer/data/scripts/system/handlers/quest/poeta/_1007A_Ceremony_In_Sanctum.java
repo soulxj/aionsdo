@@ -209,6 +209,7 @@ public class _1007A_Ceremony_In_Sanctum extends QuestHandler
 					}
 				}
 			}
+			return true;
 		}
 		return false;
 	}

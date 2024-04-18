@@ -60,8 +60,8 @@ public class _2096Twice_As_Bright extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 204206) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {
