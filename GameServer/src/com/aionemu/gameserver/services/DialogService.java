@@ -229,7 +229,46 @@ public class DialogService {
                 PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 13));
                 break;
             }
-            case 30: {
+             ///case 31: {
+//				//Arena City Teleporter.
+//				int level = player.getLevel();
+//				switch (npc.getNpcId()) {
+//					case 204089: //Garm.
+//						TeleportService2.teleportTo(player, 120010000, 984.0000f, 1543.0000f, 222.0000f, (byte) 0);
+//					break;
+//					case 203764: //Epeios.
+//						TeleportService2.teleportTo(player, 110010000, 1462.0000f, 1326.0000f, 564.0000f, (byte) 0);
+//					break;
+//					case 203981: //Meneus.
+//				        if (player.getRace() == Race.ELYOS) {
+//					        final QuestState qs1346 = player.getQuestStateList().getQuestState(1346); //Killing For Castor.
+//					        if (qs1346 == null || qs1346.getStatus() != QuestStatus.COMPLETE) {
+//								///You cannot use it as the required quest has not been completed.
+//						        PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_CANNOT_MOVE_TO_AIRPORT_NEED_FINISH_QUEST);
+//						        PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 27));
+//					        } else {
+//						        TeleportService2.teleportTo(player, 210020000, 439.0000f, 422.0000f, 274.0000f, (byte) 0);
+//					        }
+//						}
+//				    break;
+//			    }
+            case 32: {
+                //Arena City Teleporter.
+                switch (npc.getNpcId()) {
+                    case 204087: //Gunnar.
+                        TeleportService2.teleportTo(player, 120010000, 1005.0000f, 1528.0000f, 222.0000f, (byte) 0);
+                        break;
+                    case 203875: //Nepis.
+                        TeleportService2.teleportTo(player, 110010000, 1470.0000f, 1343.0000f, 563.0000f, (byte) 0);
+                        break;
+                    case 203982: //Ipetos.
+                        TeleportService2.teleportTo(player, 210020000, 446.0000f, 431.0000f, 274.0000f, (byte) 0);
+                        break;
+                }
+                break;
+            }
+
+            case 35: {
                 //Soul Healing.
                 final long expLost = player.getCommonData().getExpRecoverable();
                 final double factor = (expLost < 1000000 ? 0.25 - (0.00000015 * expLost) : 0.1);
@@ -271,45 +310,7 @@ public class DialogService {
                     player.getCommonData().setDeathCount(0);
                 }
                 break;
-            } ///case 31: {
-//				//Arena City Teleporter.
-//				int level = player.getLevel();
-//				switch (npc.getNpcId()) {
-//					case 204089: //Garm.
-//						TeleportService2.teleportTo(player, 120010000, 984.0000f, 1543.0000f, 222.0000f, (byte) 0);
-//					break;
-//					case 203764: //Epeios.
-//						TeleportService2.teleportTo(player, 110010000, 1462.0000f, 1326.0000f, 564.0000f, (byte) 0);
-//					break;
-//					case 203981: //Meneus.
-//				        if (player.getRace() == Race.ELYOS) {
-//					        final QuestState qs1346 = player.getQuestStateList().getQuestState(1346); //Killing For Castor.
-//					        if (qs1346 == null || qs1346.getStatus() != QuestStatus.COMPLETE) {
-//								///You cannot use it as the required quest has not been completed.
-//						        PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_CANNOT_MOVE_TO_AIRPORT_NEED_FINISH_QUEST);
-//						        PacketSendUtility.sendPacket(player, new S_NPC_HTML_MESSAGE(targetObjectId, 27));
-//					        } else {
-//						        TeleportService2.teleportTo(player, 210020000, 439.0000f, 422.0000f, 274.0000f, (byte) 0);
-//					        }
-//						}
-//				    break;
-//			    }
-            case 32: {
-                //Arena City Teleporter.
-                switch (npc.getNpcId()) {
-                    case 204087: //Gunnar.
-                        TeleportService2.teleportTo(player, 120010000, 1005.0000f, 1528.0000f, 222.0000f, (byte) 0);
-                        break;
-                    case 203875: //Nepis.
-                        TeleportService2.teleportTo(player, 110010000, 1470.0000f, 1343.0000f, 563.0000f, (byte) 0);
-                        break;
-                    case 203982: //Ipetos.
-                        TeleportService2.teleportTo(player, 210020000, 446.0000f, 431.0000f, 274.0000f, (byte) 0);
-                        break;
-                }
-                break;
             }
-
             case 39:
             case 44: {
                 //Flight & Teleport.
