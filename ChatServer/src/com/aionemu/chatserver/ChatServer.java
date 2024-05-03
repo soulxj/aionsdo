@@ -94,6 +94,15 @@ public class ChatServer {
      * @param args
      */
     public static void main(String[] args) {
+
+        System.out.println("   _____  .__                _________ .__    .__                ___________              \n" +
+                "  /  _  \\ |__| ____   ____   \\_   ___ \\|  |__ |__| ____ _____    \\_   _____/ _____  __ __ \n" +
+                " /  /_\\  \\|  |/  _ \\ /    \\  /    \\  \\/|  |  \\|  |/    \\\\__  \\    |    __)_ /     \\|  |  \\\n" +
+                "/    |    \\  (  <_> )   |  \\ \\     \\___|   Y  \\  |   |  \\/ __ \\_  |        \\  Y Y  \\  |  /\n" +
+                "\\____|__  /__|\\____/|___|  /  \\______  /___|  /__|___|  (____  / /_______  /__|_|  /____/ \n" +
+                "        \\/               \\/          \\/     \\/        \\/     \\/          \\/      \\/     ");
+        System.out.println("Base On Leaked Encom Team Code ");
+        System.out.println("维护者：soulxi(187033608) 交流群：877847312 \n");
         long start = System.currentTimeMillis();
 
         initalizeLoggger();

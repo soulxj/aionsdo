@@ -136,11 +136,7 @@ public class GameServer
 		IDFactory.getInstance();
 		for (int i = 0; i < worldEngines.length; i++) {
 			final int index = i;
-			ThreadPoolManager.getInstance().execute(new Runnable() {
-				public void run() {
-					worldEngines[index].load(progressLatch2);
-				}
-			});
+			ThreadPoolManager.getInstance().execute(() -> worldEngines[index].load(progressLatch2));
 		} try {
 			progressLatch2.await();
 		} catch (InterruptedException e1) {
@@ -162,11 +158,7 @@ public class GameServer
 		System.gc();
 		for (int i = 0; i < parallelEngines.length; i++) {
 			final int index = i;
-			ThreadPoolManager.getInstance().execute(new Runnable() {
-				public void run() {
-					parallelEngines[index].load(progressLatch);
-				}
-			});
+			ThreadPoolManager.getInstance().execute(() -> parallelEngines[index].load(progressLatch));
 		}
 		try {
 			progressLatch.await();
@@ -250,7 +242,18 @@ public class GameServer
 		System.gc();
 		AEInfos.printAllInfos();
 		Util.printSection("GameServerLog");
-		log.info("Encom Classic Server started in " + (System.currentTimeMillis() - start) / 1000 + " seconds.");
+		log.info("Classic Server started in " + (System.currentTimeMillis() - start) / 1000 + " seconds.");
+		System.out.println("   _____  .__                _________ .__    .__                ___________              \n" +
+				"  /  _  \\ |__| ____   ____   \\_   ___ \\|  |__ |__| ____ _____    \\_   _____/ _____  __ __ \n" +
+				" /  /_\\  \\|  |/  _ \\ /    \\  /    \\  \\/|  |  \\|  |/    \\\\__  \\    |    __)_ /     \\|  |  \\\n" +
+				"/    |    \\  (  <_> )   |  \\ \\     \\___|   Y  \\  |   |  \\/ __ \\_  |        \\  Y Y  \\  |  /\n" +
+				"\\____|__  /__|\\____/|___|  /  \\______  /___|  /__|___|  (____  / /_______  /__|_|  /____/ \n" +
+				"        \\/               \\/          \\/     \\/        \\/     \\/          \\/      \\/     ");
+		System.out.println("                                                           Base On Leaked Encom Team Code ");
+		System.out.println("问题反馈：https://github.com/soulxj/aionsdo\n" +
+				"开发/维护：Soulxi(187033608)\n" +
+				"交流群：877847312\n"
+			);
 		gs.startServers();
 		Runtime.getRuntime().addShutdownHook(ShutdownHook.getInstance());
 		if (GSConfig.ENABLE_RATIO_LIMITATION) {
@@ -275,7 +278,7 @@ public class GameServer
 	
 	private void startServers() {
 		Util.printSection("Starting Network");
-		NioServer nioServer = new NioServer(NetworkConfig.NIO_READ_WRITE_THREADS, new ServerCfg(NetworkConfig.GAME_BIND_ADDRESS, NetworkConfig.GAME_PORT, "Game Connections", new GameConnectionFactoryImpl()));
+		NioServer nioServer = new NioServer(NetworkConfig.NIO_READ_WRITE_THREADS, new ServerCfg("127.0.0.1" /*NetworkConfig.GAME_BIND_ADDRESS*/, NetworkConfig.GAME_PORT, "Game Connections", new GameConnectionFactoryImpl()));
 		LoginServer ls = LoginServer.getInstance();
 		ChatServer cs = ChatServer.getInstance();
 		ls.setNioServer(nioServer);
