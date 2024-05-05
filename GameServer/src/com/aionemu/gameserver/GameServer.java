@@ -278,7 +278,7 @@ public class GameServer
 	
 	private void startServers() {
 		Util.printSection("Starting Network");
-		NioServer nioServer = new NioServer(NetworkConfig.NIO_READ_WRITE_THREADS, new ServerCfg("127.0.0.1" /*NetworkConfig.GAME_BIND_ADDRESS*/, NetworkConfig.GAME_PORT, "Game Connections", new GameConnectionFactoryImpl()));
+		NioServer nioServer = new NioServer(NetworkConfig.NIO_READ_WRITE_THREADS, new ServerCfg(NetworkConfig.GAME_BIND_ADDRESS, NetworkConfig.GAME_PORT, "Game Connections", new GameConnectionFactoryImpl()));
 		LoginServer ls = LoginServer.getInstance();
 		ChatServer cs = ChatServer.getInstance();
 		ls.setNioServer(nioServer);
