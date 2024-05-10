@@ -43,7 +43,7 @@ import java.util.List;
 
 public class QUEST_Q10103 extends QuestHandler {
     private final static int questId = 10103;
-    private final static int[] npcs = {800676, 800677, 800678};
+    private final static int[] npcs = {800676,/* 800677,*/ 800678};
     private final static int[] LDF1_Mission_ZaifRe_Named_8_An = {219343};
 
     public QUEST_Q10103() {
@@ -84,8 +84,9 @@ public class QUEST_Q10103 extends QuestHandler {
         final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
+
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+            int var = qs.getQuestVarById(0);
             if (targetId == 800678) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
@@ -121,13 +122,11 @@ public class QUEST_Q10103 extends QuestHandler {
                         }
                     }
                     case STEP_TO_2: {
-                        changeQuestStep(env, 3, 4, false);
-                        if (player.getInventory().getItemsByItemId(182209903) != null) {
-                            PacketSendUtility.sendPacket(player, S_MESSAGE_CODE.STR_CAN_NOT_GET_LORE_ITEM((new DescriptionId(182209903))));
-                            return false;
+                        if(var == 3) {
+                            changeQuestStep(env, 3, 4, false);
+                            ItemService.addItem(player, 182209903, 1);
+                            return closeDialogWindow(env);
                         }
-                        ItemService.addItem(player, 182209903, 1);
-                        return closeDialogWindow(env);
                     }
                 }
             }
@@ -205,6 +204,7 @@ public class QUEST_Q10103 extends QuestHandler {
                 if (var1 >= 0 && var1 < 0) {
                     return defaultOnKillEvent(env, LDF1_Mission_ZaifRe_Named_8_An, var1, var1 + 1, 1);
                 } else if (var1 == 0) {
+                    qe.registerQuestNpc(800677).addOnTalkEvent(questId);
                     qs.setQuestVar(3);
                     updateQuestStatus(env);
                     return true;

@@ -101,7 +101,6 @@ public class LoginServerConnection extends AConnection {
 	@Override
 	public boolean processData(ByteBuffer data) {
 		LsClientPacket pck = lsPacketHandler.handle(data, this);
-		log.info("received packet: " + pck);
 
 		/**
 		 * Execute packet only if packet exist (!= null) and read was ok.

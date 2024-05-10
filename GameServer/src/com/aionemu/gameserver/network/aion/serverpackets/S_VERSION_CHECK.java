@@ -3,7 +3,6 @@
 
 package com.aionemu.gameserver.network.aion.serverpackets;
 
-import com.aionemu.gameserver.GameServer;
 import com.aionemu.gameserver.configs.main.GSConfig;
 import com.aionemu.gameserver.configs.main.MembershipConfig;
 import com.aionemu.gameserver.configs.network.IPConfig;
@@ -12,7 +11,6 @@ import com.aionemu.gameserver.network.NetworkController;
 import com.aionemu.gameserver.network.aion.AionConnection;
 import com.aionemu.gameserver.network.aion.AionServerPacket;
 import com.aionemu.gameserver.services.ChatService;
-import com.aionemu.gameserver.model.Race;
 
 import java.util.Calendar;
 

@@ -68,8 +68,9 @@ public class _2060Restoring_Beluslan_Observatory extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
 		int targetId = env.getTargetId();
-        int var = qs.getQuestVarById(0);
+
         if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 204701) {
 				switch (env.getDialog()) {
 					case START_DIALOG: {

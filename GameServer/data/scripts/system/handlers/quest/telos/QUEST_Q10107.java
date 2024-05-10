@@ -83,8 +83,9 @@ public class QUEST_Q10107 extends QuestHandler
 		final Player player = env.getPlayer();
         final QuestState qs = player.getQuestStateList().getQuestState(questId);
         int targetId = env.getTargetId();
-		int var = qs.getQuestVarById(0);
+
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
+			int var = qs.getQuestVarById(0);
 			if (targetId == 800709) {
                 switch (env.getDialog()) {
                     case START_DIALOG: {
